@@ -1,0 +1,101 @@
+<app-header></app-header>
+<app-header1></app-header1>
+<div class="m-core">
+    <div class="manage-orders-core my-fav-div  w-control">
+        <h2 id="orders-title">My Favorites</h2>
+        <div class="no-fav-div" *ngIf="favorites_length">
+            <h3>You have no favorites</h3>
+            <p>
+                Instead of feeling empty, why don't you <a routerLink='/categories'>browse Marketplace</a> to see if you can find some items you like?
+            </p>
+        </div><br>
+
+
+        <!-- GIG -->
+        <div class="w-control">
+            <div class=" home-gig-container">
+
+                <div class="home-gigs-row">
+                    <div *ngFor="let x of fav_det">
+                        <div class="gig">
+                            <div class="gig-img"  (click)='go_to_gigdet(x.gig_id)'>
+                                <img src="http://localhost:3000{{x.gig_img}}" alt="" width="100%" height="100%">
+                            </div>
+                            <div class="gig-text-div"  (click)='go_to_gigdet(x.gig_id)'>
+                                <div class="gig-text">
+                                    <h1>{{x.gig_title}}....</h1>
+                                    <h3>By {{x.name}}</h3>
+
+                                    <div class="stars">
+                                        <img src="{{x.raty[0]}}" alt="" width="12px" height="12px">
+                                        <img src="{{x.raty[1]}}" alt="" width="12px" height="12px">
+                                        <img src="{{x.raty[2]}}" alt="" width="12px" height="12px">
+                                        <img src="{{x.raty[3]}}" alt="" width="12px" height="12px">
+                                        <img src="{{x.raty[4]}}" alt="" width="12px" height="12px">
+                                    </div>
+                                </div>
+
+                                <div class="price">
+                                    <div class="p1">
+                                        <img src="../../assets/icons/homepage_completed_icon.png" width="18px" height="18px">
+                                        <!-- <i class="fa fa-users"></i> -->
+                                        &nbsp;
+                                        <span id="price-com">{{x.jobes_done}} Completed</span>
+                                    </div>
+
+                                    <div class="p2">
+                                        <p>Starting At&nbsp;<span>${{x.gig_cost}}</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- gig-hover -->
+                          <div class="gig-details-container">
+                                <div class="gig-dets-top">
+                                    <h1>{{x.gig_title}}</h1>
+                                    <div class="hover-display">
+                                     <div class="badges"><p>Best Seller<p></div>   
+                                     <p>in <span class="gig-hover-span">Deep Learning</span></p>
+                                     <p>Business</p>
+                                    </div>
+                                    <div class="timer-display">
+                                        <div class="timer">
+                                          <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                          <span>{{x.pac_del_sta}} Days Delivery</span>
+                                        </div>
+                                        <div class="timer">
+                                           <i class="fa fa-refresh" aria-hidden="true"></i>
+                                           <span>{{x.rev_sta}} Revisions</span>
+                                        </div>
+                                    </div><br>
+                
+                                  <h3 class="hover-h3">learn to create the algorithms in Python from Data science experts.</h3> <br>
+                                  
+                                  <!-- <div class="skills">
+                                      <div class="skills-row">
+                                         <button class="btn btn-default skills-btn">UI Design</button> 
+                                         <button class="btn btn-default skills-btn">Python</button> 
+                                         <button class="btn btn-default skills-btn">php</button> 
+                                      </div>
+                                  </div> -->
+                                  
+                                </div>
+                                <div class="hover-button">
+                                    <button class="btn btn-danger" (click)=" gotoGig([x._id])">View Detailes</button>
+                                    <span *ngIf="x.fav_status == false">
+                                            <img src="../../assets/icons/mouse-hover-box/003_unfavorite.png" width="25px" height="25px" (click)="addtoFav(x.gig_id,$event)">
+                                            <!-- <i class="fa fa-heart-o" (click)="addtoFav(x.gig_id,$event)"></i> -->
+                                        </span>
+                                        <span *ngIf="x.fav_status == true">
+                                            <img src="../../assets/icons/mouse-hover-box/004_favorite.png" width="25px" height="25px" (click)="addtoFav(x.gig_id,$event)">
+                                            <!-- <i class="fa fa-heart" style="color:red" (click)="addtoFav(x.gig_id,$event)"></i> -->
+                                        </span>
+                                </div>
+                      </div>
+                        </div>
+                    </div>
+                </div><br>
+                <br><br>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>

@@ -1,0 +1,25 @@
+<div class="container">
+  <br>
+  <div id="heading">
+    Categories
+
+  </div>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Parent_category</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of categories let i = index" >
+        <td>{{i+1}}</td>
+        <td>{{s.sub_category_name}}</td>
+        <td>{{s.category_name}}<td>
+        <td><a routerLink="/edit-category/{{s._id}}">Edit</a> | <a (click)="delete_this(s)">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

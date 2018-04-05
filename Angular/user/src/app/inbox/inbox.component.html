@@ -1,0 +1,205 @@
+<app-header></app-header>
+<app-header1></app-header1>
+
+<div class="inbox-container">
+    <div class="width-desktop  w-control">
+        <div class="inbox-core">
+            <h2 id="mailbox-title">Mailbox</h2><br>
+            <span class="msg-msg">You have <span class="unread-num">{{unread_number}}</span> unread messages</span>
+            <div class="mailbox-nav-div">
+                <ul>
+                    <li><button>Inbox</button></li>
+                    <!--<li><button>Sent</button></li>
+          <li><button>Trash</button></li>-->
+                </ul>
+            </div>
+            <div class="inbox-in"><br>
+            <div class="inbox-border">
+            <div class="inbox-search">
+                <div class="inbox-input-div">
+                <div class="form-group input-form-search">
+                    <input type="text" class="form-control" id="search" placeholder="Search">
+                    <span><i class="fa fa-search"></i></span>
+                </div>
+                </div>
+                <div class="right-msgs-div">
+                        <div class="right-msgs-head">
+                            <div class="right-msgs-text">
+                               
+                                <h3 class="head-mail">Index Design and Some Advice<span>&nbsp;(mail@abc.com)</span></h3>
+                                
+                                <p class="inbox-head-p"><span>To:</span> Me, John, etc</p>  
+                            </div>
+                            
+                       </div> 
+                    </div>
+                    <div class="inbox-icons">
+                        <ul>
+                            <li>
+                                <img src="../../assets/icons/popup-icons/003-delete.png" width="25px" height="25px">
+                            </li>
+                            <li>
+                                <img src="../../assets/icons/popup-icons/003-delete.png" width="25px" height="25px">
+                            </li>
+                            <li>
+                                <img src="../../assets/icons/popup-icons/003-delete.png" width="25px" height="25px">
+                            </li>
+                        </ul>
+                    </div>
+                </div> 
+                </div>
+                <div class="left-contacts"><br>
+                    <!-- <div *ngIf="block == true"> -->
+                        <div class="selected-core">
+                            <div *ngFor="let side of side_conv;let i = index">
+                                <div *ngIf="side.selected === true">
+                                    <div class="contact" id="con" (click)="switch_conv(side.conv_id,i)">
+                                        <div class="contact-wrap">
+                                            <div class="contact-img-div">
+                                                <img src="{{side.sender_pic}}" alt="../assets/default.png" class="contact-img">
+                                            </div>
+                                            <div class="contact-msg-table-div">
+                                                <table class="contact-msg-table">
+                                                    <tr>
+                                                        <td><span class="contact-name"></span></td>
+                                                        <td><span class="date">{{side.time}}</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            <span class="msg-hint" [innerHTML]="side.last_msg"><br>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            <span class="msg-hint"><b>{{side.sender_name | titlecase}}</b><br>
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </div><br> -->
+                    <div class="contacts-core" id="style-2">
+                        <div *ngFor="let side of side_conv;let i = index">
+                            <div *ngIf="side.selected === false">
+                                <div class="contact" id="con" (click)="switch_conv(side.conv_id,i)">
+                                    <div class="contact-wrap">
+                                        <div class="contact-img-div">
+                                            <img src="{{side.sender_pic}}" class="contact-img">
+                                        </div>
+                                        <div class="contact-msg-table-div">
+                                            <table class="contact-msg-table">
+                                                <tr>
+                                                    <td><span class="contact-name"></span></td>
+                                                    <td><span class="date">{{side.time}}</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <span class="msg-hint" [innerHTML]="side.last_msg">
+                                                            <br>
+                                                        </span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2">
+                                                        <span class="msg-hint"><b>{{side.sender_name | titlecase}}</b></span>
+                                                            
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="messages-div" id="style-2">
+                    <div class="user-msgs-core messages-div-text">
+                            <div class="user-msgs-middle" style="height:90%">
+                                    <div *ngFor='let msg of display_msgs'>
+                                        <div *ngIf='msg.status === true'>
+                                            <div class="my-msgs msgs">
+                                                <div class="msgs-pro-pic">
+                                                    <img src="{{msg.pic}}" alt="">
+                                                </div>
+                                                <div class="msgs-msg" style="height:auto">
+                                                    <p>
+                                                        {{ msg.message }}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div *ngIf='msg.status === false'>
+                                            <div class="his-msgs msgs">
+        
+                                                <div class="msgs-pro-pic">
+                                                    <img src="{{msg.pic}}" alt="">
+                                                </div>
+                                                <div class="msgs-msg" style="height:auto">
+                                                    <p>
+                                                        {{ msg.message }}
+                                                    </p>
+                                                </div>
+        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>   
+                            </div>
+                   
+                    <!-- <div class="user-msgs-core messages-div-text">
+                        <div class="user-msgs-middle" style="height:90%">
+                            <div *ngFor='let msg of all_msgs'>
+                                <div *ngIf='msg.status === true'>
+                                    <div class="my-msgs msgs">
+                                        <div class="msgs-pro-pic">
+                                            <img src="http://localhost:3000{{msg.pic}}" alt="">
+                                        </div>
+                                        <div class="msgs-msg" style="height:auto">
+                                            <p>
+                                                {{ msg.message }}
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div *ngIf='msg.status === false'>
+                                    <div class="his-msgs msgs">
+
+                                        <div class="msgs-pro-pic">
+                                            <img src="http://localhost:3000{{msg.pic}}" alt="">
+                                        </div>
+                                        <div class="msgs-msg" style="height:auto">
+                                            <p>
+                                                {{ msg.message }}
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user-msgs-btm" style="display:flex;position:absolute;top:81%;transform:translate(0,81%);width:50%;position:fixed;">
+                            <textarea class="msg-box" (keydown.enter)="send_msg_enter($event)" [(ngModel)]="msg" class="form-control" style="width:80%"></textarea>
+                            <button class="btn btn-success" (click)="send_msg()" style="width:20%">Send</button>
+                        </div>
+                    </div> -->
+                </div><br><br>
+                <div class="send-div"><br>
+                    <textarea class="send-textarea" (keydown.enter)="send_msg_enter($event)" [(ngModel)]="msg"></textarea>
+                    <button class="btn btn-success" (click)="send_msg()">SEND</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear-both"></div><br><br>
+<!-- </div> -->
+<app-footer></app-footer>

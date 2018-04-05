@@ -1,0 +1,178 @@
+<app-header></app-header>
+<app-header1></app-header1>
+
+<div class="order-buyer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-xs-9">
+                <h3>{{gig_title}}...</h3>
+                <div class="display">
+                    <p class="seller-name">Seller:{{seller_name}} <span>|</span></p><span class="a">a</span>
+                    <p class="buyer-name">Buyer:{{buyer_name}} <span>|</span></p><span class="a">a</span>
+                    <p>Order.Id:{{order_id}} <span>|</span></p><span class="a">a</span>
+                    <p>{{date}}</p>
+                </div>
+            </div>
+
+            <!-- <div class="col-lg-3 col-md-3 col-xs-3">
+       <div class="order-start">
+          <i class="fa fa-motorcycle" aria-hidden="true"></i>
+          <h4>ORDER STARTED</h4>
+          </div>
+     </div> -->
+        </div>
+    </div>
+</div><br>
+
+<div class="w-control">
+
+    <div class="container">
+        <div class="row chat">
+
+
+            <div class="col-lg-6 col-md-6 col-xs-12 padding" style="display:flex">
+                <img src="{{img}}" class="img-fluid" style="width:70px;height:70px;border-radius:5px">&nbsp;&nbsp;&nbsp;
+                <div>
+                    <span class="order-name" (click)="goto_gig_det(gig_id)">{{seller_name}}</span><br>
+                    <!-- <span><i class="fa fa-flag-o" aria-hidden="true"></i>&nbsp;{{date}}</span> -->
+                   
+                    <button id="chat-btn" class="btn btn-default btn-sm" (click)="go_to_inbox(seller_id)"><i class="fa fa-circle"></i>&nbsp;&nbsp;Chat</button>
+                </div>
+            </div>
+
+
+            <div class="col-lg-6 col-md-6 col-xs-12 padding">
+                <div class="usd">
+                    <p style="font-size:120%;font-weight:450;">${{total_amount}} USD</p>
+                    <p id="missde-date">{{missed}}</p>
+                    <!-- seller extra button -->
+
+                    <!-- <p style="font-size:80%;font-weight:600;">{{order_status}}</p> -->
+                    <span *ngIf="accept"><button id="accept-btn" class="btn btn-default" (click)="accept_order()">ACCEPT</button></span>
+                    <span *ngIf=deliver><button id="deliver-btn" class="btn btn-default" (click)="deliver_order()">DELIVER</button></span>
+                </div>
+                <div class="prog">
+                        <div class="progress progress2">
+                                <div class="progress-fill">
+                                    <div class="prog-div">
+                                     
+                                     <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%" [style.width]="div_one"></div>
+
+                                     <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%" [style.width]="div_two"></div>
+
+                                     <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%" [style.width]="div_three"></div>
+                                 </div>
+                                </div>
+                             </div>&nbsp;
+                    <span id="days-left">{{days_left}}</span>
+                    
+                </div>
+                <div class="progress1">
+                    <p>open</p>
+                    <p>started</p>
+                    <p>delivered</p>
+                </div>
+
+            </div>
+
+
+        </div><br>
+
+
+
+        <div class="row chat1">
+            <table style="width:100%;padding:10px;" class="table">
+                <tr style="width:100%;">
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Duration</th>
+                    <th>Amount</th>
+                </tr>
+                <tr>
+                    <td><span class="table-head">{{gig_title}}</span></td>
+                    <td>1</td>
+                    <td>{{total_days}} Days</td>
+                    <td>$ {{f_actual_amount}}</td>
+                </tr>
+                <tr>
+                    <td>Processing Fee(5%)</td>
+                    <td></td>
+                    <td></td>
+                    <td>${{f_process_fee}}</td>
+                </tr>
+            </table>
+        </div><br>
+        <div class="row feedback">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <div class="buyer-div">
+                    <div class="rate">
+                        <img src="../../assets/icons/order_details_screen - review box.png" width="40px" height="40px">
+                        <!-- <i class="fa fa-comment-o"></i> -->
+                        <p>PLEASE RATE YOUR EXPERIENCE</p>
+                    </div><br>
+
+                    <div class="feedback1">
+                        <div class="feedback-text">
+                            <p class="feed-p">Please select a star rating and leave your comments below</p>&nbsp;&nbsp;
+                            <div id="rating" style="float:right" (click)="clicked()">
+                            </div>
+                        </div>
+
+                        <textarea class="text-area" placeholder="Please select a star rating and leave your feedback here"></textarea><br><br>
+                        <span id="review-err"></span><br>
+                        <div class="btn1">
+                            <button class="btn btn-success btn-md" (click)="submit_review()">SUBMIT FEEDBACK</button></div><br><br>
+                    </div><br>
+                </div>
+                <div class="seller-div">
+                    <div class="rate">
+                        <img src="../../assets/icons/order_details_screen - review box.png" width="40px" height="40px">
+                        <!-- <i class="fa fa-comment-o"></i> -->
+                        <p>ORDER REVIEWS</p>
+                    </div><br>
+
+                    <div class="feedback1">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-8 col-xs-12">
+                                <div style="padding:10px;">
+                                    <h3 style="color:green;font-size:100%;font-weight:500;">{{buyer_name}} <span style="color:#999">added {{post_time}}</span></h3>
+                                   
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-xs-12">
+                                <div style="padding:10px;">
+                                    <div id="raty"></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-xs-12">
+                            <div style="padding:10px;">
+                            <div class="review-feedback-div">
+                                    <p class="feed-p-one">{{review}}</p>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div><br>
+                </div>
+            </div>
+        </div><br>
+    </div>
+</div>
+
+<!-- order-submit pop-up -->
+
+<div class="feedback-background main">
+        <div class="container feed-pop one" style="display:block">
+            <span class="pop-icon" (click)="close_pop()"> <i id="feedback-icon" class="fa fa-times"></i></span>
+            <br>
+            <div class="feed-width">
+                 <p>Your feedback has been submitted successfully</p>                  
+            </div>
+        
+        
+        </div><br>
+        
+       
+        </div>
+<app-footer></app-footer>

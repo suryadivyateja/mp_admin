@@ -1,0 +1,407 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+body {
+    background-color: #f9f9f9;
+    white-space: normal !important;
+}
+
+.how-con-core p {
+    color: rgba(0, 0, 0, 0.7) !important;
+}
+
+#h-table tbody,
+#h-table tbody tr {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.how-core {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    margin: 0 auto;
+    /* margin-top: 11vh; */
+    padding: 0;
+    background-color: #4E9ED4;
+}
+
+#h-t-wrks-title {
+    position: relative;
+    display: inline-block;
+    font-size: 250%;
+    margin: 0px 0 0px 0;
+    color: #fff;
+}
+
+#h-t-desc {
+    position: relative;
+    display: block;
+    font-size: 140%;
+    color: #fff;
+    line-height: 2;
+}
+
+.how-con-core {
+    position: relative;
+    display: block;
+    margin: 20px auto;
+}
+
+.def-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 30px 0;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.def-title-div {
+    position: relative;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    text-align: left;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    float: left;
+    width: 30%;
+}
+
+.def-title {
+    position: relative;
+    display: block;
+    font-size: 160%;
+    color: #000;
+    font-weight: bold;
+}
+
+.def-title::after {
+    content: "";
+    position: relative;
+    display: block;
+    top: 10px;
+    width: 50%;
+    height: 5px;
+    color: #F9BF3B;
+    background-color: #F9BF3B;
+    text-align: left;
+}
+
+.def-desc-div {
+    position: relative;
+    float: left;
+    text-align: left;
+    width: 70%;
+    height: auto;
+    overflow: hidden;
+    padding-right: 13px;
+}
+
+.def-desc-div p {
+    position: relative;
+    display: block;
+    white-space: normal !important;
+    font-size: 105%;
+    line-height: 1.4;
+}
+
+#h-h-options-div,
+#h-s-options-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff !important;
+    padding: 40px 0;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+}
+
+#h-table,
+#s-table {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 0 5%;
+}
+
+#h-table td,
+#s-table td {
+    position: relative;
+    display: inline-block;
+    width: 48%;
+}
+
+.h-options {
+    position: relative;
+    display: block;
+    width: 98%;
+    padding: 50px 10px;
+    overflow: hidden;
+}
+
+.h-opt-icons {
+    position: relative;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    width: 20%;
+    float: left;
+    overflow: hidden;
+}
+
+.h-opt-icons img {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+}
+
+.h-opt-desc {
+    position: relative;
+    text-align: left;
+    width: 73%;
+    margin-left: 1%;
+    float: left;
+}
+
+.h-opt-desc h2 {
+    position: relative;
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 0;
+    color: #000;
+    font-size: 140%;
+    font-weight: bold;
+}
+
+.h-opt-desc p {
+    font-size: 100%;
+    line-height: 1.3;
+    width: 80%;
+    white-space: normal;
+    word-wrap: normal;
+}
+
+#disc-div {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff !important;
+    padding: 50px 0;
+    border-top: 1px solid #ddd;
+}
+
+#disc-div h3 {
+    position: relative;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 180%;
+    color: rgba(0, 0, 0, 0.95);
+    white-space: normal !important;
+}
+
+#disc-div h5 {
+    position: relative;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 150%;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.icon-menu-div {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    width: 1100px;
+    margin: 20px auto 0px auto;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.menu-icons {
+    position: relative;
+    display: inline-flex;
+    display: -webkit-inline-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    height: 150px;
+    color: rgba(0, 0, 0, 0.6);
+    width: auto;
+    cursor: pointer;
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+
+.menu-icons i {
+    height: 80px;
+    font-size: 380%;
+}
+
+.menu-icons:hover {
+    border-bottom: 2px solid #f10;
+}
+
+.menu-ico-hr {
+    position: relative;
+    display: block;
+    width: 980px;
+    margin: 0px auto -20px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    ;
+}
+
+.menu-ico-hr {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: 0px auto -20px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width:220px) and (max-width:770px) {
+    .def-div {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 0px 0;
+        margin: 0 !important;
+        overflow: hidden;
+    }
+    .menu-icons {
+        flex-direction: row;
+        position: relative;
+    }
+    .def-desc-div {
+        position: relative;
+        text-align: left;
+        width: 100%;
+        height: auto;
+        overflow: visible;
+        padding-right: 0px !important;
+    }
+    .h-options {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 0px 0px !important;
+        overflow: hidden;
+    }
+    #h-h-options-div {
+        position: relative;
+        display: block;
+        width: 100%;
+        background-color: #fff !important;
+        padding: 0px 0 !important;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+    }
+    .h-opt-desc {
+        position: relative;
+        text-align: left;
+        width: 100%;
+        margin: 0 !important;
+        float: left;
+    }
+    .h-opt-desc h2 {
+        position: relative;
+        display: block;
+        margin-bottom: 10px;
+        margin-top: 0;
+        color: #000;
+        font-size: 140%;
+        font-weight: bold;
+        white-space: normal !important;
+    }
+    .h-opt-desc p {
+        font-size: 100%;
+        line-height: 1.3;
+        width: 100%;
+        white-space: normal !important;
+        word-wrap: normal;
+    }
+    .icon-menu-div {
+        position: relative;
+        display: block;
+        display: -webkit-block;
+        margin: 0 !important;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        flex-direction: row;
+        overflow: hidden;
+        left: 35%;
+    }
+    .menu-icons {
+        position: relative;
+        display: block;
+        display: -webkit-block;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        flex-direction: row;
+        height: 150px;
+        color: rgba(0, 0, 0, 0.6);
+        width: auto;
+        cursor: pointer;
+        border-bottom: 2px solid rgba(0, 0, 0, 0);
+    }
+    #h-t-desc {
+        position: relative;
+        display: block;
+        font-size: 140%;
+        color: #fff;
+        line-height: 2;
+        text-align: center;
+        white-space: normal !important;
+    }
+    .h-opt-icons img {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    #h-table,
+    #s-table {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin: 0 5%;
+    }
+    #h-table td,
+    #s-table td {
+        position: relative;
+        display: block;
+        width: 100%;
+    }
+    .w-control {
+        width: 330px;
+    }
+}
+
+@media screen and (min-width:750px) and (max-width:1024px) {
+    .w-control {
+        width: 100%
+    }
+}

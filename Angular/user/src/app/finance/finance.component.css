@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.profile {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    top: 10%;
+    transform: translate(0, 10%);
+    color: white;
+}
+.pswd-div{
+    position: relative;
+    border:0.5px solid #ddd;
+    width:100%;
+    left:-10px !important;
+}
+.profile h2 {
+    font-size: 130%;
+}
+
+.profile-about {
+    background-color: #F2F4F6;
+    width: 100%;
+    border-radius: 3px;
+    padding: 10px;
+    left: 10%;
+    transform: translate(5%, 0)
+}
+
+.profile-about i {
+    font-size: 25px;
+}
+
+.profile-about span {
+    font-size: 100%;
+    font-weight: 400;
+}
+
+.pswd-text {
+    border-bottom: 0.5px solid #ddd;
+    height: 15vh;
+}
+
+.pswd-text2 {
+    left: 10%;
+    top: 50%;
+    transform: translate(10%, 80%)
+}
+
+.pswd-text2 h2 {
+    font-weight: bolder;
+    font-size: 210%;
+    color: #1F2835;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.pswd-text1 {
+    left: 10%;
+    transform: translate(10%, 0);
+}
+
+.pswd-text1 h3 {
+    font-size: 100%;
+    color: #3A424D!important;
+    font-weight: 800;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.pswd-text1 label {
+    font-size: 100%;
+    font-weight: 800;
+    color: rgb(41, 40, 40)
+}
+
+.pswd-text1 .form-control {
+    width: 100%
+}
+
+.paypal-id {
+    position: relative;
+    justify-content: space-between;
+    display: flex;
+    align-items: flex-start;
+    vertical-align: middle;
+}
+
+.paypal-id p {
+    color: #777!important;
+    font-size: 90%;
+    font-weight: 550;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.paypal-id .form-group {
+    width: 60%;
+}
+
+.btn-primary {
+    background-color: #F25552;
+    border-color: transparent;
+    height: 40px;
+    border-radius: 3px;
+    font-size: 100%;
+    font-weight: 450;
+    cursor: pointer
+}
+
+.imp-div {
+    position: relative;
+    display: block;
+    width: 90%;
+    background-color: #FCEAC8;
+    padding: 10px;
+    font-size: 80%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    white-space: normal !important;
+}
+
+.fa-info-circle {
+    color: #00658A;
+    font-size: 150%;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+}
+
+.imp-text {
+    color: #00658A !important;
+    position: relative;
+    width: 18%;
+    float: left;
+    font-weight: 700;
+    font-size: 100%;
+}
+
+.imp-div p {
+    position: relative;
+    font-size: 110%;
+    width: 80%;
+    float: left;
+    color: #3A424D
+}
+
+.i-agree-label span {
+    font-size: 80%;
+    font-weight: 500;
+    color: #777;
+}
+
+.update-pay {
+    position: relative;
+    display: block;
+    width: 90%;
+    background-color: white;
+    padding: 10px;
+    font-size: 80%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    white-space: normal !important;
+}
+
+.update-pay h3 {
+    font-size: 130%;
+}

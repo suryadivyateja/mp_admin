@@ -1,0 +1,114 @@
+<app-header></app-header>
+<app-header1></app-header1>
+<div class="main-body">
+    <div class="user-dash-core">
+        <div class="clear-both"></div>
+        <div class="whole-dash w-control">
+            <!-- <div class="account-warning-div" *ngIf = alert><i class="fa fa-info-circle" aria-hidden="true"></i><span id="war-pad"> &nbsp; Your account is missing your details needed to indentify your account. <a routerLink='/settings'>Click here to update.</a></span></div> -->
+            <div class="acc-mis" *ngIf="alert">
+                <div class="acc">
+                    <span class="acc-i"><i class="fa fa-info-circle" aria-hidden="true"></i></span> &nbsp;&nbsp;
+                    <span>Your account is missing a firstname and surname need to identify the account. <a routerLink="/settings/profile">Click here to update these details.</a></span>
+                </div>
+            </div><br>
+            <div class="dash-left">
+                <div class="user-tech-details">
+                    <div class="tech-det-top">
+                        <img src={{profile_pic}} id="user-img">
+                        <h3 id="u-name">
+                            {{name}}
+                        </h3>
+                        <h4 id="designation">
+                            {{designation}}
+                        </h4>
+                    </div>
+                    <div class="tech-det-tabs">
+                        <ul>
+                            <li>
+                                <span class="t-d-tabs-name">
+                          <i class="fa fa-map-marker" aria-hidden="true" style="margin-right:10px"></i>
+                          <span>From</span>
+                                </span>
+                                <span class="t-d-tabs-value">
+                            {{country}}
+                        </span>
+                            </li>
+                            <li>
+                                <span class="t-d-tabs-name">
+                          <i class="fa fa-globe" aria-hidden="true" style="margin-right:10px"></i><span>Languages</span>
+                                </span>
+                                <span class="t-d-tabs-value">
+                          <ul id="lan">
+                            <li>English</li>
+                            <li>Hindi</li>
+                          </ul>
+                        </span>
+                            </li>
+                            <li id="flex-col"><span id="bio-title"><i class="fa fa-info-circle" aria-hidden="true" style="margin-right:10px"></i>Bio</span>
+                                <span class="bio-desc">
+                           {{description}}
+                          </span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="dash-right">
+                <div id="dash-welcome-div">
+                    <h2>Welcome to cvhatch !</h2>
+                    <h3>You are now part of a global community of over 1000 creatives, we're happy to have you on board. </h3>	
+                </div>
+                <a routerLink='/create-gig'>
+                    <div id="create-project-div">
+                        <i class="fa fa-plus" aria-hidden="true" style="font-size:450%;color:#75787d"></i>
+                        <h3>Create New project</h3>
+                        <h5>Millions of job seekers are in need of a good resume/cv, cover letters, linkedIn makeover etc.</h5>
+                    </div>
+                </a>
+
+                <div class="to-dos-div">
+                    <table class="table table-stacked">
+                        <tr class="to-dos-heading">
+                           <th class="to-head">TO-DOS ({{not_num}})</th>
+                           <td colspan="2"></td> 
+                        </tr>
+                            <tr class="to-review" *ngFor="let x of new_not">
+                                <td class="to-icon">
+                                    <i class="fa fa-gift"></i>
+                                </td>
+                                <td  class="to-text">
+                                    <span>{{x.message}}</span><br>
+                                    <!-- <span class="new-to">NEW!</span> -->
+                                </td>
+                                <td class="to-btn">
+                                    <button id="to-button" class="btn btn-success" (click)="go_to_order(x)">Review Now</button>
+                                </td>
+                            </tr>
+                    </table>
+                </div>
+                <!-- <div class="to-dos">
+                    <table>
+                        <tr>
+                            <td class="to-do-header"><span id="to-do-head">TO-DOS({{not_num}})</span></td>
+                        </tr>
+                       
+                        <tr *ngFor="let x of new_not">
+                                <td>
+                                    <div class="to-do-left"><i class="fa fa-gift" aria-hidden="true" style="font-size:35px;color:rgb(0, 224, 224)"></i><span class="to-do">{{x.message}}</span><br>&emsp;&emsp;&emsp;<span class="to-do-new">NEW !</span></div>
+                                    <input type="button" class="rev-btn" value="Review now" (click)="go_to_order([x.link])">
+                                </td>
+                            </tr> -->
+                       
+                        <!-- <tr>
+                          <td>
+                            <div class="to-do-left"><img src="" class=""><span class="to-do">You received a Gig offer</span><br><span class="to-do-new">NEW !</span></div>
+                            <input
+                              type="button" class="rev-btn" value="Review now"></td>
+                        </tr> -->
+                    <!-- </table>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

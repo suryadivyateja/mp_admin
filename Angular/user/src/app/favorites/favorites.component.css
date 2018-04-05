@@ -1,0 +1,93 @@
+.m-core {
+    position: relative;
+    display: block;
+    /* margin-top: 11vh; */
+}
+
+.manage-orders-core {
+    position: relative;
+    display: inline-block;
+    margin-left: 10vw;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#orders-title {
+    position: relative;
+    display: block;
+    text-align: left;
+    font-size: 190%;
+    color: #000;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+#orders-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    height: 5px;
+    width: 40px;
+    background-color: #F9BF3B;
+    color: #F9BF3B;
+}
+
+.no-fav-div {
+    position: relative;
+    display: block;
+    width: 60%;
+    background-color: #F5F5F5;
+    padding: 20px 20px 40px 20px;
+    border-radius: 2px;
+    white-space: normal !important;
+    overflow: hidden;
+}
+
+.no-fav-div h3 {
+    position: relative;
+    display: block;
+    font-size: 140%;
+    color: #6B5454;
+    margin: 10px 0 20px 0;
+}
+
+.mo-fav-div p {
+    position: relative;
+    display: block;
+    font-size: 100%;
+    color: #808080;
+    margin: 10px 0;
+    white-space: normal !important;
+}
+
+.m-core {
+    position: relative;
+    display: block;
+    margin-top: 11vh;
+}
+
+.manage-orders-core {
+    position: relative;
+    display: block;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+@media screen and (min-width:220px) and (max-width:740px) {
+    .no-fav-div {
+        position: relative;
+        display: block;
+        width: 100%;
+        background-color: #F5F5F5;
+        padding: 20px 20px 40px 20px;
+        border-radius: 2px;
+        white-space: normal !important;
+        overflow: hidden;
+    }
+    .w-control {
+        width: 400px;
+    }
+}

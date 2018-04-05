@@ -1,0 +1,37 @@
+<div class="container">
+  
+      
+      <div class="form-group">
+          name        
+          <input type="text" class="form-control" [(ngModel)]="name">
+      </div>
+      <div class="form-group">
+          last_name
+          <input type="text" class="form-control" [(ngModel)]="last_name">
+        </div>
+        <div class="form-group">
+            email
+            <input type="email" class="form-control" [(ngModel)]="email">
+          </div>
+          <div class="form-group">
+              pay_pal
+              <input type="email" class="form-control" [(ngModel)]="pay_pal">
+            </div>
+            <div class="form-group">
+                description
+                <textarea name="" id="" cols="10" rows="5" class="form-control" [(ngModel)]="description"></textarea>              
+              </div>
+              <div class="form-group">
+                  designation
+                  <input type="text" class="form-control" [(ngModel)]="designation">
+                </div>
+                <div class="form-group">
+                    date
+                    <input type="text" class="form-control" [(ngModel)]="date">
+                  </div>
+                  <h5>Sign_up IP : {{ipAddress}}</h5>
+                 <h5>last IP : {{ipAddress}}</h5><br>
+                  <a  class="btn btn-block btn-success" (click)="submit_this()">Submit</a>
+                  <br><br>
+    </div>
+    

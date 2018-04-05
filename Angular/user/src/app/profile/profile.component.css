@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.r-f-div input {
+    height: 35px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.p-need .prf-area {
+    float: right;
+    left: 50%;
+    transform: translate(100%, 0);
+}
+
+.r-f-div {
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    width: 95%;
+    /* margin-left: -5%; */
+    left: -6%;
+    border-radius: 2px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.09);
+}
+
+.r-f-div .headings {
+    position: relative;
+    display: block;
+    color: #1F2835;
+    font-weight: bold;
+    margin-top: 4% !important;
+    width: 80%;
+    margin: 4% auto auto auto;
+    font-size: 210% !important;
+}
+
+.p-need {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin: 0px auto;
+    word-break: break-all;
+    white-space: normal !important;
+}
+
+.profile-photo-div {
+    position: relative;
+    display: block;
+    width: 80%;
+    margin: 0px auto;
+    margin-bottom: 20px !important;
+}
+
+.p-p-div-title {
+    position: relative;
+    display: block;
+    font-size: 85%;
+}
+
+#prf-p {
+    font-size: 90%;
+    color: #777B83;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+#change-p-p {
+    position: relative;
+    float: left;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    margin-right: 10px;
+    white-space: normal;
+}
+
+.custom-p-p {
+    position: relative;
+    display: inline-block;
+    height: auto;
+    width: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#c-p-p {
+    display: none;
+}
+
+.name-div .p-l-f-div {
+    position: relative;
+    float: left;
+    width: 45%;
+    margin-right: 10%;
+}
+
+.name-div input {
+    height: 35px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.name-div .p-r-f-div {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    margin-left: 30px;
+}
+
+.name-div {
+    position: relative;
+    display: block;
+    clear: both;
+    margin-top: 40px !important;
+}
+
+.p-f-titles {
+    color: #3A424D !important;
+    font-size: 90%;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+#c-p-btn {
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+}
+
+#c-p-btn:hover {
+    cursor: pointer;
+}
+
+#text-p {
+    justify-content: space-between;
+    align-items: flex-start;
+    vertical-align: middle;
+    display: flex;
+    flex-direction: row;
+}
+
+#s-ab-you-title {
+    position: relative;
+    float: left;
+    font-size: 75% !important;
+    color: rgba(0, 0, 0, 0.7) !important;
+    white-space: normal !important;
+    font-weight: 700;
+}
+
+textarea {
+    position: relative;
+    float: right;
+    height: 150px;
+    width: 400px;
+    padding: 10px;
+    border-radius: 3px;
+    border-color: #ddd;
+    left: 4%;
+}
+
+.save-button {
+    position: relative;
+    display: inline-block;
+    margin-top: 25px !important;
+    margin-left: 140px;
+    height: 45px !important;
+    width: 120px;
+    color: #fff !important;
+    background-color: #F25552;
+    border-color: transparent;
+    height: 40px;
+    border-radius: 3px;
+    font-size: 100%;
+    font-weight: 450;
+    margin: 0;
+}
+
+.save-button:hover {
+    cursor: pointer;
+    background-color: #F25552 !important;
+}
+
+@media screen and (min-width:220px) and (max-width:740px) {
+    .r-f-div {
+        position: relative;
+        display: inline-block;
+        background-color: #fff;
+        left: -5%;
+        top: 17%;
+        transform: translate(0, 17%)
+    }
+    .headings {
+        width: 100%;
+        float: left;
+    }
+    .name-div input {
+        height: 35px;
+        width: 100%;
+        margin-top: 10px;
+    }
+}

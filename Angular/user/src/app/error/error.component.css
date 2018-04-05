@@ -1,0 +1,56 @@
+.err-container {
+    position: relative;
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    background-color: #216db8;
+    color: #fff;
+    /* margin-top: 11vh; */
+    padding: 0px 0!important;
+    text-align: center;
+}
+
+#whoops {
+    position: relative;
+    display: block;
+    font-size: 300%;
+    margin-bottom: 4vh;
+}
+
+#se-ex {
+    position: relative;
+    display: block;
+    font-size: 160%;
+    margin-bottom: 4vh;
+}
+
+.err-para {
+    position: relative;
+    display: block;
+    font-size: 110%;
+    line-height: 1.2;
+    white-space: normal;
+}
+
+.err-container-core {
+    position: relative;
+    display: block;
+    margin: 20px auto !important;
+    white-space: normal;
+    padding-top: 100px;
+    text-align: left;
+}
+
+.back-arrow-div {
+    font-size: 300%;
+    cursor: pointer;
+}
+
+@media screen and (min-width:220px) and (max-width:740px) {
+    .err-para {
+        overflow-wrap: break-word;
+    }
+    .w-control {
+        width: 350px;
+    }
+}

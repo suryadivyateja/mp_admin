@@ -1,0 +1,632 @@
+body,
+html {
+    z-index: 2;
+    transition: all 0.3s;
+    background-color: #f9f9f9;
+}
+
+.user-dash-core {
+    position: relative;
+    font-size: 100% !important;
+    /* margin-top: 11vh; */
+    margin-bottom: 30px;
+}
+
+.main-body {
+    transition: all 0.3s;
+}
+
+.back-body {
+    z-index: -1;
+    position: relative;
+    height: 500px;
+    width: 500px;
+}
+
+.whole-dash {
+    position: relative;
+    display: block;
+    height: auto;
+    margin: 30px auto 60px auto;
+    /* background-color: #f9f9f9; */
+    overflow: hidden;
+}
+
+.account-warning-div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    color: #365dea !important;
+    background-color: #82edf0;
+    padding: 20px 0px;
+    white-space: normal;
+    margin-bottom: 30px;
+}
+
+#war-pad {
+    position: relative;
+    display: block;
+    margin-left: 10px;
+}
+
+.account-warning-div .fa {
+    position: relative;
+    display: block;
+    margin-left: 20px;
+    font-size: 160%;
+}
+
+.account-warning-div a {
+    font-size: 102%;
+    font-weight: bold;
+    text-decoration: underline !important;
+    margin-left: 30px;
+}
+
+.dash-left {
+    position: relative;
+    width: 27%;
+    overflow: hidden;
+    float: left;
+}
+
+.dash-right {
+    position: relative;
+    float: right;
+    width: 68%;
+    right: 10px;
+}
+
+.user-tech-details {
+    position: relative;
+    display: block;
+    float: left;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+    padding: 1px 30px;
+    width: 100%;
+    white-space: normal;
+    overflow: hidden;
+}
+
+.user-tech-details #user-img {
+    position: relative;
+    display: block;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 0.1px teal;
+    margin: 40px 15px 10px 15px;
+}
+
+.tech-det-top {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: auto;
+    width: 98%;
+    margin: 10px 10px;
+    overflow: hidden;
+}
+
+#u-name {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 0px auto 10px auto;
+    color: #000;
+    font-size: 106%;
+    font-weight: bold;
+}
+
+#designation {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 0px auto 20px auto !important;
+    color: rgba(0, 0, 0, 0.4);
+    font-size: 100%;
+}
+
+.tech-det-tabs {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 120%;
+}
+
+.tech-det-tabs ul {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.tech-det-tabs ul>li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    height: auto;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-size: 90%;
+    overflow: hidden;
+}
+
+#lan {
+    position: relative;
+    display: inline-block;
+}
+
+#lan li {
+    position: relative;
+    display: block;
+    height: auto;
+    min-height: 10px;
+    margin-top: 5px;
+    border-bottom: none;
+}
+
+#flex-col {
+    flex-direction: column !important;
+    -webkit-flex-direction: column !important;
+    align-items: flex-start !important;
+    -webkit-align-items: flex-start !important;
+    padding-bottom: 20px;
+}
+
+#bio-title {
+    position: relative;
+    display: block;
+    text-align: left;
+    margin: 30px 0px 20px 0px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.bio-desc {
+    position: relative;
+    display: block;
+    text-align: left;
+    color: #999;
+    font-size: 80%;
+    line-height: 1.7;
+}
+
+.t-d-tabs-name {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.t-d-tabs-name span {
+    font-size: 80%;
+    color: #999;
+}
+
+.t-d-tabs-value {
+    position: relative;
+    display: inline-block;
+    color: #333;
+    font-weight: 5000;
+    font-size: 80%;
+}
+
+#lan {
+    position: relative;
+    display: block;
+    margin: 0px 0;
+}
+
+#lan li {
+    position: relative;
+    display: block;
+    height: auto;
+    margin: 6px 0;
+    padding: 0;
+    border-bottom: none;
+    text-align: right !important;
+    font-size: 85%;
+    font-weight: 550;
+}
+
+#lan li:first-child {
+    margin-top: 0px;
+}
+
+#dash-welcome-div {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    justify-content: center;
+    -webkit-justify-content: center;
+    width: 100%;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    height: 100px;
+}
+
+#dash-welcome-div h2 {
+    position: relative;
+    display: block;
+    margin-left: 20px;
+    font-size: 140%;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 0px;
+}
+
+#dash-welcome-div h3 {
+    position: relative;
+    display: block;
+    margin-left: 20px;
+    font-size: 90%;
+    color: #75787d;
+    font-weight: normal;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif */
+}
+
+#create-project-div {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 300px;
+    width: 100%;
+    border: 1px dashed #ddd;
+    background-color: #f7f7f7;
+    margin: 20px 0;
+    justify-content: center;
+    -webkit-justify-content: center;
+    align-items: center;
+    -webkit-align-items: center;
+    color: #75787d;
+}
+
+#create-project-div h3 {
+    position: relative;
+    display: block;
+    font-size: 120%;
+    font-weight: 520;
+    margin-bottom: 15px;
+}
+
+#create-project-div h5 {
+    position: relative;
+    display: block;
+    width: 30%;
+    font-size: 90%;
+    font-weight: 450;
+    text-align: center;
+    white-space: normal;
+}
+
+
+.table-stacked{
+    border: 1px solid #ddd
+}
+.to-review{
+    position: relative;
+}
+.to-icon{
+    width: 50px;
+    position: relative;
+}
+.to-text{
+    position: relative;
+    width:1100px;
+    left: -7%;
+}
+.to-text span{
+    font-size: 83% !important;
+    font-family: 'Roboto', sans-serif !important;
+    position: relative;
+    top: 8px;
+}
+.to-btn{
+    position: relative;
+    width: auto;
+    display: block;
+}
+#to-button{
+    background-color: #FE5B53;
+    border-color: transparent;
+    color: #fff;
+    font-size: 90%;
+    font-weight: 550;
+    cursor: pointer;
+    display: none;
+    vertical-align: middle;
+    position: relative;
+    top: 7px;
+}
+.to-review i{
+    color: #1FA7C2;
+    font-size: 250%
+}
+.to-review span{
+    font-size: 100%;
+    white-space: normal !important
+}
+.new-to{
+    color: #999;
+    font-size: 90%;
+}
+.to-review:hover #to-button{
+    display: block;
+}
+.to-review:hover{
+    cursor: pointer;
+    background-color: #F5FBFC !important;
+}
+.to-dos-heading{
+    background-color:rgb(236, 239, 240);
+    width: 100%;
+    position: relative;
+    height: 40px;
+}
+.to-head{
+    font-size: 120%;
+    font-weight: 600;
+}
+.to-dos-div{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.to-dos-div .table{
+    width: 100%;
+}
+
+.to-dos {
+    position: relative;
+    float: left;
+    margin-top: 30px;
+    height: auto;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+.to-dos table,
+.to-dos tbody {
+    position: relative;
+    display: block;
+    height: 100% !important;
+    width: 100%;
+}
+
+.to-dos table tr {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.to-dos td {
+    position: relative;
+    display: block;
+    height: 70px;
+    width: 100%;
+    background-color: #fff;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
+}
+
+#to-do-head {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    font-size: 125%;
+}
+
+.to-dos .to-do-header {
+    position: relative;
+    /* display: block; */
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    vertical-align: middle;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.to-dos img {
+    position: relative;
+    float: left;
+    height: 50px;
+    margin: 10px;
+}
+
+.to-dos .to-do {
+    position: relative;
+    display: inline-block;
+    margin: 10px 10px 5px 5px;
+    font-size: 120%;
+}
+
+.to-dos .to-do-new {
+    position: relative;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 5px;
+}
+
+.to-dos .to-do-left {
+    position: relative;
+    float: left;
+}
+
+.to-dos .rev-btn {
+    position: relative;
+    display: none;
+    float: right;
+    margin-top: 15px;
+    margin-right: 20%;
+    height: 40px;
+    width: 140px;
+    border: none;
+    background-color: #82B541;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 100%;
+    font-weight: 100;
+    transition: all 0.2s;
+}
+
+.to-dos .rev-btn:hover {
+    cursor: pointer;
+    background-color: #6D9837;
+}
+
+.to-dos table td:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.to-dos table td:hover .rev-btn {
+    display: block;
+}
+
+.to-dos1 {
+    position: relative;
+    float: left;
+    margin-top: 30px;
+    height: auto;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+.to-dos1 table,
+.to-dos1 tbody {
+    position: relative;
+    display: block;
+    height: 100% !important;
+    ;
+    width: 100%;
+}
+
+.to-dos1 table tr {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.to-dos1 td {
+    position: relative;
+    display: block;
+    height: 70px;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.to-dos1 .to-do {
+    position: relative;
+    display: inline-block;
+    margin: 10px 10px 5px 5px;
+    font-size: 100%;
+    font-weight: bolder
+}
+
+.to-dos1 .to-do-new {
+    position: relative;
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.5);
+    margin: 5px;
+}
+
+.to-dos1 .to-do-left {
+    position: relative;
+    float: left;
+}
+
+.to-dos1 .rev-btn1 {
+    background-color: #34A8C4;
+    border-color: transparent;
+}
+
+.acc-mis {
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+    flex-direction: row;
+    background-color: #ECEFF6;
+    color: #65AADF;
+    align-items: baseline;
+    height: 65px;
+    /* line-height: 3.5; */
+}
+
+.acc {
+    padding: 15px;
+}
+
+.acc-i {
+    color: #1F8CBE;
+    font-size: 125%;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+}
+
+.acc span a {
+    cursor: pointer;
+    color: #1F8CBE;
+    font-size: 100%;
+    font-weight: 500;
+    text-decoration: underline !important;
+}
+
+.acc span a:hover {
+    text-decoration: underline;
+    text-decoration-color: #1F8CBE
+}
+
+@media screen and (min-width:220px) and (max-width:740px) {
+    .dash-left {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+    }
+    .dash-right {
+        position: relative;
+        width: 100%;
+    }
+    #dash-welcome-div h3 {
+        position: relative;
+        display: inline-block;
+        display: -webkit-inline-block;
+        margin-left: 20px;
+        font-size: 100%;
+        color: #75787d;
+        font-weight: normal;
+    }
+    #to-do-head {
+        position: relative;
+        display: inline-block;
+        top: 50%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        font-size: 125%;
+    }
+    .w-control {
+        width: 310px;
+    }
+}

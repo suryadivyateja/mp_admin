@@ -1,0 +1,962 @@
+<app-header></app-header>
+<app-header1></app-header1>
+<body style="background-color:#F7F7F7">
+    <div class="c-gig-bck w-control">
+        <form action="" method="post" id="form" enctype="multipart/form-data">
+            <!-- c-gig-one -->
+            <div class="c-gig-divs" id="c-gig-one">
+                <div class="helpers" id="cat-helper">
+                    <h2>Category</h2>
+                    <h5>Declare the category of your gig.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="helpers" id="title-helper">
+                    <h2>Title</h2>
+                    <h5>This is your gig title. Choose wisely, you can only use 80 characters.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="helpers" id="desc-helper">
+                    <h2>Description</h2>
+                    <h5>This is your gig Description.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="helpers" id="skills-helper">
+                    <h2>Skills</h2>
+                    <h5>This is your gig Description.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="c-gig-title">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="div-nav-btns one-nav-btn" (click)="gotoNexttab('first')">One  </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns two-nav-btn" (click)="gotoNexttab('second')">Two </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns three-nav-btn" (click)="gotoNexttab('third')">Three </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns four-nav-btn" (click)="gotoNexttab('fourth')">Four </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns five-nav-btn" (click)="gotoNexttab('fifth')">Five </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns six-nav-btn" (click)="gotoNexttab('sixth')">Six</span>
+                            </td>
+                            <td>
+                                <i class="fa fa-times trl"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="main-c-gig">
+
+
+                    <table>
+
+                        <tr style="float:left">
+                            <td class="td-align-right">
+                                <h4 style="font-size:100%">Category</h4>
+                            </td>
+                            <td style="left:0%;transform:translate(-5%,0)">
+                                <select class="c-gig-inputs1" id="c-gig-cat" name="category" [(ngModel)]="gig_category" (change)="showmore($event)">
+                                    <option disabled="true">Choose your Category</option>
+                                    <option value="rc">Resume/CV</option>
+                                    <option value="or">Cover Letters</option>
+                                    <option value="vr">LinkedIn Makeover</option>
+                                    <option value="lp">Selection Criteria</option>
+                                    <option value="rl">Reference Letter</option>
+                                <!-- <option value="ph2">Governament & Defence</option> -->
+                                </select>
+                            </td>
+                            <td>
+                                <span class="sub-cat">
+                                    <select class="c-gig-inputs1" id="c-gig-cat" name="sub_category" [(ngModel)]="sub_category">
+                                            <option disabled="true">None</option>
+                                            <option value="af">Accounting & Finance</option>
+                                            <option value="ao">Administration & Office Support</option>
+                                            <option value="aam">Advetising,Arts & MEdia</option>
+                                            <option value="bc">BPO & Customer Service</option>
+                                            <option value="ca">Construction & Architecture</option>
+                                            <option value="et">Education & Teaching</option>
+                                            <option value="fv">Farming & veteirnary</option>
+                                            <option value="gd">Governament & Defence</option>
+                                            <option value="ht">Hospitality & Tourisum</option>
+                                            <option value="hrr">Human Resources & Recruitment</option>
+                                            <option value="ict">Information & Communication Technology</option>
+                                            <option value="mtl">Manufacturing , Transport & Logistics</option>
+                                            <option value="l">Legal</option>
+                                            <option value="pm">Project Management</option>
+                                            <option value="rp">Realestate & Property</option>
+                                            <option value="sr">Sales & Retails</option>
+                                            <option value="ts">Trades & Services</option>
+                                            <option value="ce">CEO & Executives</option>
+                                            <option value="oj">Other Jobs</option>
+                                    </select>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr style="float:left">
+                            <td class="td-align-right">
+                                <h4>Title</h4>
+                            </td>
+                            <td style="left:20%;transform:translate(9.5%,0)">
+                                <input type="text" id="title" name="title" class="c-gig-inputs" maxlength="80" value="" [(ngModel)]="gig_title">
+                            </td>
+                        </tr>
+                        <tr style="float:left">
+                            <td class="td-align-right">
+                                <h4>Description</h4>
+                            </td>
+                            <td style="left:10%;transform:translate(2.5%,0)">
+                                <textarea class="c-gig-inputs textarea1" id="c-gig-desc" name="description" [(ngModel)]="gig_description"></textarea>
+                            </td>
+                        </tr>
+                        <tr style="float:left">
+                            <td class="v-center td-align-right">
+                                <h4>Skill Required</h4>
+                            </td>
+                            <td class="no-padding">
+                                <table id="skills-req-table">
+                                    <tr>
+                                        <td>
+                                            <label for="email">
+                        <div class="c-gig-skills">
+                          <span class="f-l">
+                            <h4>Email/Username Login</h4>
+                            <h5>Login with an email or username</h5>
+                          </span>
+                          <span>
+                            <input type="checkbox" id="email" name="skill_check[]" value="email" (change)="handleChange($event)" [checked]="email">
+                          </span>
+                        </div>
+                      </label>
+                                        </td>
+                                        <td>
+                                            <label for="profiles">
+                        <div class="c-gig-skills">
+                          <span class="f-l">
+                            <h4>Profiles</h4>
+                            <h5>Customers can enter info about themselves</h5>
+                          </span>
+                          <span>
+                            <input type="checkbox" id="profiles" name="skill_check[]" value="profiles" (change)="handleChange($event)" [checked]="profiles">
+                          </span>
+                        </div>
+                      </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="sharing-functions">
+                        <div class="c-gig-skills">
+                          <span class="f-l">
+                            <h4>Sharing Functions</h4>
+                            <h5>Share on Twitter, Facebook, Email</h5>
+                          </span>
+                          <span>
+                            <input type="checkbox" id="sharing-functions" name="skill_check[]" value="sharing" (change)="handleChange($event)" [checked]="sharing">
+                          </span>
+                        </div>
+                      </label>
+                                        </td>
+                                        <td>
+                                            <label for="social-login">
+                        <div class="c-gig-skills">
+                          <span class="f-l">
+                            <h4>Social Login</h4>
+                            <h5>Login w/ Twitter, Facebook, etc</h5>
+                          </span>
+                          <span>
+                            <input type="checkbox" id="social-login" name="skill_check[]" value="social_login" (change)="handleChange($event)" [checked]="social_login">
+                          </span>
+                        </div>
+                      </label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="ratings">
+                        <div class="c-gig-skills">
+                          <span class="f-l">
+                            <h4>Ratings/Reviews</h4>
+                            <h5>People leave ratings</h5>
+                          </span>
+                          <span>
+                            <input type="checkbox" id="ratings" name="skill_check[]" value="rating" (change)="handleChange($event)" [checked]="rating">
+                          </span>
+                        </div>
+                      </label>
+                                        </td>
+                                        <td>
+                                            <label for="mobile-opt">
+                        <div class="c-gig-skills">
+                          <span class="f-l">
+                            <h4>Mobile Optimized</h4>
+                            <h5>Designed to look good on mobile devices</h5>
+                          </span>
+                          <span>
+                            <input type="checkbox" id="mobile-opt" name="skill_check[]" value="mobile" (change)="handleChange($event)" [checked]="mobile">
+                          </span>
+                        </div>
+                      </label>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="g-err" id="g-one-all-err"></div>
+                <div class="nav-dots">
+                    <div id="f-n-btn" class="con-btns" (click)="gotoNexttab('second')">CONTINUE</div>
+                </div>
+            </div>
+            <!--c-gig-two-->
+            <div style="display:none" class="c-gig-divs" id="c-gig-two">
+                <div class="two-helpers" id="package-cost-helper">
+                    <h2>Package cost</h2>
+                    <h5>Define cost per each package.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="two-helpers" id="package-desc-helper">
+                    <h2>Package description</h2>
+                    <h5>Provide description per each package.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="two-helpers" id="package-delivery-helper">
+                    <h2>Delivery</h2>
+                    <h5>Provide delivery time for each package.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="two-helpers" id="package-revision-helper">
+                    <h2>Revision</h2>
+                    <h5>Define revisions each package.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="two-helpers" id="package-words-helper">
+                    <h2>Words</h2>
+                    <h5>Words for each package.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="two-helpers" id="package-seperate-files-helper">
+                    <h2>Seperate Files</h2>
+                    <h5>Are seperate files available for each package.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="two-helpers" id="package-hq-files-helper">
+                    <h2>Hq files</h2>
+                    <h5>Are HQ files available for each package.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="c-gig-title">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="div-nav-btns one-nav-btn">One <span ><i class="fa fa-check-circle one-check"></i></span> </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns two-nav-btn">Two </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns three-nav-btn">Three </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns four-nav-btn">Four</span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns five-nav-btn">Five </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns six-nav-btn">Six </span>
+                            </td>
+                            <td>
+                                <i class="fa fa-times trl"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="packages">
+                    <div class="packages-div">
+                        <table class="packages-table  table1">
+                            <tr>
+                                <td class="left-t-header" rowspan="4"></td>
+                                <td class="left-t-header"><span class="package-name"><h3>STANDARD</h3></span></td>
+                                <td id="fade-id" class="left-t-header"><span class="package-name"><h3>PREMIUM&nbsp;<input (click)="fade($event)"  type="checkbox" class="fade-check" id="premium-fade-check" name="pre-fade-check" value="pre" [checked]="dont_show_pre"><label for="premium-fade-check"><span></span></label> </h3></span>
+                                </td>
+                                <td id="fade-id" class="left-t-header"><span class="package-name"><h3>PRO&nbsp;<input (click)="fade($event)" type="checkbox" class="fade-check" id="pro-fade-check" name="pro-fade-check" value="pro" [checked]="dont_show_pro"><label for="pro-fade-check"><span></span></label></h3></span></td>
+                            </tr>
+                            <tr id="package-cost-tr">
+                                <td><input type="number" class="price-select" id="standard-price" name="standard-price" placeholder="Cost of Your Package" [(ngModel)]="pac_cos_sta" maxlength="4"></td>
+
+                                <td><input type="number" class="price-select" id="premium-price" name="premium-price" placeholder="Cost of Your Package" [(ngModel)]="pac_cos_pre" maxlength="4"></td>
+
+                                <td><input type="number" class="price-select" id="pro-price" name="pro-price" placeholder="Cost of Your Package" [(ngModel)]="pac_cos_pro" maxlength="4"></td>
+
+                            </tr>
+                            <tr id="package-details-tr">
+                                <td><textarea class="package-details" id="std-details" name="std-details" placeholder="Describe the details of your offering" [(ngModel)]="pac_det_sta"></textarea></td>
+                                <td><textarea class="package-details" id="pre-details" name="pre-details" placeholder="Describe the details of your offering" [(ngModel)]="pac_det_pre"></textarea></td>
+                                <td><textarea class="package-details" id="pro-details" name="pro-details" placeholder="Describe the details of your offering" [(ngModel)]="pac_det_pro"></textarea></td>
+                            </tr>
+                            <tr id="package-delivery-tr">
+                                <td>
+                                    <select class="delivery-select" id="standard-delivery" name="standard-delivery" [(ngModel)]="pac_del_sta">
+                                            <option selected ="true" value="1">1 Days Delivery</option>
+                                            <option value="2">2 Days Delivery</option>
+                                            <option value="3">3 Days Delivery</option>
+                                            <option value="4">4 Days Delivery</option>
+                                            <option value="5">5 Days Delivery</option>
+                                            <option value="6">6 Days Delivery</option>
+                                            <option value="7">7 Days Delivery</option>
+                                            <option value="8">8 Days Delivery</option>
+                                            <option value="9">9 Days Delivery</option>
+                                            <option value="10">10 Days Delivery</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="delivery-select" id="premium-delivery" name="premium-delivery" [(ngModel)]="pac_del_pre">
+                                            <option selected ="true" value="1">1 Days Delivery</option>
+                                            <option value="2">2 Days Delivery</option>
+                                            <option value="3">3 Days Delivery</option>
+                                            <option value="4">4 Days Delivery</option>
+                                            <option value="5">5 Days Delivery</option>
+                                            <option value="6">6 Days Delivery</option>
+                                            <option value="7">7 Days Delivery</option>
+                                            <option value="8">8 Days Delivery</option>
+                                            <option value="9">9 Days Delivery</option>
+                                            <option value="10">10 Days Delivery</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="delivery-select" id="pro-delivery" name="pro-delivery" [(ngModel)]="pac_del_pro">
+                                            <option selected ="true" value="1">1 Days Delivery</option>
+                                            <option value="2">2 Days Delivery</option>
+                                            <option value="3">3 Days Delivery</option>
+                                            <option value="4">4 Days Delivery</option>
+                                            <option value="5">5 Days Delivery</option>
+                                            <option value="6">6 Days Delivery</option>
+                                            <option value="7">7 Days Delivery</option>
+                                            <option value="8">8 Days Delivery</option>
+                                            <option value="9">9 Days Delivery</option>
+                                            <option value="10">10 Days Delivery</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr id="package-revisions-tr">
+                                <td class="left-t-header no-top-border">
+                                    <div class="l-t-header">Revisions</div>
+                                </td>
+                                <td>
+                                    <select class="revisions" id="s-revisions" name="std-revisions" [(ngModel)]="rev_sta">
+                                            <option selected= "true" value="select" disabled>Select</option>
+                                            <option value="1">1 </option>
+                                            <option value="2">2 </option>
+                                            <option value="3">3 </option>
+                                            <option value="4">4 </option>
+                                            <option value="5">5 </option>
+                                            <option value="6">6 </option>
+                                            <option value="7">7 </option>
+                                            <option value="8">8 </option>
+                                            <option value="9">9 </option>
+                                            <option value="10">10</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="revisions" id="pre-revisions" name="pre-revisions" [(ngModel)]="rev_pre">
+                                            <option selected= "true" value="select" disabled>Select</option>
+                                            <option value="1">1 </option>
+                                            <option value="2">2 </option>
+                                            <option value="3">3 </option>
+                                            <option value="4">4 </option>
+                                            <option value="5">5 </option>
+                                            <option value="6">6 </option>
+                                            <option value="7">7 </option>
+                                            <option value="8">8 </option>
+                                            <option value="9">9 </option>
+                                            <option value="10">10</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="revisions" id="pro-revisions" name="pro-revisions" [(ngModel)]="rev_pro">
+                                            <option selected= "true" value="select" disabled>Select</option>
+                                            <option value="1">1 </option>
+                                            <option value="2">2 </option>
+                                            <option value="3">3 </option>
+                                            <option value="4">4 </option>
+                                            <option value="5">5 </option>
+                                            <option value="6">6 </option>
+                                            <option value="7">7 </option>
+                                            <option value="8">8 </option>
+                                            <option value="9">9 </option>
+                                            <option value="10">10</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr id="package-words-tr">
+                                <td class="left-t-header">
+                                    <div class="l-t-header">File Format</div>
+                                </td>
+                                <td>
+                                    <select class="words-included" id="std-words" name="std-words" [(ngModel)]="words_sta">
+                                            <option value="word">Word</option>
+                                            <option value="pdf">PDF</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="words-included" id="pre-words" name="pre-words" [(ngModel)]="words_pre">
+                                            <option value="word">Word</option>
+                                            <option value="pdf">PDF</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <select class="words-included" id="pro-words" name="pro-words" [(ngModel)]="words_pro">
+                                            <option value="word">Word</option>
+                                            <option value="pdf">PDF</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr id="package-seperate-files-tr">
+                                <td class="left-t-header">
+                                    <div class="l-t-header">Phone Consultation</div>
+                                </td>
+                                <td><input type="checkbox" class="sep-files-check" id="standard-sep-check" name="std-sep-check" [(ngModel)]="sf_sta">
+                                    <label for="standard-sep-check"><span></span></label>
+                                </td>
+                                <td><input type="checkbox" class="sep-files-check" id="premium-sep-check" name="pre-sep-check" [(ngModel)]="sf_pre"><label for="premium-sep-check"><span></span></label></td>
+                                <td><input type="checkbox" class="sep-files-check" id="pro-sep-check" name="pro-sep-check" [(ngModel)]="sf_pro"><label for="pro-sep-check"><span></span></label></td>
+                            </tr>
+                            <tr id="package-hq-files-tr">
+                                <td class="left-t-header">
+                                    <div class="l-t-header">Cover Letter</div>
+                                </td>
+                                <td><input type="checkbox" class="hq-files-check" id="std-hq-check" name="std-hq-check" [(ngModel)]="hq_sta"><label for="std-hq-check"><span></span></label></td>
+                                <td><input type="checkbox" class="hq-files-check" id="pre-hq-check" name="pre-hq-check" [(ngModel)]="hq_pre"><label for="pre-hq-check"><span></span></label></td>
+                                <td><input type="checkbox" class="hq-files-check" id="pro-hq-check" name="pro-hq-check" [(ngModel)]="hq_pro"><label for="pro-hq-check"><span></span></label></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="gig-fade-back"></div>
+                <div class="gig-fade-back-one"></div>
+                <div id="g-2-all-err" class="g-err"></div>
+                <div class="nav-dots">
+                    <div id="s-n-btn" class="con-btns" (click)="gotoNexttab('third')">CONTINUE</div>
+                </div>
+            </div>
+            <!-- c-gig-three-->
+            <div style="display:none" class="c-gig-divs" id="c-gig-three">
+                <div class="three-helpers" id="extra-helper">
+                    <h2>Extras</h2>
+                    <h5>Extras that you provide with each package with delivery time and cost.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="c-gig-title">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="div-nav-btns one-nav-btn">One <span ><i class="fa fa-check-circle one-check"></i></span> </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns two-nav-btn">Two <span ><i class="fa fa-check-circle two-check"></i></span></span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns three-nav-btn">Three </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns four-nav-btn">Four </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns five-nav-btn">Five </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns six-nav-btn">Six </span>
+                            </td>
+                            <td>
+                                <i class="fa fa-times trl"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h3 id="oh">Offer extras to Employers(optional)</h3>
+                <div id="ex-core">
+                    <div class="ex-offer">
+                        <table class="ex-offer-table">
+                            <tr class="full-tr">
+                                <td class="offer-rest">
+                                    <label class="left-center"><input type="checkbox" id="ex-offer-1" name="fast-delivery" [checked]="check1" value="check1" (change)="handleChange($event)"><span class="fast-del" >FAST DELIVERY</span> I will deliver all work for an extra</label>
+                                </td>
+                                <td class="offer-sm">
+                                    <div class="ext-cost center"><span id="dlr">$</span><input type="number" class="cost-input" name="fast-del-cost" [(ngModel)]="doller1"></div>
+                                </td>
+                                <!-- <td class="offer-xsm">
+                                    <span class="center">in</span>
+                                </td>
+                                <td class="offer-mm">
+                                    <div class="ext-cost days center">
+                                        <input type="text" class="days-input" name="fast-del-days" [(ngModel)]="days1">
+                                        <span id="days">days(s)</span>
+                                    </div>
+                                </td> -->
+                            </tr>
+                        </table>
+                    </div>
+                    <span *ngIf="s_e === true">
+                        <div *ngFor="let x of dis_ext ; let i = index">
+                                <div class="ex-offer temp{{i}} ">
+                                    <table class="ex-offer-table">
+                                        <tr class="full-tr">
+                                            <td class="offer-rest">
+                                                <span class="" (click)="clear(i)"><a class="cls-btn"><i class="fa fa-times"></i></a></span>
+                                                <input type="text" class="ex-offer-txt" name="ex-offer[]" id="des{{i}}" value="{{x.e_description}}">
+                                            </td>
+                                            <td class="offer-sm">
+                                                <div class="ext-cost center"><span id="dlr">$</span><input type="number" class="cost-input" name="ex-cost[]" id="cost{{i}}" value="{{x.price}}"></div>
+                                            </td>
+                                            <!-- <td class="offer-xsm">
+                                                <span class="center">in</span>
+                                            </td>
+                                            <td class="offer-mm">
+                                                <div class="ext-cost days center"><input type="text" class="days-input" name="ex-days[]" id="days{{i}}" value="{{x.days}}"><span>days(s)</span></div>
+                                            </td> -->
+                                        </tr>
+                                    </table>
+                                </div>
+                            <!-- <div #parentExtra></div> -->
+                        </div>
+                    </span>
+                    <span *ngIf="s_e === false">
+                            <div class="ex-offer">
+                                    <table class="ex-offer-table">
+                                        <tr class="full-tr">
+                                            <td class="offer-rest">
+                                                <span class=""><a class="cls-btn"><i class="fa fa-times"></i></a></span>
+                                                <input type="text" class="ex-offer-txt" name="ex-offer[]" id="des0">
+                                            </td>
+                                            <td class="offer-sm">
+                                                <div class="ext-cost center"><span id="dlr">$</span><input type="number" class="cost-input" name="ex-cost[]" id="cost0"></div>
+                                            </td>
+                                            <!-- <td class="offer-xsm">
+                                                <span class="center">in</span>
+                                            </td>
+                                            <td class="offer-mm">
+                                                <div class="ext-cost days center"><input type="text" class="days-input" name="ex-days[]" id="days0"><span>days(s)</span></div>
+                                            </td> -->
+                                        </tr>
+                                    </table>
+                                </div>
+                    </span>
+                </div>
+                        <div id="add-more-extras-btn-div">
+                            <button id="add-more-extras-btn" (click)="addExtra()">ADD ANOTHER EXTRA </button>
+                        </div>
+                <hr style="width:90%">
+                <span *ngIf="s_f === true">
+                    <div class="other-details">
+                        <h3>Frequently Asked Questions</h3>
+                        <h4 id="ad-faq-btn" (click)="addfaq()"><i class="fa fa-plus"></i> &nbsp; Add an FAQ</h4>
+                        <div *ngFor="let x of dis_faq ; let i = index">
+                                <div class="faq-core">
+                                    <div class="faq">
+                                        <h4 class="faq-head">Question</h4>
+                                        <input type="text" class="faq_question" name="faq_question[]" id="q{{i}}" value="{{x.question}}" maxlength="90">
+                                        <h4 class="faq-head">Answer</h4>
+                                        <textarea name="faq_answer[]" class="faq_ans" id="a{{i}}" value="{{x.answer}}"></textarea>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </span>
+                <span *ngIf="s_f === false">
+                        <div class="other-details">
+                                <h3>Frequently Asked Questions</h3>
+                                <h4 id="ad-faq-btn" (click)="addfaq()"><i class="fa fa-plus"></i> &nbsp; Add an FAQ</h4>
+                                    <div class="faq-core">
+                                        <div class="faq">
+                                            <h4 class="faq-head">Question</h4>
+                                            <input type="text" class="faq_question" name="faq_question[]" id="q0" maxlength="90">
+                                            <h4 class="faq-head">Answer</h4>
+                                            <textarea name="faq_answer[]" class="faq_ans" id="a0"></textarea>
+                                        </div>
+                                </div>
+                            </div>
+                </span>
+                <div id="g-3-all-err" class="g-err"></div>
+                <div class="nav-dots">
+                    <div id="t-n-btn" class="con-btns" (click)="gotoNexttab('fourth')">CONTINUE</div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!-- c-gig-four -->
+
+            <div style="display:none" class="c-gig-divs" id="c-gig-four">
+                <div class="c-gig-title">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="div-nav-btns one-nav-btn">One <span><i class="fa fa-check-circle one-check"></i></span> </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns two-nav-btn">Two <span><i class="fa fa-check-circle two-check"></i></span></span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns three-nav-btn">Three <span><i class="fa fa-check-circle three-check"></i></span></span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns four-nav-btn">Four <span></span></span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns five-nav-btn">Five  </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns six-nav-btn">Six</span>
+                            </td>
+                            <td>
+                                <i class="fa fa-times trl"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div><br><br>
+
+                <div style="text-align:justify;line-height:0px;display:flex;left:20%;transform:translate(10%,0)">
+
+                    <i style="font-size:180%;color:green" class="fa fa-book"></i>&nbsp;
+                    <div>
+                        <h3 style="font-size:120%;">Buyer Instructions</h3><br>
+                    </div>
+                </div>
+
+                <div class="author-work-core">
+
+                    <textarea type="text" class="author-work" placeholder="Buyer Instructions and Requirements" name="auth_work" [(ngModel)]="auth_work"></textarea>
+                    <div id="auth-work-err"></div>
+                </div>
+                <div class="clear-both"></div>
+                <div class="nav-dots">
+                    <input type="submit" value="CONTINUE" id="publish-gig-btn" class="con-btns" (click)="gotoNexttab('fifth')">
+                </div>
+            </div>
+
+
+            <!-- c-gig-five-->
+            <div style="display:none" class="c-gig-divs" id="c-gig-five">
+                <div class="four-helpers" id="img-helper">
+                    <h2>Gig Images</h2>
+                    <h5>Make sure you upload no more than 3 images. Extra images will just be ignored.</h5>
+                    <img src="img/g-dir.png">
+                </div>
+                <div class="c-gig-title">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="div-nav-btns one-nav-btn">One <span ><i class="fa fa-check-circle one-check"></i></span> </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns two-nav-btn">Two <span ><i class="fa fa-check-circle two-check"></i></span></span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns three-nav-btn">Three <span ><i class="fa fa-check-circle three-check"></i></span></span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns four-nav-btn">Four <span ><i class="fa fa-check-circle three-check"></i></span></span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns five-nav-btn">Five  </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns six-nav-btn">Six </span>
+                            </td>
+                            <td>
+                                <i class="fa fa-times trl"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="portfolio-pics-div">
+                    <h4>Upload your photos</h4>
+                    <h5>JPG, GIF or PNG. The higher the resolution the better. Image sizes need to have a minimum size of 800x600.</h5>
+                    <input type="file" name="disp_img" id="file" class="files" style="display:none" (change)="fileChange1($event)" accept="image/*" multiple>
+                    <input type="file" name="sec_img" id="filetwo" class="files" style="display:none" (change)="fileChange2($event)" accept="image/*">
+                    <input type="file" name="third_img" id="filethree" class="files" style="display:none" (change)="fileChange3($event)" accept="image/*">
+                    <input type="file" name="fourth_img" id="filefour" class="files" style="display:none" (change)="fileChange4($event)" accept="image/*">
+                    <input type="file" name="fifth_img" id="filefive" class="files" style="display:none" (change)="fileChange5($event)" accept="image/*">
+                    <input type="file" name="sixth_img" id="filesix" class="files" style="display:none" (change)="fileChange6($event)" accept="image/*">
+                    <span class="pick-one-head" style="color:#666;font-size:120%; display:none">Select one image frome the following as your gig's main image.</span>
+                    <hr id="pic-hr">
+
+                    <div class="row">
+                        <div style="left:2%" class="col-lg-12 col-md-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-xs-12">
+                                    <!-- <div style="border:0.5px solid #999;text-align:center;width:100%;height:25vh;text-align:center" class="img-div">
+                    <i class="fa fa-picture-o" aria-hidden="true"></i> <br><br>
+                    <div style="width:60%">
+                        <p>Add a Photo</p>
+                    </div>
+                 </div>   -->
+                                    <span (click)="btn('1')"><i class="fa fa-times-circle-o" aria-hidden="true" style="color:rgb(236, 78, 78)"></i></span>
+                                    <div class="thumb-core" id="file_thumb">
+                                        <label for="file" id="file_label">
+                            <span class="file-ch-span">
+                                <div class="image-div">
+                                    <i class="fa fa-picture-o pic1" aria-hidden="true" style="color:#E9E9E9;font-size:400%" id="fa_fa_one"></i>
+                                    
+                                    <br><br>
+                                    <div   class="upload-name" id="fa_name_one">
+                                        Click here to upload <br> <span>This will be your main display image</span>
+                                    </div>                                
+                                </div>
+                            </span>
+                        </label>
+                                        <img src="{{f_img1}}" id="gig_img_one" class="uploaded-img">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-3 col-xs-12">
+                                    <!-- <div style="border:0.5px solid #999;text-align:center;width:100%;height:100%" class="img-div">
+                       <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%"></i> <br><br>
+                       <div style="width:60%">
+                           <p>Add a Photo</p>
+                       </div>
+                    </div>   -->
+                                    <span (click)="btn('2')" style="z-index:100;top:-310%;left:70%;transform:translate(70%,-310%);cursor:pointer;font-size:28px"><i class="fa fa-times-circle-o" aria-hidden="true" style="color:rgb(236, 78, 78)"></i></span>
+                                    <div class="thumb-core" id="file_thumb">
+                                        <label for="filetwo" id="file_two_label">
+                                <span class="file-ch-span">
+                                    <div style="text-align:center">
+                                        <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%" id="fa_fa_one"></i>
+                                        
+                                        <br><br>
+                                        <div  class="upload-name" id="fa_name_one">
+                                            Click here to upload 
+                                        </div>
+                                    </div>
+                                </span>
+                            </label>
+                                        <img src="{{f_img2}}" id="gig_img_two" class="uploaded-img">
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-xs-12">
+                                    <!-- <div style="border:0.5px solid #999;text-align:center;width:100%;height:100%" class="img-div">
+                         <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%"></i> <br><br>
+                         <div style="width:60%">
+                             <p>Add a Photo</p>
+                         </div>
+                      </div>   -->
+                                    <span (click)="btn('3')" style="z-index:100;top:-310%;left:70%;transform:translate(70%,-310%);cursor:pointer;font-size:28px"><i class="fa fa-times-circle-o" aria-hidden="true" style="color:rgb(236, 78, 78)"></i></span>
+                                    <div class="thumb-core" id="file_thumb">
+                                        <label for="filethree" id="file_three_label">
+                                  <span class="file-ch-span">
+                                      <div style="text-align:center">
+                                          <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%" id="fa_fa_one"></i>
+                                           
+                                          <br><br>
+                                          <div  class="upload-name" id="fa_name_one" >
+                                              Click here to upload 
+                                          </div>
+                                      </div>
+                                  </span>
+                              </label>
+                                        <img src="{{f_img3}}" id="gig_img_three" class="uploaded-img">
+                                    </div>
+
+                                </div>
+                            </div><br>
+
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-xs-12">
+                                    <!-- <div style="border:0.5px solid #999;text-align:center;width:100%;height:25vh" class="img-div">
+                      <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%"></i> <br><br>
+                      <div style="width:60%">
+                          <p>Add a Photo</p>
+                      </div>
+                   </div>   -->
+                                    <span (click)="btn('4')" style="z-index:100;top:-310%;left:70%;transform:translate(70%,-310%);cursor:pointer;font-size:28px"><i class="fa fa-times-circle-o" aria-hidden="true" style="color:rgb(236, 78, 78)"></i></span>
+                                    <div class="thumb-core" id="file_thumb">
+                                        <label for="filefour" id="file_four_label">
+                              <span class="file-ch-span">
+                                  <div style="text-align:center">
+                                      <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%" id="fa_fa_one"></i>
+                                       
+                                      <br><br>
+                                      <div  class="upload-name" id="fa_name_one">
+                                          Click here to upload 
+                                      </div>
+                                  </div>
+                              </span>
+                          </label>
+                                        <img src="" class="img" id="gig_img_four" class="uploaded-img">
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-xs-12">
+                                    <!-- <div style="border:0.5px solid #999;text-align:center;width:100%;height:100%" class="img-div">
+                         <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%"></i> <br><br>
+                         <div style="width:60%">
+                             <p>Add a Photo</p>
+                         </div>
+                      </div>   -->
+                                    <span (click)="btn('5')" style="z-index:100;top:-310%;left:70%;transform:translate(70%,-310%);cursor:pointer;font-size:28px"><i class="fa fa-times-circle-o" aria-hidden="true" style="color:rgb(236, 78, 78)"></i></span>
+                                    <div class="thumb-core" id="file_thumb">
+                                        <label for="filefive" id="file_five_label">
+                                  <span class="file-ch-span">
+                                      <div style="text-align:center">
+                                          <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%" id="fa_fa_one"></i>
+                                         
+                                          <br><br>
+                                          <div  class="upload-name" id="fa_name_one">
+                                              Click here to upload 
+                                          </div>
+                                      </div>
+                                  </span>
+                              </label>
+                                        <img src="" class="img" id="gig_img_five" class="uploaded-img">
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-xs-12">
+                                    <!-- <div style="border:0.5px solid #999;text-align:center;width:100%;height:100%" class="img-div">
+                           <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%"></i> <br><br>
+                           <div style="width:60%">
+                               <p>Add a Photo</p>
+                           </div>
+                        </div>   -->
+                                    <span (click)="btn('6')" style="z-index:100;top:-310%;left:70%;transform:translate(70%,-310%);cursor:pointer;font-size:28px"><i class="fa fa-times-circle-o" aria-hidden="true" style="color:rgb(236, 78, 78)"></i></span>
+                                    <div class="thumb-core" id="file_thumb">
+                                        <label for="filesix" id="file_six_label">
+                                    <span class="file-ch-span">
+                                        <div style="text-align:center">
+                                            <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%" id="fa_fa_one"></i>
+                                           
+                                            <br><br>
+                                            <div  class="upload-name" id="fa_name_one">
+                                                Click here to upload 
+                                            </div>
+                                        </div>
+                                    </span>
+                                </label>
+                                        <img src="" class="img" id="gig_img_six" class="uploaded-img">
+                                    </div>
+
+                                </div>
+
+                                <div class="col-lg-3 col-md-3 col-xs-12">
+                                    <div id="g-4-all-err" class="g-err"></div>
+                                    <div style="top:50%;transform:translate(0,150%)" class="nav-dots">
+                                        <div id="fr-n-btn" class="con-btns" (click)="gotoNexttab('sixth')">CONTINUE</div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- <div class="list">
+            <div class="thumb-core" id="file_thumb">
+              <label for="file" id="file_label">
+                      <span class="file-ch-span">
+                          <div style="text-align:center">
+                              <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%"></i>
+                              <br><br>
+                              <div style="width:60%">
+                                  Click here to upload <br> This will be your main display image
+                              </div>
+                          </div>
+                      </span>
+                  </label>
+            </div>
+            <div class="thumb-core" id="filetwo_thumb">
+              <label for="filetwo" id="file_two_label">
+                      <span class="file-ch-span">
+                          <div style="text-align:center">
+                              <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%"></i>
+                              <br><br>
+                              <div style="width:60%">
+                                  Click here to upload 
+                              </div>
+                          </div>
+                      </span>
+                  </label>
+            </div>
+            <div class="thumb-core" id="filethree_thumb">
+              <label for="filethree" id="file_three_label">
+                      <span class="file-ch-span">
+                          <div style="text-align:center">
+                              <i class="fa fa-picture-o" aria-hidden="true" style="color:#E9E9E9;font-size:400%"></i>
+                              <br><br>
+                              <div style="width:60%">
+                                  Click here to upload 
+                              </div>
+                          </div>
+                      </span>
+                  </label>
+            </div>
+          </div> -->
+                    <!-- <div class="g-err" id="img-req-err">Atleast one image is required</div>
+          <div class="g-err" id="select-main-img-err">Please upload main image.</div> -->
+                </div>
+                <span id="image-err"></span>
+                <!-- <div id="g-4-all-err" class="g-err"></div>
+        <div class="nav-dots">
+          <div id="fr-n-btn" class="con-btns" (click)="gotoNexttab('fifth')">CONTINUE</div>
+        </div> -->
+            </div>
+            <!-- c-gig-six-->
+            <div style="display:none" class="c-gig-divs" id="c-gig-six">
+                <div class="c-gig-title">
+                    <table>
+                        <tr>
+                            <td>
+                                <span class="div-nav-btns one-nav-btn">One <span><i class="fa fa-check-circle one-check"></i></span> </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns two-nav-btn">Two <span><i class="fa fa-check-circle two-check"></i></span></span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns three-nav-btn">Three <span><i class="fa fa-check-circle three-check"></i></span></span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns four-nav-btn">Four <span><i class="fa fa-check-circle four-check"></i></span></span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns five-nav-btn">Five <span ><i class="fa fa-check-circle one-check"></i></span> </span>
+                            </td>
+                            <td>
+                                <span class="div-nav-btns six-nav-btn">Six <span ></span> </span>
+                            </td>
+                            <td>
+                                <i class="fa fa-times trl"></i>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="almost-there-core">
+                    <div class="almost-there-div">
+                        <h3>Almost there...</h3>
+                        <h4>Let's publish your Gig and get some buyers rolling in.</h4>
+                    </div>
+                    <p>* A 20% fee will be charged each time your service is purchased, calculated on total value for each order received. Review our <a href="">Fees and Charges page</a> for details.</p>
+                </div>
+                <div class="clear-both"></div>
+                <div class="nav-dots">
+                    <input type="submit" value="FINISH" id="publish-gig-btn" class="con-btns" (click)="savegig()">
+                </div>
+            </div>
+        </form>
+    </div>
+    <app-footer></app-footer>
+</body>

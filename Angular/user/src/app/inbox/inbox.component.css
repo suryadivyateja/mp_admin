@@ -1,0 +1,441 @@
+body {
+    background-color: #f9f9f9;
+}
+
+.clear-both {
+    clear: both;
+}
+.selected{
+    color: #B4DEFD;
+}
+.order_msg {
+    position: absolute;
+    display: block;
+    height: auto;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    background-color: #fff !important;
+    border: 1px solid #00f !important;
+    line-height: 1.4;
+}
+
+.inbox-container {
+    position: relative;
+    display: block;
+    /* margin-top: 11vh; */
+}
+
+.user-top-nav {
+    font-size: 80%;
+}
+
+.inbox-core {
+    position: relative;
+    display: block;
+    margin: 20px auto;
+    padding-top: 20px;
+}
+
+.inbox-in {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 80vh;
+}
+
+#mailbox-title {
+    position: relative;
+    font-size: 120%;
+    font-weight: bold;
+    margin: 0px 0px;
+}
+
+.msg-msg {
+    position: relative;
+    display: block;
+    color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+    font-size: 90%;
+    font-weight: 550;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.msg-msg .unread-num {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    background-color: #f00;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.mailbox-nav-div {
+    position: relative;
+    display: block;
+    border-top: 1px solid rgba(0, 0, 0, 0.09);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.mailbox-nav-div ul {
+    margin: 0;
+}
+
+.mailbox-nav-div ul li {
+    position: relative;
+    display: inline-block;
+    border-right: 1px solid rgba(0, 0, 0, 0.09);
+}
+
+.mailbox-nav-div ul li button {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0);
+    height: 100%;
+    padding: 10px 20px;
+    font-size: 100%;
+}
+
+.left-contacts {
+    position: relative;
+    float: left;
+    width: 25%;
+    height: 100%;
+    border-right: 0.5px solid #ddd;
+}
+
+.contacts-core {
+    position: relative;
+    display: block;
+    /* height: 100%; */
+    height: 250px;
+    min-height: 90%;
+    overflow-y: scroll;
+    /* overflow: auto; */
+}
+
+/* custom scroll */
+#style-2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 40px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+#style-2::-webkit-scrollbar-thumb
+{
+	border-radius: 40px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #B2DEFB;
+}
+/* end of custom scroll */
+
+.messages-div {
+    position: relative;
+    float: left;
+    width: 74%;
+    height: 100%;
+    white-space: normal;
+    border-bottom: 0.5px solid #ddd;
+    overflow-y: scroll;
+}
+.messages-div-text{
+    width:100%;
+    height:100%;
+    border-radius: 2px;
+}
+.send-div{
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: middle;
+    flex-direction: row;
+    width: 73%;
+    left: 61.5%;
+    transform: translate(-50%,0)
+}
+.send-textarea{
+    width: 90%;
+    border-radius: 3px;
+    height: auto;
+    min-height: 10vh;
+}
+.send-div button{
+    height: 65px;
+    width: 100px;
+    font-weight: 550;
+    font-size: 110%;
+    border-radius: 3px;
+}
+
+.clear-both {
+    margin-bottom: 20px;
+}
+
+.contact {
+    position: relative;
+    display: block;
+    border-bottom: 0.5px solid #ddd;
+    width: 100%;
+    height: 100px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.contact:hover {
+    z-index: 3;
+    /*box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);*/
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.contact-wrap {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    width: 100% !important;
+}
+
+.contact-img-div {
+    position: relative;
+    float: left;
+    width: 30%;
+}
+
+.contact-img {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.contact-msg-table-div {
+    position: relative;
+    float: left;
+    width: 70%;
+}
+
+.contact-name {
+    position: relative;
+    font-size: 105%;
+    text-align: left;
+    float: left;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.date {
+    position: absolute;
+    font-size: 80%;
+    top: 0%;
+    right: 4%;
+    float: right;
+    text-align: right;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.msg-hint {
+    position: relative;
+    float: left;
+    text-align: left;
+    font-size: 90%;
+    color: rgba(0, 0, 0, 0.7);
+    margin-top: 15px;
+}
+
+.msgs {
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 20px 20px;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.msgs .msgs-pro-pic {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 50px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.msgs .msgs-pro-pic img {
+    position: relative;
+    display: block;
+    min-width: 50px;
+    max-width: 10%;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.msgs .msgs-msg {
+    position: relative;
+    /* display: inline; */
+    max-width: 80%;
+    min-width: 2%;
+    padding: 20px 20px;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-size: 90%;
+}
+
+.his-msgs .msgs-msg {
+    background-color: #B1F998;
+}
+
+.my-msgs .msgs-msg {
+    background-color: #B4DEFD;
+}
+
+.msgs .msgs-msg p {
+    margin: 0;
+    padding: 0;
+}
+.inbox-input-div:after{
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    display: block;
+    height: 100px;
+    width: 0.5px;
+    background-color: #ddd;
+    justify-content: space-between
+}    
+
+.input-form-search input{
+    border-radius: 25px;
+    height: 30px;
+    width: 230px;
+    background-color: #EEEEEE;
+    position: relative;
+}
+.form-control:focus {
+    border-color: #CED4DA;
+    box-shadow: none;
+    /* border: none; */
+    /* -webkit-box-shadow: none; */
+  }
+.input-form-search span{
+    position: absolute;
+    left: 18%;
+    top: 21%;
+    transform: translate(-50%,0);
+    color: #999;
+    /* line-height: 1.7 */
+}
+.right-msgs-div{
+    position: relative;
+    left: -10%;
+    display: block;
+    top: 0;
+    padding: 0 !important;
+}
+
+.inbox-border{
+    position: relative;
+    border-bottom: 0.5px solid #ddd;
+}
+.inbox-search{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 75px;
+    align-items: center;
+    justify-content: space-between;
+    vertical-align: middle;
+    flex-direction: row;
+}
+.head-mail{
+    position: relative;
+    font-size: 120%;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 400;
+    color: #37363E;
+}
+
+.right-msgs-text span{
+    font-size: 80%;
+    color: #999;
+    font-family: 'Roboto', sans-serif !important;
+}
+.inbox-head-p{
+    font-size: 90%;
+    font-family: 'Roboto', sans-serif !important;
+    color: #999;
+}
+.inbox-head-p span{
+    color: #37363E;
+    font-size: 90%;
+    font-weight: 550;
+    font-family: 'Roboto', sans-serif !important;
+}
+.inbox-icons ul{
+    position: relative;
+    border: 0.5px solid #373637;
+    border-radius: 3px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+.inbox-icons ul li{
+    flex-basis: 0;
+    flex-flow: 1;
+    padding: 0px 5px;
+}
+.inbox-icons ul li:after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    display: block;
+    height: 40px;
+    width: 0.5px;
+    background-color: #ddd;
+    justify-content: space-between
+}
+@media screen and (min-width:220px) and (max-width:740px) {
+    .left-contacts {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 100%;
+        border-right: 1px solid rgba(0, 0, 0, 1);
+    }
+    .messages-div {
+        position: relative;
+        float: left;
+        width: 100%;
+        height: 100%;
+        white-space: normal;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+    }
+    .w-control {
+        width: 350px;
+    }
+}
+
+@media screen and (min-width:750px) and (max-width:1024px) {
+    .w-control {
+        width: 100%
+    }
+}

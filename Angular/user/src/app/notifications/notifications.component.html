@@ -1,0 +1,42 @@
+<app-header></app-header>
+<app-header1></app-header1><br>
+
+<div class="m-core">
+    <div class="w-control">
+        <!-- <div class="container"> -->
+            <div style="width:100%" class="row">
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <h2 id="orders-title">Your Notifications</h2>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-12">
+                    <button class="btn btn-success btn-sm">Mark all as read</button>
+                </div>
+            </div><br>
+            <div class="container">
+            <div *ngFor="let not of f_not_arr">
+                <div class="row border noty-row">
+                    <div class="col-lg-2 col-md-2 col-xs-12 padding">
+                        <p style="white-space:normal;color:#999;font-size:80%;">{{not.date}}</p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-xs-12 padding">
+                        <div class="not-img">
+                            <img src="{{not.image}}" class="img-circle img-fluid" style="border-radius:35px;width:35px;height:35px">
+                            <span style="cursor:pointer"><a (click)="goto_order_det(not.destination,not.link,not.not_id)">{{not.message}}</a></span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-xs-12 padding">
+                        <i id="noty-icon" class="fa fa-heart-o"></i>
+
+                    </div>
+
+                    <i id="times" class="fa fa-times"></i>
+
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+</div><br>
+<app-footer></app-footer>

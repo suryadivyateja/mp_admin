@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.footer-section{
+    width: 100%;
+    height: auto;
+    min-height: 30vh;
+    /* background-color: #fff; */
+    border-top: 0.5px solid #ddd;
+}
+
+/* .footer-img{
+    background-image: url('../../assets/images/ph.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+} */
+.footer{
+    /* background-color: rgba(0,0,0,.5); */
+    background-color:#fff;
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0;
+    top: 0 !important;
+    position: relative;
+}
+p{
+    font-size: 100%;
+    white-space: normal;
+    font-family: 'Roboto', sans-serif !important;
+    color: #000 !important;
+}
+h1{
+    font-size: 130%;
+    font-weight: 550;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif !important;
+    color: #000 !important;
+}
+h2{
+    text-transform: uppercase;
+    font-size: 300%;
+    font-weight: bolder;
+    color: rgba(80, 78, 78, 0.5);
+    font-family: 'Roboto', sans-serif !important;
+}
+h3{
+    font-size: 95%;
+    font-weight: 550;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif !important;
+    color: #000 !important;
+}
+a{
+    cursor: pointer;
+    font-size: 90%;
+    display: block;
+    font-family: 'Roboto', sans-serif !important;
+    line-height: 2;
+    color: #000 !important;
+}
+.footer-social{
+    width: 100%;
+    height: auto;
+    min-height: 60px; 
+    border-top: 0.5px solid #ddd; 
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    vertical-align: middle;
+    flex-direction: row;
+    background-color: #F5F5F1
+}
+.footer-social ul{
+    position: relative;
+    top: 10px;
+}
+.footer-social ul li{
+    float: left;
+    padding: 0px 10px;
+    cursor: pointer;
+}
+.help-center{
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 450;
+}

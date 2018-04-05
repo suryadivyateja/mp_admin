@@ -1,0 +1,95 @@
+.m-core {
+    position: relative;
+    display: block;
+    height: auto;
+    min-height: 100vh;
+}
+
+#orders-title {
+    position: relative;
+    display: block;
+    text-align: left;
+    font-size: 190%;
+    color: #000;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+#orders-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    height: 5px;
+    width: 40px;
+    background-color: #F9BF3B;
+    color: #F9BF3B;
+}
+
+.btn-success {
+    background-color: #F85852;
+    float: right;
+    border-color: transparent;
+    cursor: pointer;
+    outline: none;
+}
+
+.not-img {
+    position: relative;
+    top: 20%;
+    left: 35%;
+    transform: translate(-50%,-50%);
+    /* left: -50%;
+    transform: translate(-30%, 0) */
+}
+.not-img span{
+    width: auto;
+    height: auto;
+    min-height: 50px;
+}
+.padding {
+    top: 10%;
+    transform: translate(0, 23%)
+}
+.noty-row{
+    height:10vh;
+    width:102%;
+    position: relative;
+}
+#noty-icon{
+    color:#00DBB2;
+    float:right;
+    position: relative;
+    margin-right: -60px;
+    line-height: 1.8
+}
+#times{
+    color:#999;
+    position: relative;
+    float: right;
+    right: -65px;
+    padding: 5px;
+    /* left:50%;transform:translate(450%,0) */
+}
+.fa-times{
+    cursor: pointer
+}
+@media screen and (min-width:220px) and (max-width:740px) {
+    .reviews {
+        display: block;
+    }
+    .btn-success {
+        float: left;
+        position: relative;
+        top: 0%;
+        transform: translate(0, -50%)
+    }
+    #word {
+        white-space: normal !important;
+    }
+    .w-control {
+        width: 350px;
+    }
+}

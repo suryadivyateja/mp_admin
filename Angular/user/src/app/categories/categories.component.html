@@ -1,0 +1,381 @@
+<app-header></app-header>
+<app-header1></app-header1>
+
+<body>
+    <div class="top-image">
+        <div class="d-back"></div>
+        <div class="w-control">
+            <h2 id="top-cat-title">
+                <span style="font-size:60px;color:rgb(253, 175, 48)">{{selected_cat}}</span>
+            </h2>
+            <button class="play-vid-btn" (click)="toggleVideo('show')">
+              <img src="../assets/icons/play_category_details_page.png" width="50px" height="50px">  
+              <!-- <i class="fa fa-play-circle-o" aria-hidden="true"></i> -->
+              <h4>How it works</h4>
+            </button>
+        </div>
+    </div>
+    <div class="h-vid-div center">
+        <div class="h-vid center" id="popupVid">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/T5oVWmSg_5g?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <span class="c-btn" (click)="toggleVideo('hide')">
+            <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+          </span>
+    </div>
+    <div class="c-main-container w-control">
+        <div class="categories-div">
+            <table class="categories-table cat-tables bb">
+                <tr>
+                    <td class="cat-header">Shop Category</td>
+                </tr>
+            </table>
+            <table class="cat-tables bb no-padding">
+                <tr>
+                    <td class="bb no-padding" (click)="gigs_get('all')">
+                        <input type="button" class="cat-btns" id="all-products" value="Browse all Products">
+                        <!-- <div class="sub-cat-cats">
+                      <ul>
+                        <li><a href="">Accounting</a></li>
+                        <li><a href="">Administration & Office Support</a></li>                    
+                      </ul>
+                    </div> -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding">
+                        <input type="button" class="cat-btns" id="rc" value="Accounting & Finance
+                        " (click)="gigs_get('rc')">
+                        <!-- <div class="sub-cat-cats">
+                      <ul>
+                        <li><a href="">Accounting</a></li>
+                        <li><a href="">Administration & Office Support</a></li>                   
+                      </ul>
+                    </div> -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="or" value="Admin" (click)="gigs_get('or')"> 
+                       
+                        <!-- <div class="sub-cat-cats">
+                      <ul>
+                        <li><a href="">Accounting</a></li>
+                        <li><a href="">Administration & Office Support</a></li>
+                       
+                      </ul>
+                    </div> -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="vr" value="BPO & Customer Service" (click)="gigs_get('vr')">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="lp" value="Teachers & Childcare" (click)="gigs_get('lp')">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="ph1-btn" value="Government & Defence"></td>
+                        
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="ph2-btn" value="Healthcare & Medical
+                        "></td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="ph3-btn" value="Human Resources & Recruitment           
+                        "></td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="ph4-btn" value="IT & Software                        
+                        "></td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="ph5-btn" value="Legal                        
+                        "></td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="ph6-btn" value="Project Management                        
+                        "></td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="ph7-btn" value="Real Estate & Property                        
+                        "></td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="ph8-btn" value="Sales & Retail                        
+                        "></td>
+                </tr>
+                <tr>
+                    <td class="bb no-padding"><input type="button" class="cat-btns" id="ph9-btn" value="CEO & Executives                        
+                        "></td>
+                </tr>
+            </table>
+            <table class="cat-tables bb sticky-tables" style="background-color:#FAFAFA">
+                <tr>
+                    <td class="cat-header" id="rating-font">Rating</td>
+
+                </tr>
+                <hr class="hr-rating">
+                <tr>
+                    <td>
+                        <div id="rating"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span class="right-float">
+                <!-- Rating -->
+                <!-- <div class="b-rating"> -->
+                  
+                <!-- </div> -->
+              </span></td>
+                </tr>
+            </table>
+
+
+            <table class="cat-tables sub-txts" style="background-color:#FAFAFA">
+                <tr>
+                    <td class="cat-header" id="rating-font">Seller Level</td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="right-float"><input type="radio" name="days" value="NewSeller" id="newseller" (change)="delivery_days_filter(1)"><label for="newseller"><span></span>Up to 24 Hours
+                        </label>
+                        </span><span class="left-float">(30)</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="right-float"><input type="radio" name="days" value="LevelOne" id="levelone" (change)="delivery_days_filter(3)"><label for="levelone"><span></span>Up to 3 days
+                        </label>
+                        </span><span class="left-float">(14)</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="right-float"><input type="radio" name="days" value="LevelTwo" id="leveltwo" (change)="delivery_days_filter(7)"><label for="leveltwo"><span></span>Up to 7 days
+                        </label>
+                        </span><span class="left-float">(27)</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span class="right-float"><input type="radio" name="days" value="TopRated" id="toprated" (change)="delivery_days_filter('any')"><label for="toprated"><span></span>Any
+                        </label>
+                        </span><span class="left-float">(2)</span>
+
+                    </td>
+                </tr>
+                <tr>
+
+                </tr>
+            </table>
+
+
+
+
+            <table class="cat-tables sub-txts" style="background-color:#FAFAFA">
+                <tr>
+                    <td class="cat-header" id="rating-font">Seller Language</td>
+                </tr>
+                <tr>
+                    <td><span class="right-float"><input type="checkbox" name="lang" value="enlish" id="eng"><label for="eng"><span></span>English</label>
+                        </span><span class="left-float">(14)</span></td>
+                </tr>
+                <tr>
+                    <td><span class="right-float"><input type="checkbox" name="lang" value="german" id="eng"><label for="eng"><span></span>German
+                    </label>
+                        </span><span class="left-float">(7)</span></td>
+                </tr>
+                <tr>
+                    <td><span class="right-float"><input type="checkbox" name="lang" value="hindi" id="eng"><label for="eng"><span></span>Hindi
+                    </label>
+                        </span><span class="left-float">(12)</span></td>
+                </tr>
+                <tr>
+                    <td><a href="" class="show-more-cats">Show More</a></td>
+                </tr>
+            </table>
+        </div>
+       
+        <div class="category-sort">
+                <select id="filt-sort" (change)="filter()">
+                    <option disabled>Sort by</option>
+                    <option>Most Recent</option>
+                    <option>High to Low</option>
+                    <option>Low to High</option>
+                </select>
+                <ul class="horizantal-ul views-ul">
+                 <li class="cat-ul-img">
+                    <img src="../../assets/icons/category/001_grid_2.png" (click)="showGrid($event)" id="grid-ico" class="v-selected" >
+                     <!-- <button id="grid-ico" class="v-selected" (click)="showGrid()"><i class="fa fa-th-large" width="20" ></i></button> -->
+                </li>&nbsp;&nbsp;
+                 <li class="cat-ul-img">
+                        <img src="../../assets/icons/category/001_list_1.png" (click)="showList($event)"  id="list-ico">
+                     <!-- <button id="list-ico"><i class="fa fa-th-list" width="20" (click)="showList()"></i></button> -->
+                    </li>
+               </ul>
+        </div>
+         <!-- gig -->
+        <div class="home-gig-container1">
+            <div class="home-gigs-row1">
+                <div *ngFor="let gig of gigs">
+                    <div class="gig">
+                        <div class="gig-img" (click)='gotoGig(gig._id)'>
+                            <img src="{{gig.gig_img_main}}" alt="" width="100%" height="100%">
+                        </div>
+                        <div class="gig-text-div"  (click)='gotoGig(gig._id)'>
+                            <div class="gig-text">
+                                <h1>{{gig.title.substr(0,59)}}....</h1>
+                                <h3>By {{gig.name}}</h3>
+                                <div class="stars">
+                                        <img src="{{gig.star1}}" alt="" width="12px" height="12px">
+                                        <img src="{{gig.star2}}" alt="" width="12px" height="12px">
+                                        <img src="{{gig.star3}}" alt="" width="12px" height="12px">
+                                        <img src="{{gig.star4}}" alt="" width="12px" height="12px">
+                                        <img src="{{gig.star5}}" alt="" width="12px" height="12px">
+                                </div>
+                            </div>
+
+                            <div class="price">
+                                <div class="p1">
+                                    <img src="../../assets/icons/homepage_completed_icon.png" width="18px" height="18px">
+                                    <!-- <i class="fa fa-users"></i> -->
+                                    &nbsp;
+                                    <span id="price-com">{{gig.num_of_pro_com}} Completed</span>
+                                </div>
+
+                                <div class="p2">
+                                    <p>Starting At&nbsp;<span>${{gig.pac_cos_sta}}</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- gig-hover -->
+                        <div class="gig-details-container">
+                                <div class="gig-dets-top">
+                                    <h1>{{gig.title}}</h1>
+                                    <div class="hover-display">
+                                     <div class="badges"><p>Best Seller<p></div>   
+                                     <p>in <span class="gig-hover-span">{{gig.category}}</span></p>
+                                     <p>Business</p>
+                                    </div>
+                                    <div class="timer-display">
+                                        <div class="timer">
+                                          <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                          <span>{{gig.pac_del_sta}} Days Delivery</span>
+                                        </div>
+                                        <div class="timer">
+                                           <i class="fa fa-refresh" aria-hidden="true"></i>
+                                           <span>{{gig.rev_sta}} Revisions</span>
+                                        </div>
+                                    </div><br>
+                
+                                  <h3 class="hover-h3">learn to create the algorithms in Python from Data science experts.</h3> <br>
+                                </div>
+                                <div class="hover-button">
+                                    <button class="btn btn-danger"  (click)='gotoGig(gig._id)'>View Details</button>
+                                    <span *ngIf="gig.fav_status == false">
+                                            <img src="../../assets/icons/mouse-hover-box/003_unfavorite.png" width="25px" height="25px" (click)="addtoFav(gig._id,gig.user_id,gig)">
+                                            <!-- <i class="fa fa-heart-o" (click)="addtoFav(gig._id,gig.user_id)"></i> -->
+                                        </span>
+                                        <span *ngIf="gig.fav_status == true">
+                                            <img src="../../assets/icons/mouse-hover-box/004_favorite.png" width="25px" height="25px" (click)="addtoFav(gig._id,gig.user_id,gig)">
+                                            <!-- <i class="fa fa-heart" style="color:red" (click)="addtoFav(gig._id,gig.user_id)"></i> -->
+                                        </span>
+                                </div>
+                      </div>                        
+                    </div>
+                </div>
+            </div><br>
+            <br><br>
+            <!-- gig-hover -->
+            <div class="gig-details-container">
+                <div class="gig-dets-top">
+                    <p>Published: 08/2016</p>
+                    <h3 style="color:#888">The Complete Digital Marketing Course - 12 Courses in 1</h3>
+
+                    <p style="color:#999">Master Digital Marketing & Grow Your Business: SEO, Facebook, YouTube, Social Media Marketing, Google Analytics & More!</p>
+                    <li style="color:#999">Grow your own business from scratch</li>
+                    <li style="color:#999">Make better decisions on how to market your business</li>
+                    <li style="color:#999">Upgrade your digital marketing skills for a new job or career change</li>
+                </div>
+                <div class="gig-dets-btm">
+                    <button class="dets-add-to-cart-btn">
+                      Add to cart
+                    </button>
+
+                    <button class="dets-add-fav-btn">
+                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- list gigs -->
+            <div class="sort-filter-container">
+                    <div class="sort-filter-row">
+                        <div *ngFor = "let x of list_gigs">
+                            <div class="gig">
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-3 col-xs-3 gig-details">
+                                        <div class="gig-details-img"  (click)='gotoGig(x._id)'>
+                                            <img src="{{x.gig_img_main}}" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9 col-md-9 col-xs-9 sort-col">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-xs-12"><br>
+                                                <h4 class="sort-title"  (click)='gotoGig(x._id)'>{{x.title}}</h4>
+                                            </div>
+                                        </div><br>
+                                        <div class="row">
+                                              <div class="col-lg-12 col-md-12 col-xs-12">
+                                                <ul class="sort-ul">
+                                                    <li class="gig-profile">
+                                                        
+                                                        <!-- <img src="../../assets/images/gig.png">&nbsp; -->
+                                                        <img src="{{x.profile_pic}}">&nbsp;
+                                                       <span>{{x.name}}</span> 
+                                                    </li>
+                                                    <li class="sort-gig-raty">
+                                                       <div class="raty">
+                                                            <img src="{{x.star1}}" alt="" width="12px" height="12px">
+                                                            <img src="{{x.star2}}" alt="" width="12px" height="12px">
+                                                            <img src="{{x.star3}}" alt="" width="12px" height="12px">
+                                                            <img src="{{x.star4}}" alt="" width="12px" height="12px">
+                                                            <img src="{{x.star5}}" alt="" width="12px" height="12px">
+                                                       </div>
+                                                       <span>({{x.num_of_pro_com}})</span>
+                                                    </li>
+                                                    <li class="sort-gig-raty">
+                                                       <i class="fa fa-users"></i>&nbsp;
+                                                       <span class="sort-text">{{x.num_of_pro_com}} Completed</span>
+                                                    </li>
+                                                    <li class="fav-div" (click)="addtoFav(x._id,x.user_id)">
+                                                        <span *ngIf="x.fav_status === true">
+                                                            <button class="fav-i button">                                                  
+                                                               <i class="fa fa-heart" id="heart1"></i>
+                                                            </button>
+                                                        </span>
+                                                        <span *ngIf="x.fav_status === false">
+                                                            <button class="fav-i button">
+                                                               <i class="fa fa-heart" id="heart2"></i>
+                                                            </button>
+                                                        </span>
+                                                        </li>
+                                                    <li class="cat-price"> <h5 class="sort-value"><span>$</span>{{x.pac_cos_sta}}</h5></li>
+                                                    </ul>  
+                                              </div>
+                                          </div>
+                                      </div>              
+                                                           
+                                   </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>                      
+    </div>
+    <app-footer></app-footer>
+</body>

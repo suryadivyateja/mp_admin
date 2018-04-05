@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="form-group">
+  Gig
+    <select class="form-control" [(ngModel)]="selected_gig">
+      <option *ngFor="let g of gigs" [ngValue]="g.title" >{{g.title}}</option>
+     </select>
+  </div>
+  <div class="form-group">
+    UserName
+      <select class="form-control" [(ngModel)]="selected_user">
+        <option *ngFor="let u of users" [ngValue]="u.name" >{{u.name}}</option>
+       </select>
+    </div>
+    <div class="form-group">
+      Rating
+        <select class="form-control" [(ngModel)]="selected_rating">
+          <option  value="1" >1</option>
+          <option  value="2" >2</option>
+          <option  value="3" >3</option>
+          <option  value="4" >4</option>
+          <option  value="5" >5</option>
+         </select>
+      </div>
+    
+    <div class="form-group">
+      Comment
+      <input type="text" class="form-control" [(ngModel)]="selected_review">
+    </div>
+    <span id="serr"></span>
+   <a  class="btn btn-block btn-success" (click)="edit_this()">Submit</a>
+  <br><br>
+  </div>
+  
+
+
+
+

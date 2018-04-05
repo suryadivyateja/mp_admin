@@ -1,0 +1,45 @@
+body {
+    padding: 0 !important;
+  }
+  /* Global width */
+  .w-control{
+    width: 1020px;
+    margin: 0 auto;
+  }
+  
+  .main-header .left-float-ul,
+  .main-header ul {
+    margin-bottom: 0 !important;
+  }
+  .main-header .right-float-ul {
+    margin-bottom: 0 !important;
+  }
+  .res-menu-ico {
+    display: none !important;
+  }
+  #res-men-check {
+    display: none !important;
+  }
+  .res-menu {
+    display: none !important;
+  }
+  
+  /* Header */
+  
+  .l-header-control {
+    position: relative;
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    overflow: visible !important;
+  }
+  .header-control {
+    position: relative;
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    overflow: visible !important;
+  }
+  
+  
+  

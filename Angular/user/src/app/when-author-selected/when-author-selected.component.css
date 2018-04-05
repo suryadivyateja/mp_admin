@@ -1,0 +1,94 @@
+.container{
+    width: 60%;
+    background-color: white;
+    height: auto;
+    border: 0.5px solid #ddd
+}
+.sign-complete{
+    background-color: #EC5252;
+    height: 50%;
+    width: 100%;
+}
+.sign-complete h3,p{
+text-align: center;
+color: white;
+
+}
+.author-form{
+    width: 100%;
+    left: 20%;
+    transform: translate(20%,0)
+}
+.author-form .form-control{
+    width:30vw;
+}
+.author-form .input-group-addon{
+    background-color: transparent;
+    font-weight: 500;
+}
+.author-form h2{
+    text-align: left;
+    color: #222;
+    font-size: 90%;
+    font-weight: normal;
+    
+}
+.avilability-form{
+   display: flex;
+}
+.avilability-form1{
+    left: 50%;
+    transform: translate(55%,0)
+}
+.avilability-form h5{
+    font-size: 80%;
+    color: #999;
+    font-weight: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.avilability-form1 h5{
+    font-size: 80%;
+    color: #999;
+    font-weight: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.select1{
+    left: 30%;
+    
+}
+.select2{
+    left: 75%;
+}
+.select3{
+    left: 50%;
+}
+.select{
+    position: relative;
+    left: 0%;
+    transform: translate(-50%,0)    
+}
+.certy-form{
+    left: 50%;
+    transform: translate(22%,0)
+}
+.certy-form h5{
+    font-size: 90%;
+    color: #999;
+    font-weight: 700;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.certy-form h6{
+    font-size: 100%;
+    color: #999;
+    font-weight: normal;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+.certy-form .form-control{
+    width: 220%;
+}
+.certy-form .select1{
+    left: 13%;
+}
+.certy-form .select2{
+    left: 50%;
+}

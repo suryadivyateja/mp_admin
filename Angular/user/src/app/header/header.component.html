@@ -1,0 +1,347 @@
+<!-- When not logged in -->
+<div class="header1 header2">
+    <label for="res-men-check" class="visible-xs visible-sm t-check"><span><i class="fa fa-bars res-menu-ico" aria-hidden="true"></i><input type="checkbox" id="res-men-check" name="res-men-check"></span></label>
+    <div class="res-menu visible-xs visible-sm">
+        <ul>
+            <li id="res-title">Market place</li>
+            <li><a routerLink='/home'><i class="fa fa-home res-menu-icons" aria-hidden="true"></i>Home</a></li>
+            <li id="res-categories-div">
+                <div class="res-cat-head"><i class="fa fa-bars res-menu-icons" aria-hidden="true"></i>CATEGORIES <i class="fa fa-caret-down" style="margin-left:20px"></i></div>
+            </li>
+            <div id="res-cats">
+                <ul>
+                    <li><a (click)="get_gigs('all')"><i class="res-menu-icons fa fa-globe" aria-hidden="true"></i>Browse all products</a>
+                    </li>
+                    <li><a (click)="get_gigs('rc')"><i class="res-menu-icons fa fa-file" aria-hidden="true"></i>Resumes and Cover Letters</a></li>
+                    <li><a (click)="get_gigs('or')"><i class="res-menu-icons fa fa-globe" aria-hidden="true"></i>Online Resumes</a></li>
+                    <li><a (click)="get_gigs('vr')"><i class="res-menu-icons fa fa-eye" aria-hidden="true"></i>Visual Resumes</a></li>
+                    <li><a (click)="get_gigs('lp')"><i class="res-menu-icons fa fa-linkedin" aria-hidden="true"></i>LinkedIn Profile</a></li>
+                    <li><a><i class="res-menu-icons fa fa-anchor" aria-hidden="true"></i>Place Holder 1</a></li>
+                    <li><a><i class="res-menu-icons fa fa-anchor" aria-hidden="true"></i>Place Holder 2</a></li>
+                </ul>
+            </div>
+            <li><a routerLink='/how-it-works'><i class="res-menu-icons fa fa-question-circle-o" aria-hidden="true"></i>How it works</a></li>
+            <li><a routerLink='/become-an-author'><i class="res-menu-icons fa fa-user" aria-hidden="true"></i>Become an Author</a></li>
+            <li id="res-register-btn"><a><i class="res-menu-icons fa fa-user-plus" aria-hidden="true"></i>Register</a></li>
+            <li id="res-sign-in-btn"><a><i class="res-menu-icons fa fa-sign-in" aria-hidden="true"></i>Sign In</a></li>
+        </ul>
+    </div>
+    <div *ngIf="authService.loggedIn() === false">
+        <header class="main-header visible-md visible-lg">
+            <div class="header-control w-control">
+                <a routerLink='/home'>
+                    <img src="../assets/../assets/images/m_logo.png" alt="" class="logo-img">
+                </a>
+                <ul class="horizantal-ul left-float-ul list-unstyled">
+                    <li class="dropdown mega-dropdown">
+                        <button class="dropbtn" id="main-cat-btn"><i class="fa fa-bars" aria-hidden="true"></i> &nbsp; &nbsp;FIND AN AUTHOR </button>
+                        <ul class="dropdown-menu mega-dropdown-menu">
+                            <div class="row div-style">
+                                <div class="col-lg-4 col-md-4 col-xs-4">
+                                    <div class="back">
+                                        <div class="mega">
+                                            <h6>Categories</h6>
+                                            <li id="id1">Resumes
+                                            <div class="hover-div">
+                                                <div class="hover-flex">
+                                                <ul>
+                                                    <li>Accounting & Finance</li>
+                                                    <li>Administration & Office Support</li>
+                                                    <li>Advertising, Arts & Media</li>
+                                                    <li>BPO & Customer Service</li>
+                                                    <li>Construction & Architecture</li>
+                                                    <li>Education & Teaching</li>
+                                                     <li>Farming & Veterinary</li>
+                                                 </ul>
+                                                 <ul>
+                                                    <li>Government & Defence</li>
+                                                    <li>Healthcare & Nursing</li>
+                                                    <li>Hospitality & Tourism</li>
+                                                    <li>Human Resources & Recruitment</li>
+                                                    <li>Information & Communication Technology</li>
+                                                    <li>Manufacturing, Transport & Logistics</li>
+                                                    <li>Legal</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>Project Management</li>
+                                                    <li>Real Estate & Property</li>
+                                                    <li>Sales & Retail</li>
+                                                    <li>Trades & Services</li>
+                                                    <li>CEO & Executives</li>
+                                                    <li>Other Jobs</li>
+                                                </ul>
+                                                </div>
+                                            </div>
+                                        </li>
+                                                    <li id="id2">Cover Letters</li>
+                                                    <li id="id3">LinkedIn Makeover</li>
+                                                    <li id="id4">Selection Criteria</li>
+                                                    <li id="id4">CEO & Executives</li>
+                                                    <li id="id4">Government & Defence</li>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-8 col-md-8 col-xs-8">
+                                            <div class="white">
+                                                
+                                            </div>
+                                        </div>
+
+                            </div>
+                        </ul>
+                    </li>
+                    <li routerLink='/how-it-works'>
+                        <input type="button" class="main-nav-btns" id="how-it-works-btn" value="HOW IT WORKS">
+                    </li>
+                    <li routerLink='/become-an-author'>
+                        <input type="button" class="main-nav-btns" id="become-an-author-btn" value="BECOME AN AUTHOR">
+                    </li>
+                </ul>
+                <ul class="horizantal-ul right-float-ul list-unstyled header-main-li">
+                    <li>
+                        <input type="button" class="main-nav-btns" id="main-register-btn" (click)="app.showBackLogin(true)" value="LOGIN">
+                    </li>
+                    <li id="sign-in-li">
+                        <input type="button" class="main-nav-btns" id="sign-in-btn" (click)="app.showBackSignUp(true)" value="SIGN UP">
+                    </li>
+
+                </ul>
+            </div>
+        </header>
+    </div>
+
+    <!-- When Logged in -->
+    <div *ngIf="authService.loggedIn() == true">
+        <div class="loggedin">
+            <header id="login-header" class="main-header visible-md visible-lg">
+                <div class="header-control w-control">
+                    <a routerLink='/home'>
+                        <img src="../assets/../assets/images/m_logo.png" alt="" class="logo-img">
+                    </a>
+
+
+
+                    <ul class="horizantal-ul right-float-ul list-unstyled right" id="right-nav">
+
+
+                        <li id="bar" class="post-job-one" routerLink="/create-gig">Post a job &nbsp; <i class="fa fa-plus-circle"></i></li>
+
+
+                        <li class="mail-one dropdown" id="bar">
+                            <img class="mail-img" src="../assets/icons/header-icons/003_messages_notifications.png">
+                            <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+                            <div class="notify">
+                                <p class="mail-div-p-one">{{app.inb_num}}</p>
+                            </div>
+                            <ul class="mail-div2 dropdown-menu" id="not_down">
+                                <div *ngIf="app.inb_num !== 0" class="msg-core" id="style-2">
+                                    <div *ngFor="let msg of app.inb_msg">
+                                        <div class="li-div">
+                                                <li class="noty-display" (click)="app.go_to_inbox(msg.to,msg.conv_id)">
+                                                    <img src="{{msg.profile_pic}}" class="img-fluid" alt="img">
+                                                    <div class="noty-text">
+                                                    <p class="noty-p">{{msg.msg}}</p>
+                                                    <p class="noty-p1">{{msg.time}}</p>
+                                                    </div>
+                                                    <div>
+                                                    <i id="noty-icon" class="fa fa-heart-o"></i>
+                                                    </div>
+                                                </li>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div routerLink='/inbox' class="view-noty-back">
+                                    <li class="view-noty">View All Notifications</li>
+                                </div>
+                            </ul>
+
+                            <!-- when no mails -->
+                            <ul class="empty-mail-div2 dropdown-menu" id="not_down">
+                                <div *ngIf="app.inb_num === 0">
+                                    <div class="empty-noty-li-div">
+                                        <li class="noty-display-none">
+                                            <img src="../assets/icons/header-icons/003_messages_notifications.png">
+                                        </li>
+                                        <p class="no-mail-p">Once you start a new conversation, you will see it listed here.</p>
+                                    </div><br><br>
+                                    <div routerLink='/inbox' class="view-noty-back">
+                                        <li class="view-noty">View All Notifications</li>
+                                    </div>
+                                </div>
+                            </ul>
+                            <!-- when no mails end -->
+
+                        </li>
+                        <li id="bar" class="dropdown bell1">
+
+                            <span (click)="app.go_to_not()">
+                                <img class="bell-img" src="../assets/icons/header-icons/003_notifications-button.png">
+                                <!-- <i class="fa fa-bell" aria-hidden="true"></i> -->
+                            </span>
+                            <div class="notify">
+                                <p class="mail-div-p-one">{{app.unread_num}}</p>
+                            </div>
+
+                            <ul class="noty-div dropdown-menu" id="not_down">
+                                <div *ngIf="app.unread_num > 0">
+                                    <div *ngFor="let not of app.f_not_num">
+                                        <div class="li-div" (click)="app.goto_order_det(not.dest,not.link,not.not_id)">
+                                            <li class="noty-display">
+                                                <img src="{{not.image}}">
+                                                <div class="noty-text">
+                                                    <p class="noty-p">{{not.message}}...</p>
+                                                    <p class="noty-p1">{{not.date}}</p>
+                                                </div>
+                                                <div>
+                                                    <i id="noty-icon" class="fa fa-heart-o"></i>
+                                                </div>
+                                            </li>
+    
+                                        </div>
+                                    </div>
+                                </div>
+                                <div routerLink='/notifications' class="view-noty-back">
+                                    <li class="view-noty">View All Notifications</li>
+                                </div>
+
+                            </ul>
+
+                            <!-- when no notifications -->
+                            <ul class="empty-noty-div dropdown-menu" id="not_down">
+                                <div *ngIf="app.unread_num === 0">
+                                    <div class="empty-noty-li-div">
+                                        <li class="noty-display-none">
+                                            <img src="../assets/icons/header-icons/003_notifications-button.png">
+                                        </li>
+                                        <p class="no-noty-p">All cleaned up, you've no notifications!</p>
+                                    </div><br><br>
+                                    <div routerLink='/notifications' class="view-noty-back">
+                                        <li class="view-noty">View All Notifications</li>
+                                    </div>
+                                </div>
+                            </ul>
+                            <!-- when no notifications end -->
+
+                        </li>
+                        <li id="bar" class="dropdown profile-img">
+                            <img src={{app.profile_pic}} class="img-fluid img-circle imgg" alt="img">&nbsp; <span style="color:#999;font-size:80%">{{app.name}}</span>
+
+                            <ul class="navbar-stacked dropdown-menu">
+                                <li class="hover-profile" routerLink='/dashboard'><a class="cat-btns b-all-btn">
+                                    <div class="hover-dashboard-back"></div>
+                                &nbsp;&nbsp;Dashboard</a></li><br>
+                                <li class="hover-profile" (click)="goto_seller()"><a class="cat-btns b-all-btn">
+                                    <div class="hover-profile-back"></div> 
+                                &nbsp;&nbsp;Profile</a></li><br>
+                                <li class="hover-profile" routerLink="/settings/profile"><a class="cat-btns b-all-btn">
+                                    <div class="hover-settings-back"></div> 
+                                &nbsp;&nbsp;Settings
+                                </a></li><br>
+                                <li class="hover-profile" routerLink="/favorites"><a class="cat-btns b-all-btn">
+                                    <div class="hover-fav-back"></div>
+                                &nbsp;&nbsp;Favorites
+                               </a></li><br>
+                                <li class="hover-profile" routerLink="/manage-orders"><a class="cat-btns b-all-btn">
+                                    <div class="hover-order-back"></div> 
+                                &nbsp;&nbsp;
+                                Manage Orders
+                               </a></li>
+                                <hr>
+                                <li>
+                                    <h6 class="cat-btns b-all-btn">Author Settings</h6>
+                                </li><br>
+                                <li class="hover-profile" routerLink="/create-gig"><a class="cat-btns b-all-btn">
+                                    <div class="hover-gig-back"></div>
+                                &nbsp;&nbsp;
+                                Create New Gig
+                                </a></li><br>
+                                <li class="hover-profile"><a class="cat-btns b-all-btn">
+                                    <div class="hover-earning-back"></div>
+                                &nbsp;&nbsp;
+                                Earnings
+                                </a></li><br>
+                                <li class="hover-profile" routerLink="/manage-sales"><a class="cat-btns b-all-btn">
+                                    <div class="hover-sales-back"></div>
+                                &nbsp;&nbsp;
+                                Manage Sales
+                                </a></li><br>
+                                <li class="hover-profile"><a class="cat-btns b-all-btn">
+                                    <div class="hover-help-back"></div>
+                                &nbsp;&nbsp;
+                                Help
+                               </a></li>
+                               <hr>
+                                <li class="logout-li" (click)='app.Logout()'><a class="cat-btns b-all-btn"> 
+                                    <div class="hover-logout-back"></div>
+                                &nbsp;&nbsp;
+                                Logout
+                                </a></li><br>
+                            </ul>
+                        </li>
+
+                        <li id="dash-b1" class="th1" (click)='displayDiamondDashboard()'>
+                            <i id="th" class="fa fa-th" aria-hidden="true"></i>
+                        </li>
+
+                    </ul>
+                </div>
+            </header>
+        </div> <br><br>
+    </div>
+
+
+
+
+    <!-- diamond dashboard -->
+    <div class="diamond-container">
+        <div class="back-tra">
+            <div class="diamond-div">
+                <div class="diamond-top">
+                    <h1>navigation</h1>
+                    <i class="fa fa-times" id="dash-times"></i>
+                </div>
+
+                <div class="diamond-mid">
+                    <div class="dash-div" routerLink="/dashboard">
+                        <div class="dash-div1">
+                            <i class="fa fa-home"></i>
+                            <p>Dashboard</p>
+                        </div>
+                    </div>
+                    <div class="dash-div" routerLink="/settings/profile">
+                        <div class="dash-div1">
+                            <i class="fa fa-user"></i>
+                            <p>Profile</p>
+                        </div>
+                    </div>
+                    <div class="dash-div" routerLink="/inbox">
+                        <div class="dash-div1">
+                            <i class="fa fa-envelope"></i>
+                            <p>Mailbox</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="diamond-mid">
+                    <div class="dash-div" routerLink="/manage-orders">
+                        <div class="dash-div1">
+                            <i class="fa fa-bars"></i>
+                            <p>Tasks</p>
+                        </div>
+                    </div>
+                    <div class="dash-div" routerLink="/settings/account">
+                        <div class="dash-div1">
+                            <i class="fa fa-cog"></i>
+                            <p>Settings</p>
+                        </div>
+                    </div>
+                    <div class="dash-div">
+                        <div class="dash-div1">
+                            <i class="fa fa-calendar"></i>
+                            <p>Calendar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

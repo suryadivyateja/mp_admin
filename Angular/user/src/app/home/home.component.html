@@ -1,0 +1,427 @@
+<body>
+    <div class="home-img">
+        <app-header2></app-header2>
+        <!-- <div class="home-color"> -->
+        <div class="home-text-back">
+            <div class="w-control">
+                <div class="home-text">
+                    <h1>A community of authors<br> ready for your gig</h1>
+                <div class="search-box-div">
+                    <div class="input-group">
+                        <span class="input-group-addon bars"><i class="fa fa-bars"></i></span>
+                        <input type="text" class="form-control search-bar" placeholder="Search for a Course" [(ngModel)]="searchtext">
+                        <span class="input-group-addon addon"><p class="search1" >SEARCH</p></span>
+                    </div>
+                    <div class="search-box" id="style-2">
+                       <div class="search-list">
+                           <ul>
+                               <li *ngFor="let x of search_result">
+                                  <div class="search-gigs">
+                                   <div class="search-img" (click)="goto('title',x)">
+                                     <img src="{{x.gig_image}}">
+                                   </div>
+                                   <div class="search-title">
+                                     <h6 class="search-gig-title" (click)="goto('title',x)">{{x.title.substr(0,47) | titlecase}}..</h6>
+                                     <span class="search-author" (click)="goto('author',x)"> - By {{x.seller_name | titlecase}}</span>
+                                   </div>
+                                   <div class="search-cost"  (click)="goto('title',x)">
+                                     <span class="search-cost">${{x.pac_cos_sta}}</span>   
+                                   </div>  
+                                  </div>
+                               </li>
+                           </ul>
+                       </div>         
+                    </div>
+                </div>    
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </div>
+
+    <div class="w-control">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <img src="../../assets/images/curl.png" width="100%" height="100%" style="left:50%;transform:translate(380%,0)">
+                </div>
+            </div><br><br>
+
+            <div class="row market-place">
+                <div class="col-xs-12" id="second-vp-head">
+                    <h1>Explore The Marketplace</h1>
+                    <h3>From resumes to reference letters - we've got what you need to make you standout				
+                    </h3>
+                </div>
+            </div><br><br>
+
+
+            <div class="row" style="height:50vh">
+                <div class="col-lg-4 col-md-4 col-xs-12"><br>
+
+                    <div class="row" style="height:50%">
+                        <div class="col-lg-6 col-md-6 col-xs-12 row-border1">
+                            <div class="explore-img">
+                                <p>Logo Design</p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-lg-6 col-md-6 col-xs-12 row-border1">
+                            <div class="explore-img1">
+                                <p>Brand guide</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="height:50%">
+                        <div class="col-lg-6 col-md-6 col-xs-12 row-border2">
+                            <div class="explore-img2">
+                                <p>Packaging Design</p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-lg-6 col-md-6 col-xs-12 row-border2">
+                            <div class="explore-img3">
+                                <p>Book cover Design</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="explore-img2">
+                    </div>
+                    <div class="img-text">
+                        <p>Logo & brand identity pack</p>
+                        <p><button class="btn btn-default">*Most popular</button></p>
+                        <p class="p1">Logo and essentials to establish your brand...</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-xs-12"><br>
+
+                    <div class="row" style="height:50%">
+                        <div class="col-lg-6 col-md-6 col-xs-12 row-border3">
+                            <div class="explore-img3">
+                                <p>Brand guide</p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-lg-6 col-md-6 col-xs-12 row-border3">
+                            <div class="explore-img1">
+                                <p>T-Shirt Design</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="height:50%">
+                        <div class="col-lg-6 col-md-6 col-xs-12 row-border4">
+                            <div class="explore-img2">
+                                <p>Book cover Design</p>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-lg-6 col-md-6 col-xs-12 row-border4">
+                            <div class="explore-img1">
+                                <p>Other</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div><br><br><br><br><br>
+
+
+
+            <div class="row explore">
+                <div class="col-xs-12">
+                    <button class="btn btn-primary">view more items</button>
+                </div>
+            </div><br>
+
+            <div class="vertical-line">
+                <div class="vl"></div>
+            </div><br>
+
+            <div class="row market-place">
+                <div class="col-xs-12" id="third-vp-head">
+                    <h1>Multiple authors, incredible results</h1>
+                </div>
+            </div><br>  
+
+        </div>
+    </div>
+
+    <!-- GIG -->
+
+    <div class="w-control"><br>
+        <div class="home-gig-container">
+            <div class="home-gigs-row">
+                <div *ngFor="let gig of gigs ; let i = index">
+                    <div *ngIf="i<12">
+                            <div class="gig" id="gig{{i}}">
+                                <div class="gig-img" (click)='gotoGig(gig._id)'>
+                                    <img src="{{gig.gig_img}}" alt="" width="100%" height="100%">
+                                </div>
+                                <div class="gig-text-div" (click)='gotoGig(gig._id)'>
+                                    <div class="gig-text">
+                                        <h1>{{gig.title.substr(0,59)}}....</h1>
+                                        <h3>By {{gig.name}}</h3>
+        
+                                        <div class="stars">
+                                            <img src="{{gig.star1}}" alt="" width="12px" height="12px">
+                                            <img src="{{gig.star2}}" alt="" width="12px" height="12px">
+                                            <img src="{{gig.star3}}" alt="" width="12px" height="12px">
+                                            <img src="{{gig.star4}}" alt="" width="12px" height="12px">
+                                            <img src="{{gig.star5}}" alt="" width="12px" height="12px">
+                                        </div>
+                                    </div>
+        
+                                    <div class="price">
+                                        <div class="p1">
+                                            <img src="../../assets/icons/homepage_completed_icon.png" width="18px" height="18px">
+                                            &nbsp;
+                                            <span id="price-com">{{gig.jobs_done}} Completed</span>
+                                        </div>
+        
+                                        <div class="p2">
+                                            <p>Starting At&nbsp;<span>${{gig.pac_cos_sta}}</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                  <!-- gig-hover -->
+                                <div class="gig-details-container">
+                                        <div class="gig-dets-top">
+                                            <div class="hover-heading">
+                                              <h1>{{gig.title}}.</h1>
+                                            </div>
+                                            <div class="hover-display">
+                                             <div class="badges"><p>Best Seller<p></div>   
+                                             <p>in <span class="gig-hover-span">{{gig.cat}}</span></p><p>Business</p>
+                                             
+                                            </div>
+                                            <div class="timer-display">
+                                                <div class="timer">
+                                                 <img src="../../assets/icons/mouse-hover-box/002-clock.png" width="14px" height="14px"> 
+                                                  <span>{{gig.pac_del_sta}} Days Delivery</span>
+                                                </div>
+                                                <div class="timer">
+                                                    <img src="../../assets/icons/mouse-hover-box/001-arrows.png" width="14px" height="14px">
+                                                   <span>{{gig.rev_sta}} Revisions</span>
+                                                </div>
+                                            </div><br>
+                        
+                                          <h3 class="hover-h3">{{gig.description.substr(0,150)}}...</h3> <br>
+                                        </div>
+                                        <div class="hover-button">
+                                            <button class="btn btn-danger" (click)='gotoGig(gig._id)'>View Details</button>
+                                                <span *ngIf="gig.fav_status == false">
+                                                    <img src="../../assets/icons/mouse-hover-box/003_unfavorite.png" width="25px" height="25px" (click)="addtoFav(gig._id,$event,gig)">
+                                                </span>
+                                                <span *ngIf="gig.fav_status == true">
+                                                    <img src="../../assets/icons/mouse-hover-box/004_favorite.png" width="25px" height="25px" (click)="addtoFav(gig._id,$event,gig)">
+                                                </span>
+                                        </div>
+                              </div>
+                            </div>
+                    </div>
+                </div>
+            </div><br>
+            <br><br>
+          
+            <div class="gig-button">
+                <button class="btn btn-primary gig-btn" routerLink="/categories"><span>Show all</span> &nbsp;<i id="show-all-icon" class="fa fa-chevron-right"></i></button>
+            </div>
+
+        </div>
+    </div><br>
+
+
+
+    <section class="careers"><br><br>
+        <div class="w-control">
+            <div class="container">
+                <div class="row market-place">
+                    <div class="col-xs-12" id="second-vp-head1">
+                        <h1>Helping people grow their careers. Everyday!</h1>
+
+                    </div>
+                </div><br>
+
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-4 col-xs-12">
+                        
+                        <img src="../../assets/images/career1.png" width="auto" height="auto">
+                       
+                        <div class="careers-text">
+                            <h4>Learn from the experts</h4>
+                            <p style="white-space:normal">Industry thought-leaders to help your master new skills</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-xs-12">
+                        <img src="../../assets/images/career2.png" width="auto" height="auto">
+                        <div class="careers-text">
+                            <h4>Guareented Career Frowth</h4>
+                            <p style="white-space:normal">Get a pay-raise, a promotion, or start a new career</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-xs-12">
+                        <img src="../../assets/images/career3.png" width="auto" height="auto">
+                        <div class="careers-text">
+                            <h4>Accredited Curriculum</h4>
+                            <p style="white-space:normal">Approved bt 40+ global accrediting bodies</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- reviews -->
+
+    <div class="reviews">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+                <ul class="radio">
+                    <li (click)="radio('1')"><i class="fa fa-circle rad-but" aria-hidden="true" id="rad1"></i></li>
+                    <li (click)="radio('2')"><i class="fa fa-circle" aria-hidden="true" id="rad2"></i></li>
+                    <li (click)="radio('3')"><i class="fa fa-circle" aria-hidden="true" id="rad3"></i></li>
+                    <li (click)="radio('4')"><i class="fa fa-circle" aria-hidden="true" id="rad4"></i></li>
+                </ul>
+            </div>
+        </div>
+        <div class="w-control">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-xs-12">
+                        <div style="display:block" class="review-text" id="text1">
+                            <p>A greate logo can instantly elevate your business, and logo joy gets you there at a fraction of cost of working with a designer. I highly recommend ityour products to a wide audience..</p>
+                            <p>
+                                <img src="../../assets/images/gig.png" class="img-fluid img-circle" style="border-radius:50px;width:45px;height:45px;">&nbsp;<span>Samir, Loot 66</span>
+                            </p>
+                        </div>
+
+                        <div style="display:none" class="review-text" id="text2">
+                            <p>Ever wanted to sell your digital goods? Sign up with us and we'll help you distribute your products to a wide audience. Get started earning money today!</p>
+                            <p>
+                                <img src="../../assets/images/gig.png" class="img-fluid img-circle" style="border-radius:50px;width:45px;height:45px;">&nbsp;<span>Samir, Loot 66</span>
+                            </p>
+                        </div>
+
+                        <div style="display:none" class="review-text" id="text3">
+                            <p>From logo to web hosting, We've got what you need to make you standout Sign up with us and we'll help you distribute your products to a wide audience.</p>
+                            <p>
+                                <img src="../../assets/images/gig.png" class="img-fluid img-circle" style="border-radius:50px;width:45px;height:45px;">&nbsp;<span>Samir, Loot 66</span>
+                            </p>
+                        </div>
+
+                        <div style="display:none" class="review-text" id="text4">
+                            <p> Ever wanted to sell your digital goods? Sign up with us and we'll help you distribute your products to a wide audience. your products to a wide audience.</p>
+                            <p>
+                                <img src="../../assets/images/gig.png" class="img-fluid img-circle" style="border-radius:50px;width:45px;height:45px;">&nbsp;<span>Samir, Loot 66</span>
+                            </p>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div><br><br><br>
+
+
+    <!-- earn -->
+
+    <div class="w-control">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="earn1">
+                        <h1>Earn With Us</h1>
+                        <h3>Ever wanted to sell your digital goods? Sign up with us and we'll help you distribute<br> your products to a wide audience. Get started earning money today!</h3>
+                    </div>
+
+                </div>
+            </div><br><br>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xs-12">
+                    <div class="ready">
+                        <img src="../assets/icons/hompage_shop_icon.png" width="55px" height="40px">
+                        <p>Open your shop and reach millions of buyers</p>
+                        <button routerLink="/become-an-author" class="btn btn-primary">READY TO START?BECOME AN AUTHOR TODAY!</button>
+                    </div>
+                </div>
+            </div>
+        </div><br><br><br>
+        <div class="container">
+            <div class="row numbers">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="number">
+                        <img src="../../assets/img/ff-book.png"> <span>7,000+</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="number">
+                        <img src="../../assets/img/ff-heart.png"> <span>7,000+</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <div class="number">
+                        <img src="../../assets/img/ff-tick.png"> <span>7,000+</span>
+                    </div>
+                </div>
+            </div>
+        </div><br><br><br>
+
+
+        <!-- topics -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-xs-12" style="text-align:center">
+                    <div class="topics-text"><br>
+                        <h1>Explore Popular Topics</h1>
+                        <div class="li-div">
+                            <li>Audio</li>
+                            <li>Business Development</li>
+                            <li>Code</li>
+                            <li>Elements</li>
+                            <li>Euro Tour</li>
+                            <li>Featured Authors</li>
+                            <li>Graphics</li>
+                        </div>
+
+                        <div class="li-div1">
+                            <li>Photography</li>
+                            <li>Themes & Templates</li>
+                            <li>Video</li>
+                            <li>Wordpress</li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <app-footer></app-footer>
+</body>

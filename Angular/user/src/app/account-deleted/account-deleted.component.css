@@ -1,0 +1,97 @@
+.acc-deleted-div {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    /* margin-top: 11vh; */
+    align-items: center;
+    -webit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    width: 100%;
+    height: 400px !important;
+    overflow: hidden;
+    background-color: #F0F0F0;
+}
+
+h2 {
+    position: relative;
+    display: block;
+    font-size: 300%;
+    margin: 0 !important;
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Extra Small Devices, .visible-xs-* */
+
+@media (max-width: 767px) {
+    .acc-deleted-div {
+        position: relative;
+        display: flex;
+        display: -webkit-flex;
+        margin-top: 0vh;
+        align-items: center;
+        -webit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        width: 100%;
+        height: 400px !important;
+        overflow: hidden;
+        background-color: #F0F0F0;
+    }
+    h2 {
+        position: relative;
+        display: block;
+        font-size: 200%;
+        width: 60%;
+        text-align: center;
+        word-wrap: break-word;
+        white-space: normal;
+        margin: 0 !important;
+        font-weight: bold;
+        color: #333;
+    }
+}
+
+
+/* Small Devices, .visible-sm-* */
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .acc-deleted-div {
+        margin-top: 0vh;
+    }
+}
+
+
+/* Medium Devices, .visible-md-* */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .acc-deleted-div {
+        position: relative;
+        display: flex;
+        display: -webkit-flex;
+        margin-top: 0vh;
+        align-items: center;
+        -webit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        width: 100%;
+        height: 400px !important;
+        overflow: hidden;
+        background-color: #F0F0F0;
+    }
+    h2 {
+        position: relative;
+        display: block;
+        font-size: 300%;
+        margin: 0 !important;
+        font-weight: bold;
+        color: #333;
+    }
+}
+
+
+/* Large Devices, .visible-lg-* */
+
+@media (min-width: 1200px) {}

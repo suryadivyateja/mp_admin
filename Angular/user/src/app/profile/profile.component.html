@@ -1,0 +1,79 @@
+<div class="w-control">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9 col-xs-12">
+                <div class="r-f-div">
+                    <h3 class="p-need headings">
+                        Profile Details
+                    </h3>
+                    <hr class="top-hr">
+                    <div class="p-need profile-photo-div">
+                        <!-- <div class="p-p-div-title">
+            <h4>
+              PROFILE PHOTO
+            </h4>
+        </div> -->
+                        <form method="POST" action="" enctype="multipart/form-data">
+                            <div class="p-p-div-pic">
+                                <img src={{user_img}} id="change-p-p">
+                                <label style="font-size:80%;color:#999;" class="custom-p-p" for="c-p-p">CHOOSE PHOTO</label>
+                                <input type="file" value="CHOOSE PHOTO" id="c-p-p" name="c-p-p" (change)="fileChange($event)" accept=".jpg,.png"><br>
+
+                                <p id="prf-p">Upload a professional photograph that clearly shows your face</p><br>
+                            </div>
+                            <div class="name-div p-need profile-inputs">
+                                <div class="p-l-f-div">
+                                    <span class="p-f-titles">
+                                        First Name*
+                                    </span>
+                                    <br>
+                                    <input type="text" id="u-f-name" name="u-f-name" value="" [(ngModel)]="user_name">
+                                </div>
+                                <div class="p-r-f-div">
+                                    <span class="p-f-titles">
+                                        Last Name*
+                                    </span>
+                                    <br>
+                                    <input type="text" id="u-l-name" name="u-l-name" value="" [(ngModel)]="user_last_name">
+                                </div>
+                            </div>
+
+                            <div class="name-div p-need">
+
+                                <span class="p-f-titles">
+                Email Address*
+              </span>
+                                <br>
+                                <input type="text" id="u-e-name" name="u-e-name" value="" [(ngModel)]="user_email">
+
+                            </div>
+
+                            <div class="name-div p-need">
+                                <span class="p-f-titles">Country*</span><br>
+                                <input type="text" id="u-skills" name="u-skills" value="" [(ngModel)]="user_country">
+                            </div>
+
+                            <div class="name-div p-need">
+                                <span class="p-f-titles">Designation*</span><br>
+                                <input type="text" id="u-desig" name="u-des" value="" [(ngModel)]="user_designation">
+                            </div><br>
+
+
+                            <div class="p-need" id="text-p">
+                                <h4 id="s-ab-you-title">SOMETHING ABOUT YOU (English)<br>(150-300 characters)</h4>
+                                <textarea style="float:right;left:50%;transform:translate(100%,0)" id="s-ab-you" name="s-ab-you" style="resize:none" maxlength="300" [(ngModel)]="user_description"></textarea>
+                                <div class="clear-both"></div>
+
+                            </div>
+                            <span style="float:right" class="char-count"><span id="char-now"></span>/300 MAX</span><br>
+
+                            <div class="save-btn-area">
+                                <input type="submit" class="save-button" value="Save Settings" (click)="saveUser()">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

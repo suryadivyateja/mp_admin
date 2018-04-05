@@ -1,0 +1,63 @@
+<div class="w-control">
+
+        
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-9 col-md-9 col-xs-12">
+                <div class="r-f-div">
+                    <h3 class="p-need headings">Account</h3>
+                    <hr class="top-hr">
+                    <div class="name-div p-need">
+                        <div class="p-l-f-div col-lg-6 col-xs-12">
+                            <h4 id="close-act-title">Close Account</h4>
+                        </div>
+                        <div class="p-r-f-div close-acc-div col-lg-6 col-xs-12">
+                            <p class="bold">
+                                What happens when you deactivate your account?
+                            </p>
+                            <ul>
+                                <li>Your profile and gigs won't be shown on Fiverr anymore</li>
+                                <li>Any open orders will be cancelled and refunded</li>
+                                <li>You won't be able to re-activate you gigs</li>
+                            </ul>
+                            <p id="withdraw-revenues" class="bold">
+                                Please <a routerLink='/withdrawals'>withdraw your revenues</a> before you deactivate yor account.
+                            </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="why-leave"> 
+                        <p>Why are you leaving?</p>&nbsp;
+
+                        <select style="left:50%;transform:translate(17%,0);width:50%;border-radius:3px" name="y-leaving" [(ngModel)]="UserReason">
+                      <option selected="true" disabled="disabled">Choose a reason</option>
+                      <option value="I no longer need this service">I no longer need this</option>
+                      <option value="Not happy with services">Not happy with services</option>
+                      <option value="I do not understand Market Place">I do not understand Market Place</option>
+                    </select>
+                    </div><br>
+                    <div class="pswd-text1">
+                        <button class="bnt btn-primary" (click)="open_pop('open')">Delete Account</button><br>
+                    </div><br><br>
+                </div>
+
+                <!-- <div class="custom-order-div-back">
+                         <div class="confirm-order">
+                             <div class="custom-order-req">
+                                 <i class="fa fa-times" id="custom-order-close-btn" aria-hidden="true" (click)='closeCustOrder()'></i>
+                             </div>
+                             <div class="confirm-order-text">
+                                <p class="req-confirm-text">Are you sure you want to delete your account ?</p>
+                 
+                                <button class="btn btn-default yes" (click)=" saveUser()">Yes</button>
+                                <button class="btn btn-default cancel" (click)="open_pop('close')">Cancel</button>
+                             </div>
+                             <div class="confirm-submit-div">
+                             </div>
+                        </div>
+                </div> -->
+            </div>
+        </div><br>
+    </div>
+</div>

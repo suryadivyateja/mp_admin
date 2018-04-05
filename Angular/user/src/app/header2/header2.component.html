@@ -1,0 +1,274 @@
+<div *ngIf="!authService.loggedIn()">
+    <header style="background:transparent" class="main-header1 visible-md visible-lg">
+        <div class="header-control w-control">
+            <a routerLink='/home'>
+                <img src="../assets/../assets/images/m_logo.png" alt="" class="logo-img">
+            </a>
+            <ul class="horizantal-ul left-float-ul list-unstyled">
+                <li class="dropdown mega-dropdown">
+                    <button style="color:white" class="dropbtn" id="main-cat-btn">
+            <i class="fa fa-bars cat-fa" aria-hidden="true"></i> &nbsp; &nbsp;<span id="cat">FIND AN AUTHOR </span></button>
+                    <ul class="dropdown-menu mega-dropdown-menu">
+                        <div class="row div-style">
+                            <div class="col-lg-4 col-md-4 col-xs-4">
+                                <div class="back">
+                                    <div class="mega" >
+                                        <h6>Categories</h6>
+                                        <div *ngFor="let c of categories">
+                                        <li id="id1">{{c.category_name}}
+                                            <div class="hover-div">
+                                                <div class="hover-flex">
+                                                   
+                                                        <ul>
+                                                          <li>{{c.sub_category}}</li>
+                                                          
+                                                        </ul>
+                                                           
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <!-- <li id="id2">Cover Letters</li>
+                                        <li id="id3">LinkedIn Makeover</li>
+                                        <li id="id4">Selection Criteria</li>
+                                        <li id="id4">CEO & Executives</li>
+                                        <li id="id4">Government & Defence</li> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="col-lg-8 col-md-8 col-xs-8">
+                                <div class="white">
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </ul>
+                </li>
+                <li routerLink='/how-it-works'>
+                    <input style="color:white" type="button" class="main-nav-btns" id="how-it-works-btn" value="HOW IT WORKS">
+                </li>
+                <li routerLink='/become-an-author'>
+                    <input style="color:white" type="button" class="main-nav-btns" id="become-an-author-btn" value="BECOME AN AUTHOR">
+                </li>
+            </ul>
+            <ul class="horizantal-ul right-float-ul list-unstyled header-main-li">
+                <li>
+                    <input style="color:white" type="button" class="main-nav-btns" id="main-register-btn" (click)="app.showBackLogin(true)" value="LOGIN">
+                </li>
+                <li id="sign-in-li">
+                    <input style="color:white" type="button" class="main-nav-btns" id="sign-in-btn" (click)="app.showBackSignUp(true)"  value="SIGN UP">
+                </li>
+            </ul>
+        </div>
+    </header>
+</div>
+
+<!-- When Logged in -->
+<div *ngIf="authService.loggedIn() == true">
+    <div class="loggedin">
+        <header id="header-back" class="main-header visible-md visible-lg main-header1">
+            <div class="header-control w-control">
+                <a routerLink='/home'>
+                    <img src="../assets/../assets/images/m_logo.png" alt="" class="logo-img">
+                </a>
+                <ul class="horizantal-ul right-float-ul list-unstyled" id="right-nav">
+                    <li id="bar" routerLink="/create-gig" class="post-job">Post a job &nbsp; <i class="fa fa-plus-circle"></i></li>
+                    <li class="mail dropdown mail-one" id="bar">
+                        <img class="mail-img" src="../assets/icons/header-icons/003_messages_notifications.png">
+                        <div class="notify">
+                            <p class="mail-div-p">{{app.inb_num}}</p>
+                        </div>
+                        <ul class="mail-div1 dropdown-menu" id="not_down">
+                            <div *ngIf="app.inb_num !== 0" class="msg-core" id="style-2">
+                                <div *ngFor="let msg of app.inb_msg">
+                                    <div class="li-div">
+                                        <li class="noty-display">
+                                            <img src="{{msg.profile_pic}}" class="img-fluid" alt="img">
+                                            <div class="noty-text">
+                                            <p class="noty-p">{{msg.msg}}</p>
+                                            <p class="noty-p1">{{msg.time}}</p>
+                                           </div>
+                                           <div>
+                                            <i id="noty-icon-mail" class="fa fa-heart-o"></i>
+                                           </div>
+                                        </li>
+                                    </div>
+                                </div>
+                            </div>
+                            <div routerLink='/inbox' class="view-noty-back">
+                                <li class="view-noty">View All Messages</li>
+                            </div>
+                        </ul>
+                         <!-- when no mails -->
+                         <ul class="empty-mail-div1 dropdown-menu" id="not_down">
+                             <div *ngIf="app.inb_num === 0">
+                                 <div class="empty-noty-li-div">
+                                     <li class="noty-display-none">
+                                         <img src="../assets/icons/header-icons/003_messages_notifications.png">
+                                     </li>
+                                     <p class="no-mail-p">Once you start a new conversation, you will see it listed here.</p>
+                                 </div><br><br>
+                                 <div routerLink='/inbox' class="view-noty-back">
+                                     <li class="view-noty">View All Notifications</li>
+                                 </div>
+                             </div>
+                        </ul>
+                        <!-- when no mails end -->
+                    </li>
+
+                    <li id="bar" class="dropdown bell1">
+                        <span (click)="app.go_to_not()">
+                            <img class="bell-img" src="../assets/icons/header-icons/003_notifications-button.png">
+                            <!-- <i class="fa fa-bell" aria-hidden="true" id="bell-img"></i> -->
+                        </span>
+                        <div class="notify">
+                            <p class="mail-div-p">{{app.unread_num}}</p>
+                        </div>
+                        <!-- <span *ngIf="app.unread_num !== 0"> -->
+                            <ul class="noty-div dropdown-menu" id="not_down">
+                                <div *ngIf="app.unread_num !== 0">
+                                    <div *ngFor="let not of app.f_not_num">
+                                        <div class="li-div" (click)="app.goto_order_det(not.dest,not.link,not.not_id)">
+                                            <li class="noty-display">
+                                                <img src="{{not.image}}" class="img-fluid" alt="img">&nbsp;&nbsp;
+                                                <div class="noty-text">
+                                                  <p class="noty-p">{{not.message}}...</p>
+                                                  <p class="noty-p1">{{not.date}}</p>
+                                                </div>
+                                                <div>
+                                                <i id="noty-icon-mail" class="fa fa-heart-o"></i>
+                                                </div>
+                                            </li>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div routerLink='/notifications' class="view-noty-back">
+                                    <li class="view-noty">View All Notifications</li>
+                                </div>
+                            </ul>
+                        <!-- </span> -->
+
+                        <!-- when no notifications -->
+                        <ul class="empty-noty-div dropdown-menu" id="not_down">
+                            <div *ngIf="app.unread_num === 0">
+                                <div class="empty-noty-li-div">
+                                    <li class="noty-display-none">
+                                        <img src="../assets/icons/header-icons/003_notifications-button.png">
+                                    </li>
+                                    <p class="no-noty-p">All cleaned up, you've no notifications!</p>
+                                </div><br><br>
+                                <div routerLink='/notifications' class="view-noty-back">
+                                    <li class="view-noty">View All Notifications</li>
+                                </div>
+                            </div>
+                        </ul>
+                        <!-- when no notifications end -->
+                    </li>
+                    <!-- <li class="border1"><span>|</span></li> -->
+                    <li id="bar" class="dropdown profile-img">
+                        <img src={{app.profile_pic}} class="img-fluid img-circle imgg" alt="img"> &nbsp;<span style="color:rgb(243, 237, 237);font-size:80%" id="head-name">{{app.name}}</span>
+
+
+                        <ul class="navbar-stacked dropdown-menu">
+                            <li class="hover-profile" routerLink='/dashboard'><a class="cat-btns b-all-btn"> <div class="hover-dashboard-back"></div>
+                                &nbsp;Dashboard</a></li><br>
+                            <li class="hover-profile" (click)="goto_seller()"><a class="cat-btns b-all-btn">
+                                    <div class="hover-profile-back"></div> 
+                                    &nbsp;Profile</a></li><br>
+                            <li class="hover-profile" routerLink="/settings/profile"><a class="cat-btns b-all-btn">
+                                    <div class="hover-settings-back"></div> 
+                                    &nbsp;Settings</a></li><br>
+                            <li class="hover-profile" routerLink="/favorites"><a class="cat-btns b-all-btn">
+                                    <div class="hover-fav-back"></div>
+                                    &nbsp;Favorites</a></li><br>
+                            <li class="hover-profile" routerLink="/manage-orders"><a class="cat-btns b-all-btn">
+                                    <div class="hover-order-back"></div> 
+                                    &nbsp;Manage Orders</a></li>
+                            <hr>
+                            <li>
+                                <h6 class="cat-btns b-all-btn">Author Settings</h6>
+                            </li><br>
+                            <li class="hover-profile" routerLink="/create-gig"><a class="cat-btns b-all-btn">
+                                    <div class="hover-gig-back"></div>
+                                    &nbsp;Create New Gig</a></li><br>
+                            <li class="hover-profile"><a class="cat-btns b-all-btn">
+                                    <div class="hover-earning-back"></div>
+                                    &nbsp;Earnings</a></li><br>
+                            <li class="hover-profile" routerLink="/manage-sales"><a class="cat-btns b-all-btn">
+                                    <div class="hover-sales-back"></div>
+                                    &nbsp;Manage Sales</a></li><br>
+                            <li class="hover-profile"><a class="cat-btns b-all-btn">
+                                    <div class="hover-help-back"></div>
+                                    &nbsp;Help</a></li>
+                                    <hr>
+                            <li class="logout-li" (click)='app.Logout()'><a class="cat-btns b-all-btn">
+                                    <div class="hover-logout-back"></div>
+                                    &nbsp;Logout</a></li><br>
+                        </ul>
+
+
+                    </li>
+
+                    <li id="dash-b1" class="th1" (click)='displayDiamondDashboard()'>
+                        <i id="th" class="fa fa-th" aria-hidden="true" id="dash"></i>
+                    </li>
+
+                </ul>
+            </div>
+        </header>
+    </div> <br><br>
+</div>
+<!-- diamond dashboard -->
+<div class="diamond-container">
+    <div class="back-tra">
+        <div class="diamond-div">
+            <div class="diamond-top">
+                <h1>navigation</h1>
+                <i class="fa fa-times" id="dash-times"></i>
+            </div>
+
+            <div class="diamond-mid">
+                <div class="dash-div" routerLink="/dashboard">
+                    <div class="dash-div1">
+                        <i class="fa fa-home"></i>
+                        <p>Dashboard</p>
+                    </div>
+                </div>
+                <div class="dash-div" routerLink="/settings/profile">
+                    <div class="dash-div1">
+                        <i class="fa fa-user"></i>
+                        <p>Profile</p>
+                    </div>
+                </div>
+                <div class="dash-div" routerLink="/inbox">
+                    <div class="dash-div1">
+                        <i class="fa fa-envelope"></i>
+                        <p>Mailbox</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="diamond-mid">
+                <div class="dash-div" routerLink="/manage-orders">
+                    <div class="dash-div1">
+                        <i class="fa fa-bars"></i>
+                        <p>Tasks</p>
+                    </div>
+                </div>
+                <div class="dash-div" routerLink="/settings/account">
+                    <div class="dash-div1">
+                        <i class="fa fa-cog"></i>
+                        <p>Settings</p>
+                    </div>
+                </div>
+                <div class="dash-div">
+                    <div class="dash-div1">
+                        <i class="fa fa-calendar"></i>
+                        <p>Calendar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

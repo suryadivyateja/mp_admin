@@ -1,0 +1,50 @@
+<div class="w-control">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-9 col-md-9 col-xs-12">
+                <div class="r-f-div">
+                    <h3 class="p-need headings">Email Notifications</h3>
+
+                    <div class="p-need" (keyup.enter)="update_email($event)">
+
+
+                        <table id="notif-table">
+                            <tr class="h" id="head-td">
+                                <td>Email Notifications</td>
+                                <td id="no-resp-td">Creative Market Emails</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Recieve Email notificatins when : </p>
+                                    <ul class="ul1">
+                                        <label><li class="r"><input type="checkbox" value="a" (change)="handleChange($event)" [checked]='a'><span class="check-desc">Someone follows you</span></li></label>
+                                        <label><li class="r"><input type="checkbox" value="b" (change)="handleChange($event)"  [checked]='b'><span class="check-desc">Someone follows you</span></li></label>
+                                        <label><li class="r"><input type="checkbox" value="c" (change)="handleChange($event)"  [checked]='c'><span class="check-desc">Someone follows you</span></li></label>
+                                        <label><li class="r"><input type="checkbox" value="d" (change)="handleChange($event)"  [checked]='d'><span class="check-desc">Someone follows you</span></li></label>
+                                        <label><li class="r"><input type="checkbox" value="e" (change)="handleChange($event)"  [checked]='e'><span class="check-desc">Someone follows you</span></li></label>
+                                    </ul>
+                                </td>
+                                <td id="resp-td">Creative Market Emails</td>
+                                <td>
+                                    <p>Get curated list of : </p>
+                                    <ul>
+                                        <label><li class="r"><input type="checkbox" value="f" (change)="handleChange($event)" [checked]='f'><span class="check-desc" >Someone follows you</span></li></label>
+                                        <label><li class="r"><input type="checkbox" value="g" (change)="handleChange($event)" [checked]='g'><span class="check-desc" >Someone follows you</span></li></label>
+                                        <label><li class="r"><input type="checkbox" value="h" (change)="handleChange($event)" [checked]='h'><span class="check-desc" >Someone follows you</span></li></label>
+                                        <label><li class="r"><input type="checkbox" value="i" (change)="handleChange($event)" [checked]='i'><span class="check-desc" >Someone follows you</span></li></label>
+                                        <label><li class="r"><input type="checkbox" value="j" (change)="handleChange($event)" [checked]='j'><span class="check-desc" >Someone follows you</span></li></label>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div><br>
+
+                    <div class="save-btn-area">
+                        <button class="bnt btn-primary" (click)="saveUser()">Save Settings</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

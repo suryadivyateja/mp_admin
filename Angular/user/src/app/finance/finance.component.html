@@ -1,0 +1,74 @@
+<div class="w-control">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-9 col-md-9 col-xs-12">
+                <div class="pswd-div">
+                <div class="pswd-text">
+                    <div class="pswd-text2">
+                        <h2>Payments & Financials</h2>
+                    </div>
+                </div><br>
+
+
+                <div class="pswd-text1">
+                    <h3>Payments Methods</h3>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                            <img src="../../assets/images/paypal-logo.png" class="img-fluid" width="100px" height="30px">&nbsp;
+                            <span>abc@outlook.com</span>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-xs-6">
+                            <div style="left:-50%;transform:translate(-200%,0);float:right">
+                                <i class="fa fa-check-circle"></i><span>VERIFIED</span></div>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="update-pay">
+                        <h3>Update Paypal Details</h3>
+                        <p>In order to earn money, you'll need to set up your payment account. Please enter your paypal email address.</p>
+
+                        <div class="paypal-id">
+                            <p>PAYPAL ID (EMAIL ADDRESS):</p>
+                            <div class="form-group">
+                                <input type="text" class="form-control" [(ngModel)]="pay_palEmail">
+                            </div>
+                        </div>
+                        <!-- <div style="display:flex">
+                  <p>PAYPAL ID(EMAIL ADDRESS):</p>&nbsp;&nbsp;
+                  <div class="form-group">
+                    <input type="text" class="form-control" [(ngModel)]="pay_palEmail">
+                  </div>
+                </div> -->
+
+                    </div>
+
+                    <div class="imp-div">
+                        <span class="imp-text">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;&nbsp;IMPORTANT !
+                </span>
+                        <p>
+                            We will not be able to recover funds sent to the wrong address, please make sure the information you enter is correct.
+                        </p>
+                    </div>
+
+                    <input type="checkbox" id="i-agree" name="i-agree" value="agree" (change)="handleChange($event)">
+                    <label for="i-agree" class="i-agree-label">
+          <span>I UNDERSTAND AND AGREE.</span>
+        </label>
+
+
+                </div><br>
+
+                <div class="pswd-text1">
+                    <button class="bnt btn-primary">Save Settings</button>
+                </div><br>
+
+            </div>
+            </div>
+        </div><br>
+
+
+    </div>
+</div>

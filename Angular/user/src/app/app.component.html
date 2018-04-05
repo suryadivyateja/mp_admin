@@ -1,0 +1,747 @@
+<div *ngIf='showDarkBack'>
+    <div id="dark-back">
+        <i class="fa fa-times close-mark" aria-hidden="true" (click)="closeShowBack(true)"></i>
+        <h2 id="db-main-head">Market place</h2>
+        <h3 id="db-main-caption">Universal access to the world's best market place</h3>
+        <div class="dark-core">
+            <div class="dark-index">
+                <ul id="dark-ul">
+                    <li id="login-trig-btn" (click)='showBackLogin(true)'>LOG IN</li>
+                    <li id="signup-trig-btn" (click)='showBackSignUp(true)'>SIGN UP</li>
+                </ul>
+            </div>
+            <div class="container-fluid" style="background-color:#EAEAEA;height:85%;border-radius: 3px;display:block">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-xs-12">
+                        <div style="width:300px;height:110%;top:-50%;transform:translate(0,-5%);background-color:white;border-radius: 3px;z-index:1000;">
+                            <!-- login -->
+                            <div *ngIf='showLogin'>
+                                <div class="login-div" (keyup.enter)="activate_enter($event)">
+                                    <div class="l-t-icon"></div>
+                                    <h3 id="login-head">Login to Cvhatch</h3>
+                                    <input type="email" id="d-login-email" placeholder="Email" [(ngModel)]="loginEmail">
+                                    <span class="err" id="login-email-err" style="color:red"></span>
+                                    <input type="password" id="d-login-pwd" name="name" placeholder="Password" [(ngModel)]="loginPassword">
+                                    <a id="forgot-pad-btn" (click)="showFp(true)">Forgot?</a>
+                                    <p class="err" id="login-err" style="color:red"></p>
+                                    <button id="login-submit-btn" (click)="LoginSubmit(loginEmailInput,loginPasswordInput)">LOGIN</button>
+                                    <h5 style="font-size:90%" class="nor">OR</h5>
+                                    <div class="social-icons">
+                                        <h5 style="font-size:80%;color:#999">Sign up with</h5>
+
+                                        <ul>
+                                            <li class="facebook-icon" style="float:left;padding:7px 10px">
+                                                <i class="fa fa-facebook"></i>
+                                            </li>
+
+                                            <!-- <li class="google-icon" style="float:left;padding:7px 10px">
+                                                <i class="fa fa-google" (click)="googleLogin()"></i>
+                                            </li> -->
+
+                                            <li class="linkedin-icon" style="float:left;padding:7px 10px">
+                                                <i class="fa fa-linkedin"></i>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+
+                                    <div class="join-now">
+                                        <hr>
+                                        <p>Not a member yet?
+                                            <span class="join-now"  (click)='showBackSignUp(true)'>Join now</span>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- register -->
+                            <div *ngIf='showSignUp'>
+                                <div class="signup-div"  (keyup.enter)="activate_signup($event)">
+                                    <div class="l-t-icon"></div>
+                                    <h3 id="signup-head">Join Cvhatch
+                                        </h3>
+                                    <br>
+                                    <span class="input-display">
+                    <input type="text" class="input2" id="d-signup-f-name" placeholder="Full Name" [(ngModel)]="regName">
+                    <input type="text" class="input2" id="d-signup-l-name" placeholder="Last Name" [(ngModel)]="regLastName">
+                  </span>
+
+                                    <input type="text" class="input1" id="d-signup-email" placeholder="Email" [(ngModel)]="regEmail">
+
+                                    <input type="password" class="input1" name="name" id="d-signup-pwd" placeholder="Password" [(ngModel)]="regPassword">
+
+                                    <span class="form-err signup-err" id="serr"></span>
+
+                                    <button id="signup-submit-btn" (click)="SignUp()">SIGN UP</button>
+                                    <h5 class="nor">OR</h5>
+                                    <div class="social-icons">
+                                        <h5 style="font-size:80%;color:#999">Sign up with</h5>
+
+                                        <ul>
+                                            <li class="facebook-icon">
+                                                <i class="fa fa-facebook"></i>
+                                            </li>
+
+                                            <!-- <li class="google-icon" style="float:left;padding:7px 10px">
+                                                <i class="fa fa-google"></i>
+                                            </li> -->
+
+                                            <li class="linkedin-icon">
+                                                <i class="fa fa-linkedin"></i>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                    <br>
+
+                                    <p style="font-size:70%;text-align:justify;left:50%;transform:translate(10%,0)">By signing up you agree to our
+                                        <a href="/privacy-policy">privacy policy</a>
+                                        <br> and
+                                        <a href="/terms">terms of use</a>
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- forgot password -->
+
+
+                            <div *ngIf='showFpDiv'>
+                                <div class="fp-div">
+                                    <div class="l-t-icon">
+                                    </div>
+                                    <h3 id="fp-head">FORGOT PASSWORD</h3>
+                                    <h4 id="fp-p">We will send you instructions on how to reset your password by email.
+                                        </h4>
+                                    <input type="email" id="d-fp-email" placeholder="yourname@company.com
+                                    " [(ngModel)]="forgot_email">
+                                    <!-- <p class="form-err" id="prop-email-f-er">*Proper Email is required.</p>
+      <p class="form-err" id="not-email-f-er">*That email is not registered with us.</p> -->
+                                    <button id="fp-send-btn" (click)='showSentfp(true)'>SEND</button>
+                                    <a class="back-to-login" (click)='showBackLogin(true)'>Back to Login</a>
+                                    <br>
+                                    <br>
+                                </div>
+                            </div>
+                            <div *ngIf='showFpSent'>
+                                <div class="text-p">
+                                        <p style="color:green;font-size:80%;padding:10px;
+            white-space:normal;text-align:justify;">
+            Thank you! Please check your inbox for verification email from cvhatch.
+                                        </p>
+                                    </div>
+                            </div>
+                                    
+                            <div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8 col-md-8 col-xs-12">
+                        <br>
+                        <div class="dark-side">
+                            <div class="dark-icos">
+                                <img src="../../assets/icons/trustworthy_writers.png" class="dbimgs">
+                                <div class="dbico-core">
+                                    <br>
+                                    <h2 class="dbico-htwo">
+                                            Trustworthy Writers
+                                    </h2>
+                                    <p class="dbico-p">
+                                            You can read their reviews and policies, and chat in real-time with any questions.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="dark-icos">
+                                <img src="../assets/icons/secure_shopping.png" class="dbimgs">
+                                <div class="dbico-core">
+                                    <br>
+                                    <h2 class="dbico-htwo">
+                                            Secure shopping
+                                    </h2>
+                                    <p class="dbico-p">
+                                            We use best-in-class technology to protect your transactions for both clients & writers.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="dark-icos">
+                                <img src="../assets/icons/purchase_protection.png" class="dbimgs">
+                                <div class="dbico-core">
+                                    <br>
+                                    <h2 class="dbico-htwo">
+                                            Purchase protection
+                                    </h2>
+                                    <p class="dbico-p">
+                                            If anything goes wrong, our global support team has got your back.
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- <div class="dark-icos">
+                                <img src="../assets/img/dbfour.jpg" class="dbimgs">
+                                <div class="dbico-core">
+                                    <br>
+                                    <h2 class="dbico-htwo">
+                                        100% SECURED PAYMENT GATEWAY
+                                    </h2>
+                                    <p class="dbico-p">
+                                        We are fairly small, flexible design studio that designs for print and web. We work flexibly with clients.
+                                    </p>
+                                </div>
+                            </div> -->
+                            <br>
+
+
+                            <div class="dark-icos">
+                                
+                                <div class="dbico-core-help"> 
+                                   
+                                      <div class="phone-icon">
+                                        <i class="fa fa-question-circle-o"></i>
+                                     </div>
+                                     <div class="dbico-htwo1">
+                                             Need help? Visit the <a href="#">help center</a>
+                                     </div>
+                                    
+                                   
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div>
+                <!-- <div class="dark-side">
+          <div class="dark-icos">
+            <img src="../../assets/images/dbone.jpg" class="dbimgs">
+            <div class="dbico-core"><br>
+              <h2 class="dbico-htwo">
+                30 DAYS MONEY BACK GUARANTEE
+              </h2>
+              <p class="dbico-p">
+                We are fairly small, flexible design studio that  designs for print and web. We work flexibly with clients.
+              </p>
+            </div>
+          </div>
+          <div class="dark-icos">
+            <img src="../assets/img/dbtwo.jpg" class="dbimgs">
+            <div class="dbico-core">
+              <h2 class="dbico-htwo">
+                NEW ITEMS ARE INCLUDED IN SAME SUBSCRIPTIONS
+              </h2>
+              <p class="dbico-p">
+                We are fairly small, flexible design studio that  designs for print and web. We work flexibly with clients.
+              </p>
+            </div>
+          </div>
+          <div class="dark-icos">
+            <img src="../assets/img/dbthree.jpg" class="dbimgs">
+            <div class="dbico-core"><br>
+              <h2 class="dbico-htwo">
+                24/7 DEDICATED CUSTOMER SUPPORT
+              </h2>
+              <p class="dbico-p">
+                We are fairly small, flexible design studio that  designs for print and web. We work flexibly with clients.
+              </p>
+            </div>
+          </div>
+          <div class="dark-icos">
+            <img src="../assets/img/dbfour.jpg" class="dbimgs">
+            <div class="dbico-core"><br>
+              <h2 class="dbico-htwo">
+                100% SECURED PAYMENT GATEWAY
+              </h2>
+              <p class="dbico-p">
+                We are fairly small, flexible design studio that  designs for print and web. We work flexibly with clients.
+              </p>
+            </div>
+          </div>
+
+
+
+
+
+          <div loop>
+
+
+            <div style="display:none" class="login-div">
+                <div class="l-t-icon">
+          
+                </div>
+                <h3 id="login-head">LOGIN TO RESTORED</h3>
+                <input type="email" id="d-login-email" placeholder="Email">
+                <span class="err" id="login-email-err"style="color:red"></span>
+                <input type="password" id="d-login-pwd" name="name" placeholder="Password">
+                <a id="forgot-pad-btn" (click)="showFp(true)">Forgot?</a>
+                <p class="err" id="login-err"style="color:red"></p>
+                <button id="login-submit-btn" (click)="LoginSubmit(loginEmailInput,loginPasswordInput)">LOGIN</button>
+                <h5 style="font-size:90%" class="nor">OR</h5>
+  
+                
+                <div class="social-icons">
+                  <h5 style="font-size:80%;color:#999">Sign in with</h5>
+                  
+                  <ul>
+                    <li class="facebook-icon" style="float:left;padding:7px 10px"><i class="fa fa-facebook"></i></li>
+                    <li class="google-icon" style="float:left;padding:7px 10px"><i class="fa fa-google"></i></li>
+                    <li class="linkedin-icon" style="float:left;padding:7px 10px"><i class="fa fa-linkedin"></i></li>
+                  </ul>
+                 
+                </div>
+  
+                <div class="join-now">
+                  <hr>
+                  <p>Not a member yet? <span style="color:green">Join now</span></p>
+                </div>
+                
+              </div>
+        </div> 
+
+
+
+
+
+
+
+
+
+
+
+        </div> -->
+
+
+
+                <!-- login page uncomment -->
+
+
+                <!-- <div loop>
+
+
+          <div style="display:none" class="login-div">
+              <div class="l-t-icon">
+        
+              </div>
+              <h3 id="login-head">LOGIN TO RESTORED</h3>
+              <input type="email" id="d-login-email" placeholder="Email">
+              <span class="err" id="login-email-err"style="color:red"></span>
+              <input type="password" id="d-login-pwd" name="name" placeholder="Password">
+              <a id="forgot-pad-btn" (click)="showFp(true)">Forgot?</a>
+              <p class="err" id="login-err"style="color:red"></p>
+              <button id="login-submit-btn" (click)="LoginSubmit(loginEmailInput,loginPasswordInput)">LOGIN</button>
+              <h5 style="font-size:90%" class="nor">OR</h5>
+
+              
+              <div class="social-icons">
+                <h5 style="font-size:80%;color:#999">Sign in with</h5>
+                
+                <ul>
+                  <li class="facebook-icon" style="float:left;padding:7px 10px"><i class="fa fa-facebook"></i></li>
+                  <li class="google-icon" style="float:left;padding:7px 10px"><i class="fa fa-google"></i></li>
+                  <li class="linkedin-icon" style="float:left;padding:7px 10px"><i class="fa fa-linkedin"></i></li>
+                </ul>
+               
+              </div>
+
+              <div class="join-now">
+                <hr>
+                <p>Not a member yet? <span style="color:green">Join now</span></p>
+              </div>
+              
+            </div>
+      </div>  -->
+
+
+
+
+                <!-- <div>
+          
+          <div class="signup-div">
+            <div class="l-t-icon">
+      
+            </div>
+            <h3 id="signup-head">CREATE YOUR ACCOUNT</h3>
+            <button type="button" class="btn btn-lg btn-toggle" data-toggle="button" aria-pressed="false" autocomplete="off">
+                <div class="handle"></div>
+              </button>
+
+
+
+            <table id="db-radio-table">
+              <tr style="background-color:#00C7E4;border-radius:5px;">
+                <td>
+                  <input type="radio" id="client-char" name="char" value="client">
+                </td>
+                <td>
+                  <label for="client-char">Client</label>
+                </td>
+                <td>
+                  <input type="radio" id="author-char" name="char" value="author">
+                </td>
+                <td>
+                  <label  for="author-char">Author</label>
+                </td>
+              </tr>
+            </table>
+            
+              <input type="text" id="d-signup-f-name" placeholder="Full Name">
+              
+            
+            
+             <input type="text" id="d-signup-email" placeholder="Email">
+            <input type="password" name="name" id="d-signup-pwd" placeholder="Password">
+            
+            <span class="form-err signup-err" id="serr"></span> 
+
+            <button id="signup-submit-btn" (click)="SignUp()">SIGN UP</button>
+
+
+            <h5 class="nor">OR</h5>
+
+
+            <div class="social-icons">
+                <h5 style="font-size:80%;color:#999">Sign in with</h5>
+                
+                <ul style="float:right">
+                  <li class="facebook-icon" style="float:left;padding:7px 10px"><i class="fa fa-facebook"></i></li>
+                  <li class="google-icon" style="float:left;padding:7px 10px"><i class="fa fa-google"></i></li>
+                  <li class="linkedin-icon" style="float:left;padding:7px 10px"><i class="fa fa-linkedin"></i></li>
+                </ul>
+               
+              </div><br>
+
+              <p style="font-size:70%;text-align:justify;left:50%;transform:translate(10%,0)">By signing up you agree to our <a href="#">privacy policy</a><br> and <a href="#">terms of use</a></p>
+          </div>
+
+        </div>  -->
+
+            </div>
+
+
+            <!-- UNCOMMENT AFTER -->
+            <!-- <div>
+        
+        <div class="fp-div">
+          <div class="l-t-icon">
+    
+          </div>
+          <h3 id="fp-head">FORGOT PASSWORD</h3>
+          <h4 id="fp-p">Enter your email below and we'll send you the instructions on how to generate a new password.</h4>
+          <input type="email" id="d-fp-email" placeholder="Enter your email address"> 
+          
+          <button id="fp-send-btn" (click)='showSentfp(true)'>SEND</button>
+          <a style="float:left;font-size:70%;text-decoration:underline;left:15%;transform:translate(55%,0)" href="">Back to Login</a><br><br>
+
+          <div style="background-color:#DFF0D8;width:77%;height:auto;left:5%;transform:translate(15%,0);border-radius:5px;" class="text-p">
+            <p style="color:green;font-size:80%;padding:10px;
+            white-space:normal;text-align:justify;">Reset req sent. Please check your inbox for verification email</p>
+          </div>
+        </div>
+
+      </div>  -->
+
+
+            <div *ngIf='showFpSent'>
+
+                <div class="f-fp-div">
+                    <div class="l-t-icon">
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3 id="f-fp-head">Check in your mail !</h3>
+                        <h4 id="f-fp-p">We just emailed you with the instructions to reset your password.</h4>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+    <div *ngIf='showAuthorSignUp'>
+
+        <!-- UNCOMMENT AFTER -->
+        <div class="ss-dark-back">
+            <div class="ss-dark-core">
+                <div class="signup-complete" style="background-color:#FF5341;width:100%;top:0%;height:40%;">
+                    <h3 style="color:white;" class="ss-head">Signup complete !</h3>
+                    <h4 style="color:white;" class="ss-capt">Let's get started ! Tell us about you and your shop.</h4>
+                </div>
+                <br>
+
+                <div class="author-form">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter your shop name">
+                        <span class="input-group-addon">Check availability</span>
+                    </div>
+                    <h2>Your mplace URL:https://mplace.com/username</h2>
+                </div>
+                <br>
+
+                <div class="ss-main">
+
+                    <div class="flex-container">
+                        <div>Availability
+                            <span class="ast">*</span>
+                        </div>
+                        <div>
+                            <select style="width:250%;height:150%;border-radius:3px;left:50%;transform:translate(73%,0)">
+                <option>Choose</option>
+              </select>
+                        </div>
+
+                        <div>
+                            <select style="width:250%;height:150%;border-radius:3px;left:50%;transform:translate(160%,0)">
+                <option>Choose</option>
+              </select>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class="flex-container">
+                        <div>Shop Language
+                            <span class="ast">*</span>
+                        </div>
+                        <div>
+                            <select style="width:250%;height:150%;border-radius:3px;left:50%;transform:translate(50%,0)">
+                <option>Australia</option>
+              </select>
+                        </div>
+
+
+                    </div>
+                    <br>
+                    <hr>
+
+                    <div class="flex-container">
+                        <div>Certifications
+                            <br> Do you have any certifications?
+
+                        </div>
+                        <div>
+                            <div style="left:50%;transform:translate(9%,0)" class="form-group">
+                                <input type="text" class="form-control" placeholder="Certificated from (E.G Adobe)">
+                            </div>
+                        </div>
+
+                        <div>
+                            <select style="width:150%;height:68%;border-radius:3px;left:50%;transform:translate(55%,0)">
+                <option>Year</option>
+              </select>
+                        </div>
+                    </div>
+
+                    <div class="flex-container">
+                        <div>Education
+
+
+                        </div>
+
+                        <div style="width:70%;left:22%;" class="input-group">
+                            <select style="width:20%;" class="input-group-addon" id="basic-addon1">
+                <option>Title</option>
+              </select>
+                            <input type="text" class="form-control" placeholder="Degree" aria-describedby="basic-addon1">
+                        </div>
+
+
+                    </div>
+                    <br>
+
+
+
+                    <div class="flex-container">
+                        <div>Certifications
+                            <br> What Languages do you speak?
+
+                        </div>
+                        <div>
+                            <div style="left:50%;transform:translate(8%,0)" class="form-group">
+                                <input type="text" class="form-control" placeholder="Hindi, English">
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <hr>
+
+                </div>
+                <p class="form-err" id="p-radio-err">*Password shouldn\'t contain space</p>
+                <button name="btn btn-primary" id="ss-create-acc-btn">Create My Account</button>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+    <!--<div class="social-signup-dark-back">
+      <h3>Select your account type</h3>
+      <div class="social-char-select">
+        <table id="db-radio-table">
+          <tr>
+            <td>
+              <input type="radio" id="c-char" name="char" value="client">
+            </td>
+            <td>
+              <label for="c-char">Client</label>
+            </td>
+            <td>
+              <input type="radio" id="a-char" name="char" value="author">
+            </td>
+            <td>
+              <label for="author-char">Author</label>
+            </td>
+          </tr>
+        </table>
+        <button id="social-char-submit-btn">SUBMIT</button>
+      </div>
+    </div>-->
+
+    <!-- UNCOMMENT AFTER <div class="total-er-div">
+      <div class="total-er-main">
+        That's your own gig !
+      </div>
+  </div> -->
+
+</div>
+<!-- Header -->
+<router-outlet></router-outlet>
+<div style="clear:both"></div>
+<div class="clear-both"></div>
+<!--<footer class="main-footer">
+  <div class="footer-cover">
+    <div class="w-control">
+      <div id="featured-div">
+        <p>As featured in...</p>
+        <div class="com-div"></div>
+      </div>
+      <div class="clear-both"></div>
+      <div class="footer-core">
+        <h3 class="row align-items-start">86% OF THE FORTUNE 100 <br>USE MARKET PLACE</h3>
+        <div class="footer-nav row align-items-center">
+          <div class="footer-navs">
+            <ul class="footer-nav-ul">
+              <li class="footer-nav-heads">MARKET PLACE</li>
+              <li><a routerLink='/home'>HOME</a></li>
+              <li><a routerLink='/about'>ABOUT</a></li>
+              <li><a routerLink='/become-an-author'>BECOME AN AUTHOR</a></li>
+              <li><a routerLink='/how-it-works'>HOW IT WORKS</a></li>
+              <li><a routerLink='/help'>HELP</a></li>
+              <li>COMPANY</li>
+              <li>DOWNLOAD</li>
+            </ul>
+          </div>
+          <div class="footer-navs">
+            <ul class="footer-nav-ul">
+              <li class="footer-nav-heads">RESOURCES</li>
+              <li>SHARE</li>
+              <li>PORTAL</li>
+              <li>BLOG</li>
+              <li>FORUM</li>
+            </ul>
+          </div>
+          <div class="footer-navs">
+            <ul class="footer-nav-ul">
+              <li class="footer-nav-heads">LEGAL</li>
+              <li><a routerLink='/terms'>TERMS OF USE</a></li>
+              <li><a routerLink='/privacy-policy'>PRIVACY POLICY</a></li>
+              <li>LICENSE AGREEMENT</li>
+              <li>PATENTS</li>
+            </ul>
+          </div>
+          <div class="footer-navs">
+            <ul class="footer-nav-ul">
+              <li class="footer-nav-heads">CONNECT</li>
+              <li>TWITTER</li>
+              <li>FACEBOOK</li>
+              <li>LINKENIN</li>
+              <li>GOOGLE+</li>
+            </ul>
+          </div>
+          <div class="footer-navs">
+            <ul class="footer-nav-ul">
+              <li class="footer-nav-heads">EMAIL</li>
+              <li>CONTACTUS@MARKETPLACE.COM</li>
+              <li>SUPPORT@MARKETPLACE.COM</li>
+              <li>SALES@MARKETPLACE.COM</li>
+              <li>PR@MARKETPLACE.COM</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-main-title row align-items-end">
+        <h2>Market place</h2>
+        <h6>&copy;2015-2016 Marketplace software, Inc. All rights reserved. Market place is a registered trademark of Market
+          place software, Inc.</h6>
+      </div>
+    </div>
+  </div>
+</footer>-->
+
+
+
+<!-- Diamond Dashboard -->
+<div class="diamond-dashboard">
+    <div class="diamond-core">
+        <div class="diamond-dash-header">
+            <h3 class="title">NAVIGATION</h3>
+            <span id="diamond-close">
+        <i class="fa fa-times x-img"></i>
+      </span>
+        </div>
+        <div class="diamond-tiles-div">
+            <a routerLink='/dashboard'>
+                <div class="diamond-tiles">
+                    <span class="center">
+            <i class="fa fa-home diamond-imgs" aria-hidden="true"></i>
+            <br> Dashboard
+          </span>
+                </div>
+            </a>
+            <a routerLink='/seller'>
+                <div class="diamond-tiles">
+                    <span class="center">
+            <i class="fa fa-user diamond-imgs" aria-hidden="true"></i>
+            <br> Profile
+          </span>
+                </div>
+            </a>
+            <a>
+                <div class="diamond-tiles">
+                    <span class="center">
+            <i class="fa fa-tasks diamond-imgs" aria-hidden="true"></i>
+            <br> Tasks
+          </span>
+                </div>
+            </a>
+            <a routerLink='/settings'>
+                <div class="diamond-tiles">
+                    <span class="center">
+            <i class="fa fa-cog diamond-imgs"></i>
+            <br> Settings
+          </span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- app-pop -->
+<div class="app-pop">
+   <h3 class="app-msg"></h3>
+</div>

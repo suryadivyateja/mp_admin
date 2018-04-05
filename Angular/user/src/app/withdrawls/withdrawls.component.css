@@ -1,0 +1,350 @@
+
+.m-core {
+    position: relative;
+    display: block;
+    /* margin-top: 11vh; */
+}
+
+#orders-title {
+    position: relative;
+    display: block;
+    text-align: left;
+    font-size: 190%;
+    color: #000;
+    font-weight: bold;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+#orders-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 0;
+    height: 5px;
+    width: 40px;
+    background-color: #F9BF3B;
+    color: #F9BF3B;
+}
+
+.orders-div {
+    position: relative;
+    display: block;
+    float: right;
+    height: auto;
+    width: 100%;
+    background-color: #fff;
+    padding: 0px 20px 10px 20px;
+}
+
+.pay-summary {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 120px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #F2F1EF;
+}
+
+.pay-sum-items {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex-direction: column;
+    border-left: 1px solid #f2f1ef;
+    flex-grow: 1;
+}
+
+.pay-ico-core {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    width: 100%;
+    text-align: left;
+    padding-left: 20px;
+    height: 50%;
+}
+
+.pay-sum-icons {
+    font-size: 260% !important;
+    color: #8DF2E3;
+}
+
+.pay-sum-core {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    flex-direction: row;
+    height: 50%;
+    width: 100%;
+    padding: 4px 5px;
+}
+
+.pay-num {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    font-size: 200%;
+    font-weight: bold;
+    width: auto;
+    padding-left: 10px;
+    margin-right: 20px;
+}
+
+.pay-desc {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start;
+    flex-direction: column;
+    width: auto;
+    padding-left: 5px;
+}
+.radio-btn{
+    position: relative;
+    top: -5px;
+}
+.pay-sum-core h3 {
+    position: relative;
+    display: block;
+    font-size: 120% !important;
+    font-weight: bold;
+    text-align: left;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.pay-sum-core h4 {
+    position: relative;
+    display: block;
+    font-size: 100%;
+    text-align: left !important;
+    margin: 0 !important;
+}
+
+#w-submit-btn {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50px;
+    color: #fff;
+    font-size: 120%;
+    font-weight: bold;
+    background-color: #FE5B53;
+    border: none;
+    border-radius: 2px;
+}
+
+#w-submit-btn:hover {
+    background-color: #FE5B53;
+    cursor: pointer
+}
+
+.manage-orders-core {
+    position: relative;
+    display: block;
+    margin: 40px auto;
+    overflow: hidden;
+}
+
+.orders-div {
+    position: relative;
+    display: inline-block;
+    height: auto;
+    width: 100%;
+    background-color: #fff;
+    margin-left: 0 !important;
+    padding: 0 0 !important;
+    border: none;
+    overflow: hidden;
+}
+
+.w-earnings-div {
+    position: relative;
+    width: 48%;
+    float: left;
+    border: 1px solid #EEECEB;
+    padding: 10px 20px;
+}
+
+.w-history-div {
+    position: relative;
+    width: 48%;
+    float: right;
+    border: 1px solid #EEECEB;
+    padding: 10px 20px;
+    right: 10px;
+}
+
+.w-history-div h3,
+.w-earnings-div h3 {
+    position: relative;
+    display: block;
+    font-size: 130%;
+    font-weight: bold;
+    color: #0F2427;
+    margin: 6px 0;
+}
+
+.w-history-div h4,
+.w-earnings-div h4 {
+    position: relative;
+    display: block;
+    font-size: 110%;
+    font-weight: bold;
+    color: #00151A;
+    margin: 10px 0;
+}
+
+.w-earnings-div input {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 40px;
+    border: 1px solid #EFEDEC;
+    border-radius: 2px;
+    margin: 10px 0;
+    padding: 0 10px;
+    font-size: 90%;
+    background-color: #FBFBFA;
+}
+
+.w-earnings-div label input {
+    position: relative;
+    float: left;
+    width: 15px;
+    height: 15px;
+}
+
+.w-earnings-div label {
+    position: relative;
+    display: block;
+}
+
+.w-history-div table {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EEEDEB;
+    overflow: hidden;
+}
+
+.w-history-div table tbody {
+    height: 100%;
+}
+
+.w-history-div table tbody,
+.w-history-div table tr {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.w-history-div table td {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    color: #817F79;
+    font-size: 90%;
+}
+
+.date {
+    width: 20%;
+}
+
+.email {
+    width: 40%;
+}
+
+.amount {
+    width: 20%;
+    font-weight: bold;
+    color: #000 !important;
+}
+
+.status {
+    width: 16%;
+    font-weight: bold;
+    color: #000 !important;
+    text-align: right !important;
+}
+
+@media screen and (min-width:220px) and (max-width:740px) {
+    .pay-summary {
+        position: relative;
+        display: block;
+        flex-direction: row;
+        width: 100%;
+        height: 120px;
+    }
+    .w-earnings-div {
+        position: relative;
+        width: 100%;
+        float: left;
+        top: 30%;
+        transform: translate(0, 30%);
+        border: 1px solid #EEECEB;
+        padding: 10px 20px;
+    }
+    .w-history-div {
+        position: relative;
+        width: 100%;
+        float: left;
+        top: 150%;
+        transform: translate(0, 150%);
+        margin: 0 !important;
+        border: 1px solid #EEECEB;
+        padding: 10px 20px;
+    }
+    .w-history-div table {
+        position: relative;
+        display: block;
+        width: 100%;
+        float: left;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #EEEDEB;
+        overflow: scroll;
+    }
+    .w-history-div table td {
+        position: relative;
+        display: flex;
+        vertical-align: middle;
+        color: #817F79;
+        font-size: 90%;
+    }
+    .m-core {
+        height: auto;
+    }
+    .w-control {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width:750px) and (max-width:1024px) {
+    .w-control {
+        width: 100%;
+    }
+}

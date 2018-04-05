@@ -1,0 +1,244 @@
+.w-control1 {
+    width: 1800px;
+    margin: 0 auto;
+}
+
+.a-f-vp {
+    position: relative;
+    display: block;
+    width: 100vw;
+    height: 80vh;
+}
+
+.a-f-header {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    width: 100%;
+    height: 10%;
+    background-color: #fff;
+}
+
+.a-f-header .a-width-desktop {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    height: 100%;
+    align-items: center;
+    -webkit-align-items: center;
+}
+
+.a-f-header nav {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    height: 100%;
+    align-items: center;
+    -webkit-align-items: center;
+    padding: 0 !important;
+}
+
+.a-f-header nav ul {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    height: 100%;
+    margin: 0 !important;
+}
+
+.a-f-header ul li {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center !important;
+    text-align: center !important;
+    line-height: 0;
+    height: 100%;
+    width: auto;
+    font-weight: 700;
+    color: #888896;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.a-f-header ul li a {
+    color: #888896;
+}
+
+#first-li {
+    padding-left: 0 !important;
+}
+
+.selected-li {
+    color: #444449 !important;
+    border-bottom: 3px solid #00BDEB !important;
+}
+
+.selected-li a {
+    color: #444449 !important;
+}
+
+.a-f-b-p {
+    position: relative;
+    display: flex;
+    display: -webkit-flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    width: 100%;
+    height: 90%;
+    background-image: url(../../assets/images/ph.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.a-f-b-p h3 {
+    font-weight: bold;
+    font-size: 400%;
+    margin: 0 0 20px 0 !important;
+}
+
+.left-header {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.a-f-b-p h5 {
+    font-size: 140%;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.a-width-desktop {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+}
+
+.about-container {
+    position: relative;
+    display: block;
+    /* top: 11vh; */
+    background-color: #fff;
+    height: auto;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0 0 40px 0;
+    white-space: normal;
+    overflow: hidden;
+}
+
+.press {
+    width: 270px;
+    height: auto;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px #dddddd;
+}
+
+.press1 {
+    width: 270px;
+    height: 250px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px #dddddd;
+}
+
+.press1 h4 {
+    font-size: 120%;
+}
+
+.press2 {
+    width: 270px;
+    height: 200px;
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: 5px 5px 5px #dddddd;
+}
+
+.btn-inverse {
+    position: relative;
+    left: 50%;
+    background-color: #292D35;
+    color: white;
+}
+
+.padding {
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 20%;
+    position: relative;
+    transform: translate(0, 10%)
+}
+
+.padding1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 0%;
+    position: relative;
+    transform: translate(0, 10%)
+}
+
+@media screen and (min-width:220px) and (max-width:740px) {
+    .a-pics-div {
+        position: relative;
+        left: -14%;
+        flex-direction: column;
+    }
+    .a-pic {
+        position: relative;
+    }
+    .a-pic-div h3 {
+        font-weight: bold;
+        color: #444444;
+        font-size: 110%;
+        text-align: center;
+    }
+    .a-pic-div h4 {
+        color: #CCCCD5;
+        font-size: 90%;
+        font-weight: bold;
+        float: left;
+    }
+    .ab-b-t,
+    .ab-b-m,
+    .ab-b-b {
+        position: relative;
+        flex-direction: column;
+    }
+    .ab-b-t,
+    .ab-b-m {
+        align-items: flex-start;
+        -webkit-align-items: flex-start;
+    }
+    .faq-divs {
+        position: relative;
+        display: block;
+        display: -webkit-block;
+        flex-direction: row;
+        width: 100%;
+    }
+    .a-faq-div {
+        position: relative;
+        display: block;
+        flex-direction: row;
+    }
+    .container {
+        margin: 0px auto;
+    }
+    .w-control {
+        width: 350px
+    }
+}

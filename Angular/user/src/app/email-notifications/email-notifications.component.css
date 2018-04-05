@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+label {
+    display: block;
+}
+.r-f-div {
+    position: relative;
+    display: inline-block;
+    background-color: #fff;
+    width: 95%;
+    /* margin-left: -5%; */
+    left: -6%;
+    border-radius: 2px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.09);
+}
+.p-need {
+    width: 80% !important;
+    margin: 0 auto !important;
+}
+
+
+/* #head-td {
+    font-size: 120%;
+    color: #000;
+    left: 0%;
+    margin-bottom: 20px;
+  } */
+
+#notif-table .h {
+    font-size: 130%;
+    color: #777;
+    left: 0%;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #F25552;
+    border-color: transparent;
+    height: 40px;
+    border-radius: 3px;
+    font-size: 100%;
+    font-weight: 450;
+    float: left;
+    left: 60%;
+    transform: translate(100%, 50%);
+    cursor: pointer
+}
+
+@media screen and (min-width:220px) and (max-width:740px) {
+    #notif-table {
+        position: relative;
+        display: block;
+        width: 100%;
+        flex-direction: row;
+    }
+    #notif-table tbody,
+    #notif-table tr {
+        position: relative;
+        display: block;
+        width: 100%;
+        padding: 10px 10px;
+    }
+    #notif-table td {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle !important;
+        width: 100%;
+    }
+    #notif-table td ul li {
+        padding: 0;
+        margin: 0;
+    }
+    #notif-table #resp-td {
+        display: none;
+    }
+    #notif-table td input {
+        margin: 0 10px 0 0 !important;
+    }
+    .ul1 label li span {
+        font-size: 70%;
+        color: #777;
+        font-family: 'Roboto', sans-serif !important;
+    }
+    #notif-table td .r {
+        position: relative;
+        display: flex;
+        display: -webkit-flex;
+        align-items: center;
+        -webkit-align-items: center;
+        text-align: left;
+        flex-direction: row;
+        -webkit-flex-direction: row;
+    }
+    .r-f-div {
+        position: relative;
+        display: inline-block;
+        background-color: #fff;
+        left: -5%;
+        top: 25%;
+        transform: translate(0, 25%)
+    }
+    .headings {
+        width: 100%;
+        float: left;
+        font-weight: bolder;
+        font-size: 210%;
+        color: #1F2835;
+        font-family: 'Roboto', sans-serif !important;
+        margin: 0 !important
+    }
+}
+
+@media screen and (min-width:750px) and (max-width:1024px) {
+    .w-control {
+        width: 100%
+    }
+}

@@ -1,0 +1,229 @@
+<app-header></app-header>
+<app-header1></app-header1>
+<div class="w-control">
+<div class="m-core">
+    <div class="manage-orders-core">
+        <h2 id="orders-title">MY ORDERS</h2>
+        <div class="my-gigs-index">
+            <button class="index-head">
+    Orders
+  </button>
+            <button class="index-item selected-index" id="all-btn" (click)="get_orders('all')"> All</button>
+            <button class="index-item" id="cancelled-btn" (click)="get_orders('cancelled')">Open</button>
+            <button class="index-item" id="progress-btn" (click)="get_orders('inprogress')"> Started </button>
+            <button class="index-item" id="completed-btn" (click)="get_orders('completed')"> Delivered</button>
+    
+        </div>
+        <div class="orders-div ">
+            <div class="pay-summary">
+                <div class="pay-sum-items">
+                    <div class="pay-ico-core">
+                        <i class="fa fa-gift pay-sum-icons"></i>
+                    </div>
+                    <div class="pay-sum-core">
+                        <div class="pay-num">{{total_orders}}</div>
+                        <div class="pay-desc">
+                            <h3>Products Sold</h3>
+                            <h4>In all Time</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay-sum-items">
+                    <div class="pay-ico-core">
+                        <i class="fa fa-gift pay-sum-icons"></i>
+                    </div>
+                    <div class="pay-sum-core">
+                        <div class="pay-num">{{this_month_orders_len}}</div>
+                        <div class="pay-desc">
+                            <h3>Products Sold</h3>
+                            <h4>In this Month</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay-sum-items">
+                    <div class="pay-ico-core">
+                        <i class="fa fa-tag pay-sum-icons"></i>
+                    </div>
+                    <div class="pay-sum-core">
+                        <div class="pay-num">$ {{f_t_sales}}</div>
+                        <div class="pay-desc">
+                            <h3>Total Sales</h3>
+                            <h4>In all Time</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="pay-sum-items">
+                    <div class="pay-ico-core">
+                        <i class="fa fa-briefcase pay-sum-icons"></i>
+                    </div>
+                    <div class="pay-sum-core">
+                        <div class="pay-num">$ {{f_t_earnings}}</div>
+                        <div class="pay-desc">
+                            <h3>Total Earning</h3>
+                            <h4>In all Time</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- gig -->
+
+
+            <!-- <div class="orders-div"> -->
+            <div class="manage-gig-con">
+                    <div class="manage-gig-r">
+                        <div *ngFor="let x of f_all_orders">
+                            <div class="gig">
+                                <div class="gig-img">
+                                    <img src="{{x.gig_img}}" alt="" width="100%" height="100%">
+                                    <!-- <i id="cog" class="fa fa-cog" (click)="open_drop($event)"></i> -->
+                                </div>
+
+                                     <div class="gig-image-position">
+                                        <img  class="gig-setting-img" src="../assets/icons/gig-setting.png" width="20px" height="20px" (click)="open_drop($event)">
+                                        <div class="sales-drop">
+                                            <span *ngIf="x.accept == true" class="accept">
+                                                <li class="sales-drop-down" (click)="accept_order(x.order_id,$event,x)">Accept</li>
+                                            </span>
+                                            <span *ngIf="x.accept == false" class="accept">
+                                                <li class="sales-drop-back">Accept</li>
+                                            </span>
+                                            <span *ngIf="x.deliver == true" class="deliver">
+                                                <li class="sales-drop-down"(click)="deliver_order(x,$event)">Deliver</li>
+                                            </span>
+                                            <span *ngIf="x.deliver == false" class="deliver">
+                                                <li class="sales-drop-back">Deliver</li>
+                                            </span>
+                                            <span *ngIf="x.cancel == true" class="cancel">
+                                                <li class="sales-drop-down" (click)="cancel_order([x.order_id],$event,x)">Cancel</li>
+                                            </span>
+                                            <span *ngIf="x.cancel == false" class="cancel">
+                                                <li class="sales-drop-back">Cancel</li>
+                                            </span>
+                                        </div>
+                                    </div>
+                                <div class="gig-text-div" (click)="go_to_orderDet(x.order_id)">
+                                    <div class="text">
+                                        <h3>{{x.title}}...</h3>
+                                        <div class="order-display">
+                                            <p>Buyer&nbsp;:&nbsp;<span>{{x.buyer_name}}</span></p>
+                                            <!-- <p>{{x.order_date}}</p>
+                              <p>Total:$ {{x.total_amount}}</p> -->
+                                        </div>
+                                    </div>
+
+                                    <div class="order-id">
+                                        <div class="order-id1">
+                                            <div class="order-width">
+                                                <p>
+                                                    <img src="../assets/icons/001_cart_order details.png" width="20px" height="20px">
+                                                    <!-- <i class="fa fa-shopping-cart" aria-hidden="true"></i> -->
+                                                    &nbsp;<span id="order-num">{{x.order_num}}</span></p>
+                                            </div> &nbsp;&nbsp;&nbsp;
+                                            <div class="order-width1">
+                                                <p>TOTAL<br>${{x.total_amount}}</p>
+                                            </div>
+                                            <div class="order-width1">
+                                                <p>PURCHASE DATE<br>{{x.order_date}}</p>
+                                            </div>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="progress1">
+                                        <p>open</p>
+                                        <p>started</p>
+                                        <p>delivered</p>
+                                    </div>
+
+                                    <div class="progress progress2">
+                                            <div class="progress-fill">
+                                                <div class="prog-div">
+                                                 
+                                                 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%" [style.width]="x.div_one"></div>
+     
+                                                 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%" [style.width]="x.div_two"></div>
+     
+                                                 <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:100%" [style.width]="x.div_three"></div>
+                                             </div>
+                                            </div>
+                                         </div><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- </div> -->
+            <!-- </div> -->
+
+            <!-- uncomment  if gig not satisfied -->
+            <!-- <div class="orders-core">
+          <div *ngFor="let x of f_all_orders">
+              <div class="order-div1">
+                <div class="gig">
+                <div class="order-img1">
+                  <img src="http://localhost:3000{{x.gig_img}}" alt="" width="100%" height="100%"> 
+                </div>
+                  <i id="cog" class="fa fa-cog" (click)="open_drop($event)"></i>
+                  <div class="sales-drop">
+                      <span *ngIf="x.accept == true" class="accept"><li style="border-bottom:0.5px solid #ddd;list-style-type:none;font-size:85%;font-weight:450;line-height:35px;cursor:pointer;" (click)="accept_order([x.order_id],$event)">Accept</li></span>
+                      <span *ngIf="x.accept == false" class="accept"><li style="border-bottom:0.5px solid #ddd;list-style-type:none;font-size:85%;font-weight:450;line-height:35px;background-color:#666;cursor:pointer;" >Accept</li></span>
+                      <span *ngIf="x.deliver == true" class="deliver"><li style="border-bottom:0.5px solid #ddd;list-style-type:none;font-size:85%;font-weight:450;line-height:35px;cursor:pointer;" (click)="deliver_order([x.order_id],$event)">Deliver</li></span>                      
+                      <span *ngIf="x.deliver == false" class="deliver"><li style="border-bottom:0.5px solid #ddd;list-style-type:none;font-size:85%;font-weight:450;line-height:35px;cursor:pointer;">Deliver</li></span>                      
+                      <span *ngIf="x.cancel == true" class="cancel"><li style="list-style-type:none;font-size:85%;font-weight:450;line-height:35px;cursor:pointer;"(click)="cancel_order([x.order_id],$event)">Cancel</li></span>
+                      <span *ngIf="x.cancel == false" class="cancel"><li style="list-style-type:none;font-size:85%;font-weight:450;line-height:35px;background-color:#666;cursor:pointer;">Cancel</li></span>
+                    
+                    </div>
+                <div class="text">
+                <h3>{{x.title}}...</h3>
+                <div class="order-display">
+                  <p>Buyer&nbsp;:&nbsp;<span>{{x.buyer_name}}</span></p> -->
+
+
+
+            <!-- no uncomment<p>{{x.order_date}}</p>
+                  <p>Total:$ {{x.total_amount}}</p> -->
+
+
+            <!-- </div>
+                </div> -->
+
+            <!--no uncomment <div class="sales-id">
+                    <p><i class="fa fa-check"></i> #1219BA</p>
+                    <p>TOTAL<br>$29.00</p>
+                    <p>PURCHASE DATE<br>Nov 20, 2017</p>
+                </div> -->
+
+            <!-- <div class="order-id">
+                    <div class="order-id1">
+                      <div class="order-width">
+                     <p><i class="fa fa-shopping-cart" aria-hidden="true"></i> #1219BA</p>
+                     </div> &nbsp;&nbsp;&nbsp;
+                     <div class="order-width1">
+                     <p>TOTAL<br>${{x.total_amount}}</p>
+                     </div>
+                     <div class="order-width1">
+                     <p>PURCHASE DATE<br>{{x.order_date}}</p>
+                     </div>
+                    </div>
+                  </div><br>
+
+                <div class="progress1">
+                    <p>started</p>
+                    <p>in progress</p>
+                    <p>delivered</p>
+                     </div>
+
+                     <div class="progress progress2">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="10"
+                        aria-valuemin="0" aria-valuemax="100" [style.width]="x.f_css_width">
+                          
+                        </div>
+                      </div><br>
+              </div>
+           </div>              
+        </div>
+      </div> -->
+        </div>
+    </div>
+</div>
+</div>
+<app-footer></app-footer>

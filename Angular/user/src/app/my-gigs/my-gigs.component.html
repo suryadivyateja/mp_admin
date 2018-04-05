@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<app-header></app-header><br>
+<app-header1></app-header1>
+
+<body>
+    <div class="w-control"><br>
+
+        <h2 id="orders-title">My Gigs</h2>
+        <div class="row my-gig-width">
+            <div class="col-lg-3 col-md-3 col-xs-12">
+
+                <div class="my-gigs-index">
+                    <button class="index-head">
+                        Orders
+                      </button>
+                    <button class="index-item border1" id="all" (click)="go_to_gig('all')" style="cursor:pointer"> All </button>
+                           
+                    <button class="index-item" (click)="go_to_gig('inprogress')" id="progress" style="cursor:pointer"> Active </button>
+                    
+                    <button class="index-item" (click)="go_to_gig('completed')" id="comp" style="cursor:pointer"> Deactive</button>
+
+                    <button class="index-item" (click)="go_to_gig('cancelled')" id="cancelled" style="cursor:pointer"> Rejected</button>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-9 col-xs-12 my-gig-container">
+                <div class="row my-gigs-row">
+                    <div class="gig2">
+                        <div class="order-div">
+                            <div class="order-img1">
+                                <div class="plus1">
+                                    <i id="fa1" class="fa fa-plus "></i>
+                                </div>
+                            </div>
+                            <div class="text">
+                                <h3 style="text-align:center">Upload New Item</h3>
+                                <div class="order-display1">
+                                    <p style="color:#999;white-space:normal">Loreum imposum dolor sit Loreum imposum dolor sit Loreum imposum dolor sit</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div *ngFor="let x of final">
+                        <div class="gig1">
+                            <div class="order-div">
+                                <div class="order-img">
+                                    <img src="{{x.gig_img}}" alt="" width="100%" height="100%">
+                                </div>
+                                    
+                                <div class="gig-image-position">
+                                    <img  class="gig-setting-img" src="../assets/icons/gig-setting.png" width="20px" height="20px" (click)="open_drop($event)">
+                                    <div class="sales-drop">
+                                        <li id="gig-drop" (click)="goto_edit_gig([x.gig_id])">Edit</li>
+                                        <li id="gig-drop" (click)="delete_gig(x)">Delete</li>
+                                        <li id="gig-drop" (click)="goto_gig_det(x.gig_id)">Preview</li>
+                                        <span *ngIf="x.pause === false">
+                                            <li id="gig-drop1" (click)="pause_gig(x)">Pause</li>
+                                        </span>
+                                        <span *ngIf="x.pause === true">
+                                            <li id="gig-drop1" (click)="pause_gig(x)">UnPause</li>
+                                        </span>
+                                    </div>
+                               </div>
+
+                                <div class="text">
+                                    <h3 style="white-space:normal">{{x.gig_title.substr(0,59)}}....</h3>
+                                    <div class="order-display">
+                                        <p style="color:#999">{{x.gig_des}}...</p>
+                                    </div>
+                                    <div class="flyers">
+                                        <p class="flyer">{{x.buyer_name}}</p>
+                                        <p style="float:right;">$<span id="cost">{{x.gig_cost}}</span></p>
+                                    </div>
+                                    <div class="imgg">
+                                        <div>
+                                            <img src="{{x.buyer_pic}}" style="width:35px;height:35px;border-radius:25px;" class="img-circle img-fluid">
+                                            <span style="font-size:80%;font-weight:500">{{x.buyer_name}}..</span>
+                                        </div>
+                                        <div class="rat">
+                                            <img src="{{x.raty[0]}}" alt="" width="12px" height="12px">
+                                            <img src="{{x.raty[1]}}" alt="" width="12px" height="12px">
+                                            <img src="{{x.raty[2]}}" alt="" width="12px" height="12px">
+                                            <img src="{{x.raty[3]}}" alt="" width="12px" height="12px">
+                                            <img src="{{x.raty[4]}}" alt="" width="12px" height="12px">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- UNCOMMENT AFTER -->
+        
+
+
+    </div>
+    <div class="gig-pop-div-back">
+            <div class="pop-up">
+                <div class="pop-in">
+                    <h2>Are You Sure !</h2>
+                    <h3>Want To Delete This Gig ??</h3>
+                    <button class="btn btn-danger" (click)="fin_delete_gig()">Ok</button>
+                    <button class="btn btn-success" (click)="close_pop()">Cancel</button>
+                </div>
+            </div>
+            </div>
+        <div *ngIf="greeting">
+            <div class="custom-order-div-back">
+                <div class="image ">
+                    <span (click)="hide_greeting()" ><i  class="fa fa-times " aria-hidden="true"></i></span>
+                        <img  src="../../assets/img/u1998.png" class="img-responsive" alt="img">
+                        <div class="text-img">
+                        <h6 class="text-center"><b>Congratulations! You posted a contest</b></h6>
+                        <p class="text-center">While you have coffee and wait for the entries to come,</p>
+                        <p class="text-center"><b>why not post another contest?</b></p>
+                        </div>
+                        
+                    </div>
+            </div>
+        </div><br>
+        <app-footer></app-footer>
+</body>
+
+</html>

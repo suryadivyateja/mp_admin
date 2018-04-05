@@ -1,0 +1,276 @@
+<app-header></app-header>
+<app-header1></app-header1>
+
+
+<div class="main-checkout">
+    <!-- <div class="navbar navbar-default check-nav">
+      <div class="w-control">
+        <ul class="display">
+          <span class="map"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+          <li>Order Details</li>
+          <li><i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+          <span class="map1"><span class="id1">1</span></span>
+          <li>Review & Pay</li>
+          <li><i class="fa fa-chevron-right" aria-hidden="true"></i></li>
+          <span class="map1"><span class="id1">2</span></span>
+          <li>Submit Requirements & Start Order</li>
+         
+          
+        </ul>
+        
+        </div>
+      </div><br> -->
+    <div class="w-control">
+        <h2 id="your-order-h2">Your Order</h2>
+        <form class="" method="post" enctype="multipart/form-data">
+            <div class="order-top-dets">
+                <h2 id="pro-br-title" class="sec-heads mob">
+                    1. Order Details
+                </h2>
+                <div class="left-float" id="order-img">
+
+                    <div class="home-gigs-row">
+                        <div class="gig">
+                            <div class="gig-img">
+                                <img src="{{gig_img}}" alt="" width="100%" height="100%">
+                            </div>
+                            <div class="gig-text-div">
+                                <div class="gig-text">
+                                    <h1>{{gig_title}}</h1>
+                                    <h3>By {{name}}</h3>
+                                    <div class="stars">
+                                        <img src="{{raty1}}" alt="" width="12px" height="12px">
+                                        <img src="{{raty2}}" alt="" width="12px" height="12px">
+                                        <img src="{{raty3}}" alt="" width="12px" height="12px">
+                                        <img src="{{raty4}}" alt="" width="12px" height="12px"> 
+                                        <img src="{{raty5}}" alt="" width="12px" height="12px" >
+                                    </div>
+                                </div>
+
+                                <div class="price">
+                                    <div class="p1">
+                                        <img src="../../assets/icons/homepage_completed_icon.png" width="18px" height="18px">
+                                        <!-- <i class="fa fa-users"></i> -->
+                                        &nbsp;
+                                        <span id="price-com">{{jobs_done}} Completed</span>
+                                    </div>
+
+                                    <div class="p2">
+                                        <p>Starting At&nbsp;<span>${{selected_price}}</span></p>
+                                    </div>
+                                </div>
+                                <!-- <div class="price">
+                      <i class="fa fa-user"></i>&nbsp;
+                      <p>{{gig.jobes_done}} Completed</p>
+                      <span id="price-val">Starting  At <span>${{gig.pac_cos_sta}}</span></span>
+            
+                  </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <h5 id='job-title'>JOB</h5>
+          <div class="featured-gig">
+            <div class="f-gig-top">
+*****
+            </div>
+            <div class="f-gig-pic"> <span><img src="http://localhost:3000{{gig_img}}" alt="" style="height:100%;width:100%;max-width:100%"></span>
+
+            </div>
+            <div class="f-gig-dets">
+              <div class="f-gig-title">
+                <h6>
+                  <strong>{{gig_title}}</strong>
+              </h6>
+            </div>
+            <div class="f-gig-dets-dets">
+              <div>
+                by <strong>{{name}}</strong>
+              </div> 
+              <div class="cost-format-div">
+                <span class="dlr">$</span>
+                <span class="cost-num">{{selected_price}}</span>
+                </div> 
+              </div>
+            </div>
+         
+          </div> -->
+                </div>
+                <div class="right-float" id="order-dets">
+                    <div class="order-dets-core">
+                        <section id="desc">
+                            <div class="t-heads-div">
+                                <h4 class="t-heads">DESCRIPTION</h4>
+                                <h5 class="t-sec-heads">PRICE</h5>
+                            </div>
+                            <div class="desc-div">
+                                <div class="desc">
+                                    <p>
+                                        {{description}}
+                                    </p>
+                                </div>
+                                <div class="price-div">
+                                    <div class="cost-format-div">
+                                        <span class="dlr">$</span>
+                                        <span class="cost-num">{{selected_price}}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </section>
+
+
+                        <section id="extra">
+                            <div class="t-heads-div">
+                                <h4 class="t-heads">EXTRA</h4>
+                                <h5 class="t-sec-heads"></h5>
+                            </div>
+                            <div *ngFor="let extra of selected_extras ; let i = index">
+                                <div class="desc-div">
+                                    <label>
+                          <div class="desc">
+                              <div class="extra-check-div">
+                                  <!-- <input type="checkbox" name="" id="checked" value="{{extra._id}}" (change)="onchange($event)" [checked]="true"> -->
+                                  <input type='checkbox' name='thing' value='{{extra._id}}' id="checked{{i}}" (change)="onchange($event)" [checked]="true"/><label for="checked{{i}}"></label>
+                              </div>&emsp;
+                              <p>{{extra.e_description}}</p>
+                          </div>
+                        </label>
+                                    <div class="price-div">
+                                        <div class="cost-format-div">
+                                            <span class="dlr">$</span>
+                                            <span class="cost-num">{{extra.price}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+
+
+
+                        <!-- DON'T UNCOMMENT <div class="desc-div">
+                    <label>
+                      <div class="desc">
+                          <div class="extra-check-div">
+                              <input type="checkbox" name="" id="">
+                          </div>
+                          <p>
+                              Lorem ipsum dolor sit amet, ad quo dictas repudiandae, debet graeci partiendo usu at. Possit reformidans ne mei, mel natum doctus cu. Ut salutatus consequuntur duo. Cum ne alia esse, at erant ponderum mei. Populo comprehensam ea cum.
+                          </p>
+                      </div>
+                    </label>
+                    <div class="price-div">
+                        <div class="cost-format-div">
+                            <span class="dlr">$</span>
+                            <span class="cost-num">10</span>
+                        </div> 
+                    </div>
+                  </div> -->
+
+
+                        <section id="total">
+                            <div>
+                                <h5><strong> processing Fee(5%) of total amount </strong></h5>
+                                <h2></h2>
+                            </div>
+
+                            <div class="t-heads-div">
+                                <h4 class="t-heads">TOTAL</h4>
+                                <h5 class="t-sec-heads"></h5>
+                            </div>
+                            <div class="desc-div">
+                                <div class="desc">
+                                    <p>
+                                        TOTAL
+                                    </p>
+                                </div>
+                                <div class="price-div">
+                                    <div class="cost-format-div">
+                                        <span class="dlr">$</span>
+                                        <span class="cost-num">{{total_amount}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+                <div class="clear-both"></div>
+            </div>
+            <div class="pro-br-div">
+                <h2 id="pro-br-title" class="sec-heads">
+                    2.Provide your brief
+                </h2>
+                <h3 class="h3" id="h3">
+                    If you have resume handy, we can use it to populate your profile and save you some typing
+                </h3>
+                <div class="imp_divs">
+                    <div class="imp_div"><br>
+                        <h3>
+                            Upload your latest resume
+                        </h3>
+                        <label for="buyer_files" class="imp_btn">
+            Choose file
+          </label>
+                        <input type="file" id="buyer_files" name="buyer_files[]" style="display:none" (change)="filechange($event)" multiple="multiple">
+                        <h4>
+                            Drag your CV here
+                        </h4>
+                        <h6>
+                            Recommended. Best format is a Word document, but we support most files.
+                        </h6>
+                    </div>
+                    <div class="imp_div"><br>
+                        <h3>
+                            Or import basic info from
+                        </h3>
+                        <span class="imp_btn" id="l_imp_btn">
+            Linkedin &nbsp; <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+          </span>
+                        <h6>
+                            Limited to basic profile and current role(s)
+                        </h6>
+                    </div>
+                </div>
+                <output id="list"></output>
+                <div class="note-to">
+                    <span>Note to {{name}}</span><span>(optional)</span>                 
+                </div>
+                <textarea id="brief" name="buyer-brief" [(ngModel)]="order_description" placeholder="You can enter any info needed to complete your order or write a note to the seller.
+                "></textarea>
+            </div><br><br>
+
+
+            <div class="container space">
+                <h2 id="pro-br-title" class="sec-heads">
+                    3.Payment Details
+                </h2>
+                <h3 class="h3" id="h3">
+                Your payment will be held securely by cvhatch until your job is successfully completed                        
+                </h3>
+
+                <div class="row">
+                    <div class="col-xs-12 paypal"><br>
+                        <form style="left:10%;transform:translate(5%,0)">
+                            <input type="radio" name="name" (click)="pay()">
+                            <img src="../assets/images/paypal-logo.png" class="img-fluid" width="100px" height="30px">&nbsp;
+
+                            <input type="radio" name="name">
+                            <img src="../assets/images/paypal-logo.png" class="img-fluid" width="100px" height="30px"><br><br>
+
+                            <h6><b>Promotional Code</b></h6>
+
+                            <input class="code" type="text" placeholder="Coupon code">&nbsp;
+                            <button class="coupon" class="btn btn-default">Apply Coupon</button>
+                            <br><br>
+                            <h2>Total Amount:$575 USD</h2>
+                        </form><br>
+                    </div>
+                </div>
+            </div><br>
+                <span id="order-err"></span><br><br>
+            <input type="submit" name="submit" id="proceed-btn" value="Submit Order" (click)="placeOrder()">
+        </form>
+
+    </div>
+</div><br>
+<app-footer></app-footer>

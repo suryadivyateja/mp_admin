@@ -1,0 +1,80 @@
+<div class="container-fluid">
+  <ul id="nav" >
+          <li>
+            <a  routerLink="/home">Home</a>
+          </li>
+          <li>
+            <a  href="#">Settings</a>
+          </li>
+            <li class="dropd">
+                <a href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Categories
+                </a>
+                <ul class="dropd-menu">
+                  <li><a routerLink="/manage-categories">manage-categories</a></li> 
+                  <li><a routerLink="/add-category">add a category</a></li>
+                  <li><a routerLink="/add-sub_category">add a sub_category</a></li>
+                  
+                </ul>
+          </li>
+          <li >
+            <a routerLink="/manage-gigs">Gigs</a>
+          </li>
+          <li >
+            <a routerLink="/manage-orders">Orders</a>
+          </li>
+          <li class="dropd">
+            <a href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             FeedBack
+            </a>
+            <ul class="dropd-menu">
+              <li><a routerLink="/manage-feedback">manage-feedback</a></li> 
+              <li><a routerLink="/fake-feedback">fake-feedback</a></li>
+              </ul>
+      </li>
+          <li >
+            <a  href="#">Payments</a>
+          </li>
+          <li >
+            <a  href="#">Withdrawals</a>
+          </li>
+          <li>
+            <a routerLink="/manage-custom-requests">Requests</a>
+          </li>
+          <li >
+            <a routerLink="/manage-members">Members</a>
+          </li>
+          <li >
+            <a  href="#">Reports</a>
+          </li>
+          <li>
+            <a  href="#">Conversations</a>
+          </li>
+          
+          <li >
+            <a  href="#">Ads</a>
+          </li>
+          <li >
+            <a  href="#">Bans</a>
+          </li>
+          <li>
+            <a href="#">Files</a>
+          </li>
+          <li class="nav-item">
+            <a  href="#">Referrals</a>
+          </li>
+          <li >
+            <a href="#">Launch</a>
+          </li>
+          <li >
+            <a  href="#">Admins</a>
+          </li>
+          <li >
+            <a  href="#">Local Bank</a>
+          </li>
+        </ul>
+      </div>
+  
+      <router-outlet></router-outlet>
+  
+  

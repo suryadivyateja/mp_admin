@@ -1,0 +1,29 @@
+<div class="container">
+  <br>
+    <div id="heading">
+      Orders
+  
+    </div>
+  <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Gig Ordered</th>
+          <th>Buyer</th>
+          <th>Date Ordered</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let o of orders">
+          <td>{{o._id}}</td>
+          <td>{{o.gig_title}}</td>
+          <td>{{o.buyer_name}}</td>
+          <td>{{o.formatted_date}}</td>
+          <td>{{o.order_status}}</td>
+          <td><a href="#">CancelOrder</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

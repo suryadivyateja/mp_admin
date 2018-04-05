@@ -1,0 +1,292 @@
+ <p>
+    <b>Home</b>
+  </p>
+  <hr>
+  <br>
+  <div class="dashboard-container">
+    <p class="switcher">
+      <label for="store_switcher">Website Statistics</label>
+    </p>
+    <table cellspacing="25" width="100%">
+      <tbody>
+        <tr>
+          <td>
+            <div class="entry-edit">
+              <div class="entry-edit-head">
+                <h4>Gig Statistics</h4>
+              </div>
+              <fieldset class="np">
+                <div class="grid np">
+                  <table cellspacing="0" style="border:0;" id="lastOrdersGrid_table">
+                    <colgroup>
+                      <col>
+                      <col width="100">
+                    </colgroup>
+                    <thead>
+                      <tr class="headings">
+                        <th class=" no-link">
+                          <span class="nobr">Summary</span>
+                        </th>
+                        <th class=" no-link a-center last">
+                          <span class="nobr">Results</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class=" ">Gigs Awaiting Validation</td>
+                        <td class=" a-center last">0</td>
+                      </tr>
+                      <tr>
+                        <td class=" ">New Gigs</td>
+                        <td class=" a-center last">6</td>
+                      </tr>
+                      <tr>
+                        <td class=" ">Total Gigs</td>
+                        <td class="a-center last">{{total_gigs.length}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="entry-edit">
+              <div class="entry-edit-head">
+                <h4>Order Statistics</h4>
+              </div>
+              <fieldset class="np">
+                <div class="grid np">
+                  <table cellspacing="0" style="border:0;" id="lastOrdersGrid_table">
+                    <colgroup>
+                      <col>
+                      <col width="100">
+                    </colgroup>
+                    <thead>
+                      <tr class="headings">
+                        <th class=" no-link">
+                          <span class="nobr">Summary</span>
+                        </th>
+                        <th class=" no-link a-center last">
+                          <span class="nobr">Total Orders</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class=" ">Gig Orders</td>
+                        <td class=" a-center last">{{total_orders.length}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="entry-edit">
+              <div class="entry-edit-head">
+                <h4>Request Statistics</h4>
+              </div>
+              <fieldset class="np">
+                <div class="grid np">
+                  <table cellspacing="0" style="border:0;" id="lastOrdersGrid_table">
+                    <colgroup>
+                      <col>
+                      <col width="100">
+                    </colgroup>
+                    <thead>
+                      <tr class="headings">
+                        <th class=" no-link">
+                          <span class="nobr">Summary</span>
+                        </th>
+                        <th class=" no-link a-center last">
+                          <span class="nobr">Results</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class=" ">Requests Awaiting Validation</td>
+                        <td class=" a-center last">0</td>
+                      </tr>
+                      <tr>
+                        <td class=" ">Total Requests</td>
+                        <td class=" a-center last">{{custom_orders.length}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+            </div>
+
+          </td>
+          <td>
+
+            <div class="entry-edit">
+              <div class="entry-edit-head">
+                <h4>Category Statistics</h4>
+              </div>
+              <fieldset class="np">
+                <div class="grid np">
+                  <table cellspacing="0" style="border:0;" id="lastOrdersGrid_table">
+                    <colgroup>
+                      <col>
+                      <col width="100">
+                    </colgroup>
+                    <thead>
+                      <tr class="headings">
+                        <th class=" no-link">
+                          <span class="nobr">Summary</span>
+                        </th>
+                        <th class=" no-link a-center last">
+                          <span class="nobr">Total Categories</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="">Categories</td>
+                        <td class="">{{total_categories.length}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+            </div>
+            <div class="entry-edit">
+              <div class="entry-edit-head">
+                <h4>Advertisement Statistics</h4>
+              </div>
+              <fieldset class="np">
+                <div class="grid np">
+                  <table cellspacing="0" style="border:0;" id="lastOrdersGrid_table">
+                    <colgroup>
+                      <col>
+                      <col width="100">
+                    </colgroup>
+                    <thead>
+                      <tr class="headings">
+                        <th class=" no-link">
+                          <span class="nobr">Summary</span>
+                        </th>
+                        <th class=" no-link a-center last">
+                          <span class="nobr">Total Ads</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class=" ">Standard Advertisements</td>
+                        <td class=" a-center last">5</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="entry-edit">
+              <div class="entry-edit-head">
+                <h4>Member Statistics</h4>
+              </div>
+              <fieldset class="np">
+                <div class="grid np">
+                  <table cellspacing="0" style="border:0;" id="lastOrdersGrid_table">
+                    <colgroup>
+                      <col>
+                      <col width="100">
+                    </colgroup>
+                    <thead>
+                      <tr class="headings">
+                        <th class=" no-link">
+                          <span class="nobr">Summary</span>
+                        </th>
+                        <th class=" no-link a-center last">
+                          <span class="nobr">Results</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class=" ">Total Members</td>
+                        <td class=" a-center last">{{total_users.length}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+            </div>
+
+            <div class="entry-edit">
+              <div class="entry-edit-head">
+                <h4>Payment Statistics</h4>
+              </div>
+              <fieldset class="np">
+                <div class="grid np">
+                  <table cellspacing="0" style="border:0;" id="lastOrdersGrid_table">
+                    <colgroup>
+                      <col>
+                      <col width="100">
+                    </colgroup>
+                    <thead>
+                      <tr class="headings">
+                        <th class=" no-link">
+                          <span class="nobr">Summary</span>
+                        </th>
+                        <th class=" no-link a-center last">
+                          <span class="nobr">Results</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Total Payments</td>
+                        <td class=" a-center last">{{total_orders_delivered.length}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+            </div>
+
+          </td>
+          <td>
+
+            <div class="entry-edit">
+              <div class="entry-edit-head">
+                <h4>Last 10 Members</h4>
+              </div>
+              <fieldset class="np">
+                <div class="grid np">
+                  <table cellspacing="0" style="border:0;" id="lastOrdersGrid_table">
+                    <colgroup>
+                      <col>
+                      <col>
+                    </colgroup>
+                    <thead>
+                      <tr class="headings">
+                        <th class=" no-link">
+                          <span class="nobr">Username</span>
+                        </th>
+                        <th class=" no-link a-center last">
+                          <span class="nobr">E-Mail Address</span>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor="let u of total_users">
+                      <tr>
+                        <td class=" ">{{u.name}}</td>
+                        <td class=" a-center last">{{u.email}}</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+              </fieldset>
+            </div>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

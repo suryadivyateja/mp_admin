@@ -1,0 +1,108 @@
+<html>
+
+
+<app-header></app-header><br>
+<app-header1></app-header1>
+
+<body>
+
+    <div class="m-core">
+        <div class="manage-orders-core w-control">
+            <h2 id="orders-title">WITHDRAWALS</h2>
+            <div class="orders-div">
+                <div class="pay-summary">
+                    <div class="pay-sum-items">
+                        <div class="pay-ico-core">
+                            <i class="fa fa-gift pay-sum-icons"></i>
+                        </div>
+                        <div class="pay-sum-core">
+                            <div class="pay-num"></div>
+                            <div class="pay-desc">
+                                <h3>Products Sold</h3>
+                                <h4>In all Time</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pay-sum-items">
+                        <div class="pay-ico-core">
+                            <i class="fa fa-gift pay-sum-icons"></i>
+                        </div>
+                        <div class="pay-sum-core">
+                            <div class="pay-num"></div>
+                            <div class="pay-desc">
+                                <h3>Products Sold</h3>
+                                <h4>In this Month</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pay-sum-items">
+                        <div class="pay-ico-core">
+                            <i class="fa fa-tag pay-sum-icons"></i>
+                        </div>
+                        <div class="pay-sum-core">
+                            <div class="pay-num">$ 20</div>
+                            <div class="pay-desc">
+                                <h3>Total Sales</h3>
+                                <h4>In all Time</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pay-sum-items">
+                        <div class="pay-ico-core">
+                            <i class="fa fa-briefcase pay-sum-icons"></i>
+                        </div>
+                        <div class="pay-sum-core">
+                            <div class="pay-num">$ 10.630</div>
+                            <div class="pay-desc">
+                                <h3>Total Earning</h3>
+                                <h4>In all Time</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-earnings-div">
+                    <h3>Withdraw Earnings</h3>
+                    <hr>
+                    <h4>Amount to withdraw ($745.00 Maximum)*</h4>
+                    <input type="text" name="name" id="amount-to-withdraw" placeholder="Enter the amount you want to withdraw..">
+                    <hr>
+                    <h4>Choose Your Withdrawal Method*</h4>
+                    <label for="paypal"><input type="radio" class="radio-btn" name="w-method" id="paypal" value="paypal">Paypal</label><br>
+                    <label for="skrill"><input type="radio"  class="radio-btn" name="w-method" id="skrill" value="skrill">Skrill</label><br>
+                    <label for="international"><input type="radio"  class="radio-btn" name="w-method" id="international" value="international">International Transfer ($200 Minimum) </label><br>
+                    <hr>
+                    <h4>Your Paypal Acccount*</h4>
+                    <input type="text" name="paypal-account" id="paypal-account" placeholder="Enter your paypal account here... ">
+                    <h3>Confirm Your Password*</h3>
+                    <input type="password" name="paypal-pwd" id="paypal-pwd" placeholder="Confirm your password for security... ">
+                    <hr>
+                    <button type="submit" name="w-submit" id="w-submit-btn">Request Withdrawal</button>
+                </div>
+                <div class="w-history-div">
+                    <h4>Withdrawal History</h4>
+                    <hr>
+                    <table>
+                        <tr>
+                            <td class="date">
+                                Mar 27th,2014
+                            </td>
+                            <td class="email">
+                                johnnyfisher@paypal.com
+                            </td>
+                            <td class="amount">
+                                $537.20
+                            </td>
+                            <td class="status">
+                                pending
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clear-both"></div>
+    <app-footer></app-footer>
+</body>
+
+</html>
