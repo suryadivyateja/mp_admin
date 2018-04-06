@@ -20,6 +20,16 @@ const UserSchema = Schema({
     designation:{
         type:String,         
     },
+    referral_code:{
+        type:String
+
+    },
+    referred_code:{
+        type:String
+    },
+    referred_name:{
+        type: String
+    },
     pay_pal:{
         type:String, 
     },
@@ -51,11 +61,21 @@ const UserSchema = Schema({
     date:{
         type:String
     },
+    ipAddress:{
+        type:String
+    },
     resetPasswordToken:{
         type:String
     },
     resetPasswordDate:{
         type: Date
+    },
+    referral_balance:{
+        type:Number,
+    },
+    referral_status:{
+        type:String,
+        default:'Awaiting Approval'
     }
 });
 

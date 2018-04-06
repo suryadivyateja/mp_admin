@@ -145,6 +145,12 @@ reset(obj){
         return this.http.get('http://localhost:3000/users/get-user-rewards/' + user_id).map(res => res.json());
         // return this.http.get('users/get-user-rewards/' + user_id).map(res => res.json());
     }
+    getReferralCode(code){
+        return this.http.get('http:localhost:3000/users/find_referral_code/' + code).map(res=>res.json());
+    }
+    getReferredCode(code){
+        return this.http.get('http://localhost:3000/users/find_referred_code/' + code).map(res=>res.json());
+    }
 
     getUser(user_id){
         return this.http.get('http://localhost:3000/users/user_details/'+ user_id).map(res => res.json());

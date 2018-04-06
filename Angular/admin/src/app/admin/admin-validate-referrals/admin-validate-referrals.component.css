@@ -1,0 +1,14 @@
+#heading{
+    background: rgb(115, 170, 113);
+    color:white;
+    padding: 2px;
+
+}
+#add{
+    color: green;
+    cursor: pointer;
+}
+#delet{
+    color: red;
+    cursor: pointer;
+}

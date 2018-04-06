@@ -68,6 +68,9 @@ router.post("/register",(req,res,next) => {
         password:req.body.password, 
         profile_pic:'../assets/default.png',
         date:req.body.date,
+        ipAddress:req.body.ipAddress,
+        referral_code:req.body.referral_code,
+        referred_code:req.body.referred_code,
     });
     User.addUser(newUser,(err,user) => {
             if(err){
@@ -201,7 +204,23 @@ router.post("/register",(req,res,next) => {
     });
 
 });
-
+//add referral_balance
+router.post('/add_referral_balance',(req,res)=>{
+    let user_id=req.body.user_id;
+    console.log(req)
+    User.findByIdAndUpdate({_id:user_id},{$set:{referral_balance:1,referral_status:'Completed'}}).exec((err,data)=>{
+        if(err) res.json({success:false,msg:err});
+        else res.json({success:true,msg:data});
+    })
+})
+//delete referral
+router.post('/delete_referral',(req,res)=>{
+let user_id=req.body.user_id;
+User.findByIdAndUpdate({_id:user_id},{$set:{referral_status:'Declined'}}).exec((err,data=>{
+   if(err) res.json({success:false,msg:err});
+        else res.json({success:true,msg:data});
+}))
+})
 //authenticate
 router.post("/authenticate",(req,res,next) => {
    const email = req.body.email;
@@ -246,6 +265,13 @@ router.get("/find-email/:email",(req,res,next) => {
     });
 });
 
+router.get('/find_referred_code/:code',(req,res)=>{
+    User.findOne({referral_code:req.params.code},(err,data)=>{
+        if(err) res.json({success:true,msg:err});
+        else res.json({success:true,msg:data});
+        })
+
+})
 //forget password
 router.post("/forgot_password",(req,res,next) => {
         console.log(req.body);

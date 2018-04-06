@@ -26,6 +26,8 @@ import { AdminManageFeedbackComponent } from './admin/admin-manage-feedback/admi
 import { AdminFakeFeedbackComponent } from './admin/admin-fake-feedback/admin-fake-feedback.component';
 import { AdminAddSubCategoryComponent } from './admin/admin-add-sub-category/admin-add-sub-category.component';
 import { AdminManageCustomRequestComponent } from './admin/admin-manage-custom-request/admin-manage-custom-request.component';
+import { AdminManageReferralsComponent } from './admin/admin-manage-referrals/admin-manage-referrals.component';
+import { AdminValidateReferralsComponent } from './admin/admin-validate-referrals/admin-validate-referrals.component';
 const appRoutes:Routes = [{
   path:'',
   redirectTo:'/home',
@@ -82,6 +84,12 @@ const appRoutes:Routes = [{
     },{
       path:'manage-custom-requests',
       component:AdminManageCustomRequestComponent
+    },{
+      path:'validate-referrals',
+      component:AdminValidateReferralsComponent
+    },{
+      path:'manage-referrals',
+      component:AdminManageReferralsComponent
     }]
 
 @NgModule({
@@ -101,7 +109,9 @@ const appRoutes:Routes = [{
     AdminManageFeedbackComponent,
     AdminFakeFeedbackComponent,
     AdminAddSubCategoryComponent,
-    AdminManageCustomRequestComponent
+    AdminManageCustomRequestComponent,
+    AdminManageReferralsComponent,
+    AdminValidateReferralsComponent
   ],
   imports: [
     BrowserModule,

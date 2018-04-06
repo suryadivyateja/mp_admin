@@ -104,8 +104,19 @@ export class AdminService {
   getIpAddress() {
     return this.http
           .get('http://freegeoip.net/json/?callback')
-          .map(res=>res.json());
-          
+          .map(res=>res.json());          
+}
+addReferralBalance(user_id){
+  let header = new Headers();
+    header.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3000/users/add_referral_balance',user_id,{headers:header}).map(res=>res.json());
+
+}
+deleteReferral(user_id){
+  let header = new Headers();
+    header.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3000/users/delete_referral',user_id,{headers:header}).map(res=>res.json());
+
 }
 getUserById(user_id){
   return this.http.get('http://localhost:3000/admin/user_by_id/' + user_id).map(res=>res.json());

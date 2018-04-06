@@ -1,10 +1,10 @@
 import { Component,OnInit } from '@angular/core';
 import { Router, NavigationEnd } from "@angular/router";
-
 // Importing services
 import { AuthService } from "./services/auth.service";
 import { ValidateService } from "./services/validate.service";
 import { GigService } from "./services/gig.service";
+import { AdminService } from "./services/admin.service";
 // import * as moment from "moment"
 import { PLATFORM_SERVER_ID } from '@angular/common/src/platform_id';
 declare var $:any;
@@ -22,7 +22,7 @@ import { element } from 'protractor';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private router:Router, private authService:AuthService, private validateService:ValidateService,private gigService:GigService) {
+  constructor(private adminService:AdminService,private router:Router, private authService:AuthService, private validateService:ValidateService,private gigService:GigService) {
 
   }
 
@@ -42,6 +42,8 @@ export class AppComponent implements OnInit {
   regEmail:string;
   regPassword:string;
   regLastName:string;
+  referral_code:string;
+  referred_code:string;
   //Login values
   loginEmail:string;
   loginPassword:string;
@@ -64,9 +66,11 @@ export class AppComponent implements OnInit {
   inb_num = 0;
   inb_msg=[];
   not_ids = [];
-
+ip:any;
   ngOnInit(){
-  
+  this.adminService.getIpAddress().subscribe(res=>{
+    this.ip=res.ip
+  })
 // google login
     gapi.load('auth2', function () {
     
@@ -351,6 +355,9 @@ name;
       pay_pal : this.regEmail,
       password : this.regPassword,
       date:moment(),
+      referred_code:this.referral_code,
+      referral_code:this.regName.substr(0,5) +'-'+ Math.floor(Math.random() * 10000),
+      ipAddress:this.ip,
     };
     
     // Validate
@@ -381,6 +388,7 @@ name;
       }else{
           $('#serr').html('Please enter a valid email');
       }
+
     }else{
       switch (false) {
         case this.validateService.validateInput(this.regName):         
@@ -396,8 +404,10 @@ name;
         default:
           break;
       }      
-    }    
+    }
+       
   }
+
   
   googleLogin() {
     let googleAuth = gapi.auth2.getAuthInstance();

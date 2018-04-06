@@ -133,6 +133,9 @@ reset(obj){
         return this.http.get('http://localhost:3000/users/get-address/' + user_id).map(res => res.json());
         // return this.http.get('users/get-address/' + user_id).map(res => res.json());
     }
+    getReferredCode(c){
+        return this.http.get('http://localhost:3000/users/find_referred_code/' + c).map(res=>res.json());
+    }
 
     postOrder(order) {
         let header = new Headers();

@@ -1,0 +1,11 @@
+
+#heading{
+    background: rgb(115, 170, 113);
+    color:white;
+    padding: 2px;
+
+}
+td>a{
+    color: red;
+    cursor: pointer;
+}

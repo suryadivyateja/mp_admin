@@ -1,0 +1,34 @@
+<div class="container">
+    <br>
+      <div id="heading">
+       Manage Referrals
+    
+      </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>UserName</th>
+            <th>Referred</th>
+            <th>Money</th>
+            <th>Date</th>
+            <th>IP</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of users let i = index">
+            <td>{{i+1}}</td>
+            <td>{{u.username}}</td>
+            <td>{{u.referred}}</td>
+            <td>$ 1.00</td>
+            <td>{{u.formatted_date}}</td>
+            <td>{{u.ipAddress}}</td>
+            <td>{{u.referral_status}}</td>
+            <td><a (click)="delete_this(u)">delete</a> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  

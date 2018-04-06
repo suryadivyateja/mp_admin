@@ -1,0 +1,31 @@
+<div class="container">
+  <br>
+    <div id="heading">
+     Validate Referrals
+  
+    </div>
+  <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>UserName</th>
+          <th>Referred</th>
+          <th>Money</th>
+          <th>Date</th>
+          <th>IP</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let u of users let i = index">
+          <td>{{i+1}}</td>
+          <td>{{u.username}}</td>
+          <td>{{u.referred}}</td>
+          <td>$ 1.00</td>
+          <td>{{u.formatted_date}}</td>
+          <td>{{u.ipAddress}}</td>
+          <td><a (click)="add(u)" id="add">Approve and Add $1.00 to {{u.name}}</a> | <a (click)="delete_this(u)" id="delet">delete</a> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
