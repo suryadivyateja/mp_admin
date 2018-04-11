@@ -60,6 +60,7 @@ export class HomeComponent implements OnInit {
       if(dat.success){
         // this.all_gigs = dat.msg;              
         dat.msg.forEach(element => {
+          console.log(element.img1);
             if(!element.pause){
               if(element.user_id === this.user_id){
                 element['add'] = false;

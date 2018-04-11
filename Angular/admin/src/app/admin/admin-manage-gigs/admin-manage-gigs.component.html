@@ -14,10 +14,10 @@
         <th>Action</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="content">
       <tr *ngFor="let g of gigs">
         <td>{{g.title}}</td>
-        <td>{{g.buyer_name}}</td>
+        <td>{{g.members.name}}</td>
         <td>{{g.formatted_date}}</td>
         <td><a routerLink="/edit-gig/{{g._id}}">Edit</a> | <a (click)="delete_this(g)">Delete</a></td>
       </tr>

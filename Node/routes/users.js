@@ -216,10 +216,10 @@ router.post('/add_referral_balance',(req,res)=>{
 //delete referral
 router.post('/delete_referral',(req,res)=>{
 let user_id=req.body.user_id;
-User.findByIdAndUpdate({_id:user_id},{$set:{referral_status:'Declined'}}).exec((err,data=>{
+User.findByIdAndUpdate({_id:user_id},{$set:{referral_status:'Declined'}}).exec((err,data)=>{
    if(err) res.json({success:false,msg:err});
         else res.json({success:true,msg:data});
-}))
+})
 })
 //authenticate
 router.post("/authenticate",(req,res,next) => {
@@ -989,7 +989,7 @@ router.get("/get_gigsby_id/:user_id",(req,res,next) => {
 router.get("/get_gig_byId/:gig_id",(req,res,next) => {
     let gig_id = req.params.gig_id;
     // console.log(gig_id);
-    User_gig.findById({_id:gig_id},(err,gig) =>{
+    User_gig.findById({_id:gig_id}).populate('members').exec((err,gig) =>{
         if(gig){
             res.json({success:true,msg:gig});
             // console.log(gig);

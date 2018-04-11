@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const User = require('./user');
 const schema = mongoose.Schema;
 
 const gigSchema = new schema({
@@ -158,7 +158,19 @@ const gigSchema = new schema({
     pause:{
         type:Boolean,
         default:false,
-    }
+    },
+    
+},{
+    toObject : {virtuals:true},
+    toJSON   : {virtuals: true}
 })
+gigSchema.virtual('members', {
+    ref: 'User', // The model to use
+    localField: 'user_id', // Find people where `localField`
+    foreignField: '_id', // is equal to `foreignField`
+    // If `justOne` is true, 'members' will be a single doc as opposed to
+    // an array. `justOne` is false by default.
+    justOne: true
+  });
 
 const User_gig = module.exports = mongoose.model('User_gig',gigSchema);

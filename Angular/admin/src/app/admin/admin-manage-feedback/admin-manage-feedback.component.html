@@ -18,8 +18,8 @@
     <tbody>
       <tr *ngFor="let r of reviews" >
         <td>{{r._id}}</td>
-     <td>{{r.username}}</td>
-     <td>{{r.title}}</td>
+     <td>{{r.buyer.name}}</td>
+     <td>{{r.gig.title}}</td>
      <td>{{r.review}}</td>
      <td>{{r.score}}</td>
 <td><a (click)="delete_this(r)">Delete</a></td>

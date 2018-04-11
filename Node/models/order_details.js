@@ -1,8 +1,6 @@
 const mongoose = require('mongoose');
-var connection = mongoose.createConnection('mongodb://localhost:27017/market-place');
-
+var connection = mongoose.createConnection('mongodb://suryadivyateja:surya@ds237379.mlab.com:37379/mp');
 const User = require('./user');
-
 const Schema = mongoose.Schema;
 const autoIncrement = require('mongoose-auto-increment');
 
@@ -66,6 +64,9 @@ const order_det = Schema({
     accepted_date:{
         type:String,
     }
+},{
+    toObject : {virtuals:true},
+    toJSON   : {virtuals: true}
 });
 autoIncrement.initialize(connection);
 
@@ -74,5 +75,13 @@ order_det.plugin(autoIncrement.plugin,{
     startAt:5000,
     incrementBy:1
 })
+order_det.virtual('buyer', {
+    ref: 'User', // The model to use
+    localField: 'buyer_id', // Find people where `localField`
+    foreignField: '_id', // is equal to `foreignField`
+    // If `justOne` is true, 'members' will be a single doc as opposed to
+    // an array. `justOne` is false by default.
+    justOne: true
+  });
 
 const order = module.exports = mongoose.model("order",order_det);

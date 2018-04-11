@@ -36,14 +36,12 @@ submit_this(){
     meta_keywords: this.meta_key
   }
   if(this.validateService.validateInput(this.category_name)){
-    this.adminService.getCategoryByName(this.category_name).subscribe(res=>{
-      if(res.success == true){
+    this.adminService.postCategory(data).subscribe(res=>{
+      if(res.success === false){
         $('#serr').html('category_name is already exists');
-      }else{
-        this.adminService.postCategory(data).subscribe(res=>{
+      }else if(res.success === true){
           console.log(res);
           window.location.reload();
-        })
       }
     })
   }else{

@@ -8,7 +8,8 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const admin = require('../models/admin');
 const User = require('../models/user');
-const gig = require('../models/gig');
+const User_gig = require('../models/gig');
+const files = require('../models/files');
 const order = require('../models/order_details');
 const conv = require('../models/conversations');
 const category = require('../models/category');
@@ -20,6 +21,7 @@ var multipartyMiddleWare = multiparty();
 // const User = require('../models/user');
 // const Order = require('../models/order');
 const bcrypt = require('bcryptjs');
+const async = require('async');
 
 
 // post admin details
@@ -80,6 +82,7 @@ router.post("/auth_admin",(req,res,next) => {
     });
 
 });
+
 //get users by id
 router.get('/user_by_id/:id',(req,res)=>{
     User.findById({_id:req.params.id},(err,data)=>{
@@ -131,6 +134,7 @@ router.post('/post_category',(req,res)=>{
         if(data.length>0){
             res.json({success:false,msg:'category already exists'});
         }else if(data.length === 0){
+            
             newCategory.save((err1,cat)=>{
                 if(err1) res.json({success:false,msg:err1});
                 else{
@@ -248,7 +252,7 @@ router.get('/delete_sub_category/:id',(req,res)=>{
 })
 // get orders
 router.get('/get_orders',(req,res)=>{
-    order.find({}).exec((err,data)=>{
+    order.find({}).populate('buyer').exec((err,data)=>{
         if(err) res.json({success:false,msg:err});
         else res.json({success:true,msg:data});
     })    
@@ -288,7 +292,7 @@ router.get('/get_user_by_name/:user_name',(req,res)=>{
     })
 })
 router.get('/get_gig_by_title/:gig_title',(req,res)=>{
-     gig.find({title:req.params.gig_title},(err,gig)=>{
+    User_gig.find({title:req.params.gig_title},(err,gig)=>{
         if(gig){
             res.json({success:true,msg:gig});
         }else{
@@ -296,38 +300,17 @@ router.get('/get_gig_by_title/:gig_title',(req,res)=>{
         }
      })
 })
-// get all gigs
-router.get("/get_all_gigs",(req,res,next) => {
-    gig.find((err,gigs) => {
-        if(gigs){
-            res.json({success:true,msg:gigs});
-        }else{
-            res.json({success:false,msg:err});
-        }
-    })
-})
-//get all orders
-router.get("/get_all_orders",(req,res,next) => {
-    order.find((err,orders) => {
-        if(orders){
-            res.json({success:true,msg:orders});
-        }else{
-            res.json({success:false,msg:err});
-        }
-    })
-})
-router.get("/delete_gig/:gig_id",(req,res,next)=>{
-    let gig_id = req.params.gig_id;
-        User_gig.remove({_id:gig_id},(err,success) => {
-            if(success){
-                res.json({success:true,msg:"Gig deleted successfully"});
-            }else{
-                res.json({success:false,msg:err});
+//get_gigs
+router.get('/get_all_gigs',(req,res)=>{
+    User_gig.find({}).populate('members').exec((err,data)=>{
+            if(err) res.json({success:false,msg:err});
+            else{
+                res.json({success:true,msg:data});
             }
-        })
+    })
 })
 router.get('/get_all_reviews',(req,res)=>{
-    review.find((err,orders) => {
+    review.find({}).populate('buyer gig').exec((err,orders) => {
         if(orders){
             res.json({success:true,msg:orders});
         }else{
@@ -343,5 +326,33 @@ router.get('/delete_reviews/:id',(req,res)=>{
             res.json({success:false,msg:err});
         }
     })
+})
+//files
+router.get('/get_files',(req,res)=>{
+    files.find({}).populate('pics').exex((err,file)=>{
+        if(err) res.json({success:false,msg:err});
+        else{
+            res.json({success:true,msg:file});
+        }
+    })
+})
+//update gig
+router.post('/edit_gig',(req,res)=>{
+    var gig_id = req.body.gig_id;
+    User_gig.findByIdAndUpdate({_id:gig_id},{$set:{
+        user_id:req.body.user_id, 
+        category:req.body.category,
+        title:req.body.title, 
+        description:req.body.description,
+        rating:req.body.rating,
+        pac_cos_sta:req.body.pac_cos_sta,
+        pac_del_sta:req.body.pac_del_sta   
+}},(err,gig) => {
+               if(gig){
+                       res.json({success:true,msg:gig});
+                       }else{ 
+                            res.json({success:false,msg:err});
+                            }
+           })                 
 })
 module.exports = router;

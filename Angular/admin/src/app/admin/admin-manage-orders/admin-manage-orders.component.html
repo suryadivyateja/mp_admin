@@ -19,7 +19,7 @@
         <tr *ngFor="let o of orders">
           <td>{{o._id}}</td>
           <td>{{o.gig_title}}</td>
-          <td>{{o.buyer_name}}</td>
+          <td>{{o.buyer.name}}</td>
           <td>{{o.formatted_date}}</td>
           <td>{{o.order_status}}</td>
           <td><a href="#">CancelOrder</a></td>

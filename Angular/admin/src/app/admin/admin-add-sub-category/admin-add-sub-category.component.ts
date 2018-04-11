@@ -27,35 +27,26 @@ sub_categories=[];
     this.adminService.getCategory().subscribe(res=>{
       this.categories=res.msg;
     })
-    this.adminService.getSubCategory().subscribe(res=>{
-      this.sub_categories = res.msg;
-      console.log(this.sub_categories);
-    })
-
   }
   submit_this(){
+    var data = {
+      sub_category_name:this.sub_category_name,
+      category_name:this.selected_cat,
+      description: this.desc,
+      seo_name: this.seo,
+      page_title: this.page_title_name,
+      meta_description: this.meta_desc,
+      meta_keywords: this.meta_key
+    }
  
     if(this.validateService.validateInput(this.sub_category_name) && this.validateService.validateInput(this.selected_cat) ){
-     this.sub_categories.forEach(element=>{
-    if(element.sub_category_name.toLowerCase() === this.sub_category_name.toLowerCase()){
-        console.log(element.sub_category_name)
-          $('#serr').html('Sub_category already exists');
-        }else{
-          var data = {
-            sub_category_name:this.sub_category_name,
-            category_name:this.selected_cat,
-            description: this.desc,
-            seo_name: this.seo,
-            page_title: this.page_title_name,
-            meta_description: this.meta_desc,
-            meta_keywords: this.meta_key
-          }
-          this.adminService.postSubCategory(data).subscribe(res=>{
+      this.adminService.postSubCategory(data).subscribe(res=>{
+        if(res.success === false){
+          $('#serr').html('sub_category_name is already exists');
+        }else if(res.success === true){
             console.log(res);
             window.location.reload();
-          })
         }
-    
       })
     }else{
       switch(false){

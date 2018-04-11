@@ -28,15 +28,16 @@ export class AdminService {
     return this.http.get("http://localhost:3000/admin/get_all_users").map(res => res.json());
     // return this.http.get("admin/get_all_users").map(res => res.json());
   }
-  
+  edit_gig(formData){
+    return this.http.post("http://localhost:3000/admin/edit_gig",formData).map(res => res.json());
+    // return this.http.post("users/update_gig",formData).map(res => res.json());
+}
   // get all gigs
   get_all_gigs(){
     return this.http.get("http://localhost:3000/admin/get_all_gigs").map(res => res.json());
-    // return this.http.get("admin/get_all_gigs").map(res => res.json());
   }
   get_all_orders(){
     return this.http.get("http://localhost:3000/admin/get_all_orders").map(res => res.json());
-    // return this.http.get("admin/get_all_gigs").map(res => res.json());
   }
   postCategory(data:any){
     let header = new Headers();

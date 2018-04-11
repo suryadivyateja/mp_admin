@@ -21,13 +21,8 @@ export class AdminManageOrdersComponent implements OnInit {
       console.log(this.orders);
       this.orders.forEach(element=>{
      element.formatted_date= moment(element.date).format('MMM Do, YYYY');
-     this.authService.getUser(element.buyer_id).subscribe(user_det=>{
-      console.log(user_det) 
-      if(user_det.success===true){
-      element.buyer_name=user_det.msg.name;
-      }
+    
     })
-     })
     })
 }
 }

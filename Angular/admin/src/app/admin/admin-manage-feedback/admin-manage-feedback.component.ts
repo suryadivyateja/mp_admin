@@ -16,17 +16,6 @@ gigTitle;
   ngOnInit() {
     this.adminService.getAllReviews().subscribe(res=>{
       this.reviews=res.msg;
-      this.reviews.forEach(element=>{
-        this.adminService.getUserById(element.buyer_id).subscribe(user=>{
-          element.username=user.msg.name;
-          console.log(element.gig_id)
-          this.gigService.get_gig_byId(element.gig_id).subscribe(gig=>{
-            console.log(gig)
-            element.title=gig.msg.title;
-            
-        })
-        })
-      })
       console.log(this.reviews);
     })
 
