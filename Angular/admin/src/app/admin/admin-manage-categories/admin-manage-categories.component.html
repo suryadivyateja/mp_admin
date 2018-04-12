@@ -1,4 +1,6 @@
-<div class="container">
+<app-header></app-header>
+
+<!-- <div class="container">
   <br>
   <div id="heading">
     Categories
@@ -17,9 +19,104 @@
       <tr *ngFor="let s of categories let i = index" >
         <td>{{i+1}}</td>
         <td>{{s.sub_category_name}}</td>
-        <td>{{s.category_name}}<td>
-        <td><a routerLink="/edit-category/{{s._id}}">Edit</a> | <a (click)="delete_this(s)">Delete</a></td>
+        <td>{{s.category_name}}</td>
+        <td><a routerLink="/edit-category/{{s._id}}"> <b id="edit">Edit</b></a> | <a (click)="delete_this(s)"> <b id="del">Delete</b> </a></td>
       </tr>
     </tbody>
   </table>
+</div> -->
+
+<!-- <div class="categories">
+  <div class="cate-div">
+    <div class="cat-left">
+      <div class="cat-left-title">
+        <h2 class="title">Categories</h2>
+      </div>
+
+    </div>
+    <div class="cat-left">
+
+    </div>
+  </div>
+</div> -->
+
+<div class="middle" id="anchor-content">
+  <div id="page:main-container">
+    <div class="columns ">
+
+      <div class="side-col" id="page:left">
+        <h3>Categories</h3>
+
+        <ul id="isoft" class="tabs">
+          <li>
+            <a href="cat_manage.php" id="isoft_group_1" name="group_1" title="Manage Categories" class="tab-item-link active">
+              <span>
+
+                <h5 class="add-c add-man"> Manage Category</h5>
+              </span>
+            </a>
+          </li>
+          <li class="add">
+            <a href="cat_add.php" id="isoft_group_2" name="group_2" title="Add Category" class="tab-item-link">
+              <span>
+
+                <h5 class="add-c"> Add Category</h5>
+              </span>
+            </a>
+
+          </li>
+
+        </ul>
+      </div>
+      <div class="main-col">
+        <div class="main-col-inner">
+          <div id="messages"></div>
+          <div class="con-header">
+            <div class="con-h">
+              <h3 class="con-header-title">
+                Manage-Categories
+              </h3>
+              <div class="con-header-button">
+                <button class="con-button">
+                  <i class="fa fa-plus-circle"></i> Add category</button>
+              </div>
+            </div>
+          </div>
+          <div class="group-content">
+            <div class="edit-heading">
+              <h6>Categories</h6>
+            </div>
+          </div>
+          <div class="grid">
+            <table cellspacing="0">
+              <thead>
+                <tr>
+                  <th class="id">ID</th>
+                  <th class="name">Name</th>
+                  <th class="pcat">Parent Category</th>
+                  <th clas="action">Action</th>
+                </tr>
+              </thead>
+              <tbody *ngFor="let s of categories let i = index">
+                <tr class="s">
+                  <td>
+                    {{i+1}}
+                  </td>
+                  <td>
+                {{s.sub_category_name}}
+                  </td>
+                  <td>
+                    {{s.category_name}}
+                  </td>
+                      <td><a routerLink="/edit-category/{{s._id}}"> <b id="edit">Edit</b></a> | <a (click)="delete_this(s)"> <b id="del">Delete</b> </a></td>
+                </tr>
+              </tbody>
+
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

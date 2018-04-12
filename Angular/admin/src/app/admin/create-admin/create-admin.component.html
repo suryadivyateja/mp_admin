@@ -1,0 +1,23 @@
+<app-header></app-header>
+<br>
+<div class="container">
+  <br>
+  <div id="heading">
+    Create-Admnistrator
+  </div>
+  <div class="form-group">
+    UserName:
+    <input type="text" class="form-control" [(ngModel)]="user_name" placeholder="Enter the name">
+</div>
+  <div class="form-group">
+      Email-Address:
+      <input type="text" class="form-control" [(ngModel)]="email" placeholder="Enter Email-Address">
+  </div>
+  <div class="form-group">
+      Password:
+      <input type="text" class="form-control" [(ngModel)]="password" placeholder="Enter Password">
+  </div>
+  <span id="serr"></span>
+  <a (click)="signup()" class="btn btn-success btn-block">Sign-Up</a>
+  </div>
+

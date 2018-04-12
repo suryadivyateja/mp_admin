@@ -1,3 +1,5 @@
+<app-header></app-header>
+<br>
 <div class="container">
   <br>
     <div id="heading">
@@ -22,7 +24,9 @@
           <td>{{o.buyer.name}}</td>
           <td>{{o.formatted_date}}</td>
           <td>{{o.order_status}}</td>
-          <td><a href="#">CancelOrder</a></td>
+          <td *ngIf="o.order_status === 'Order Cancelled'"> <p id="can">Order Cancelled</p></td>
+          <td *ngIf="o.order_status === 'Order Delivered'"> <p id="del">Order Delivered</p></td>
+          <td *ngIf="o.order_status !== 'Order Cancelled'&& o.order_status !== 'Order Delivered'"><a (click)="cancel_this()">CancelOrder</a></td>
         </tr>
       </tbody>
     </table>

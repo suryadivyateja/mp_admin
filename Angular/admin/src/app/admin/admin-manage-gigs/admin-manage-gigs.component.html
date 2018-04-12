@@ -1,3 +1,5 @@
+<app-header></app-header>
+<br>
 <div class="container">
   <br>
   <div id="heading">
@@ -19,7 +21,7 @@
         <td>{{g.title}}</td>
         <td>{{g.members.name}}</td>
         <td>{{g.formatted_date}}</td>
-        <td><a routerLink="/edit-gig/{{g._id}}">Edit</a> | <a (click)="delete_this(g)">Delete</a></td>
+        <td><a routerLink="/edit-gig/{{g._id}}"> <b id="edit">Edit</b> </a> | <a (click)="delete_this(g)"> <b id="del">Delete</b> </a></td>
       </tr>
     </tbody>
   </table>

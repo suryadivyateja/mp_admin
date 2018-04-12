@@ -54,6 +54,7 @@ export class HomeComponent implements OnInit {
         let u = JSON.parse(user);
         this.user_id = u.id;
       }
+      
     this.gigService.get_all_gigs().subscribe(dat => {
       console.log(dat);
       this.ever_gigs = dat.msg;

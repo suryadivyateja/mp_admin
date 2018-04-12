@@ -27,6 +27,7 @@ const async = require('async');
 // post admin details
 router.post("/admin_det",(req,res,next)=>{
     let newAdmin = new admin ({
+        name:req.body.name,
         email:req.body.email,
         password:req.body.password
     }); 
@@ -90,9 +91,23 @@ router.get('/user_by_id/:id',(req,res)=>{
         else res.json({success:true,msg:data});
     })
 })
-//get users by id
+//get admin by id
+router.get('/admin_by_id/:id',(req,res)=>{
+    admin.findById({_id:req.params.id},(err,data)=>{
+        if(err) res.json({success:false,msg:err});
+        else res.json({success:true,msg:data});
+    })
+})
+//remove users by id
 router.get('/remove_user/:id',(req,res)=>{
     User.findByIdAndRemove({_id:req.params.id},(err,data)=>{
+        if(err) res.json({success:false,msg:err});
+        else res.json({success:true,msg:data});
+    })
+})
+//remove admin by id
+router.get('/remove_admin/:id',(req,res)=>{
+    admin.findByIdAndRemove({_id:req.params.id},(err,data)=>{
         if(err) res.json({success:false,msg:err});
         else res.json({success:true,msg:data});
     })
@@ -118,7 +133,16 @@ designation:designation}}).exec((err,data)=>{
     else res.json({success:true,msg:data});
 })
 });
-
+//update admin data
+router.post('/update_admin',(req,res)=>{
+    let name =req.body.name;
+    let email=req.body.email;
+admin.findByIdAndUpdate({_id:req.body.id},{$set:{name:name,
+email:email}}).exec((err,data)=>{
+    if(err) res.json({sucess:false,msg:err});
+    else res.json({success:true,msg:data});
+})
+});
 
 router.post('/post_category',(req,res)=>{
     let newCategory = new category({
@@ -257,9 +281,35 @@ router.get('/get_orders',(req,res)=>{
         else res.json({success:true,msg:data});
     })    
 })
+//cancel order
+router.get('/cancel_order',(req,res)=>{
+    order.findByIdAndUpdate({_id:req.body.id},{$set:{order_status:'Order Cancelled'}}).exec((err,data)=>{
+        if(err) res.json({success:false,msg:err});
+        else{
+            res.json({success:true,msg:data})
+        }
+    })
+})
 // get custom_orders
 router.get('/get_custom_orders',(req,res)=>{
     custom_order.find({},(err,data)=>{
+        if(err) res.json({success:false,msg:err});
+        else res.json({success:true,msg:data});
+    })
+})
+//edit custom orders
+router.post('/edit_request',(req,res)=>{
+    let buyer_id = req.body.buyer_id;
+    let order_description = req.body.order_description;
+    let category_name = req.body.category_name;
+    custom_order.findByIdAndUpdate({_id:req.body.id},{$set:{buyer_id:buyer_id,order_description:order_description,category_name:category_name}}).exec((err,data)=>{
+        if(err) res.json({success:false,msg:err});
+        else res.json({success:true,msg:data});
+    })
+})
+//get custom request by id
+router.get('/get_custom_orders_by_id/:id',(req,res)=>{
+    custom_order.findById({_id:req.params.id}).populate('buyer seller').exec((err,data)=>{
         if(err) res.json({success:false,msg:err});
         else res.json({success:true,msg:data});
     })
@@ -281,6 +331,17 @@ router.get("/get_all_users",(req,res,next) => {
                 res.json({success:false,msg:err});
             }
         })
+})
+//get all admins
+router.get("/get_all_admins",(req,res,next) => {
+
+    admin.find((err,admins) => {
+        if(admins){
+            res.json({success:true,msg:admins});
+        }else{
+            res.json({success:false,msg:err});
+        }
+    })
 })
 router.get('/get_user_by_name/:user_name',(req,res)=>{
     User.find({name:req.params.user_name},(err,user)=>{

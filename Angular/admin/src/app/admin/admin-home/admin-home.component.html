@@ -1,4 +1,5 @@
- <p>
+<app-header></app-header>
+ <!-- <p>
     <b>Home</b>
   </p>
   <hr>
@@ -289,4 +290,266 @@
         </tr>
       </tbody>
     </table>
+</div> -->
+<div class="sec">
+<div class="section-home">
+    <h3 class="home">Home</h3>
+</div>
+<div class="section-s">
+   <div class="section-s-title">
+       <h5 class="s-title">
+       Website Statistics
+       </h5>
+   </div>
+   <div class="section-table">
+       <div class="section-table-stat">
+          <div class="section-gig">
+        <div class="section-gig-stat">
+               <div class="edit-heading">
+                   <h4>Gig Statistics</h4>
+               </div>
+                   <div class="fieldset">
+                       <div class="grid">
+                           <table cellspacing="0" >
+                              <thead>
+                                  <tr class="heading">
+                                      <th class="no-link">
+                                          <span class="nobr">
+                                          Summary
+                                          </span>
+                                      </th>
+                                      <th class="no-link">
+                                          <span class="nobr">
+                                          Results
+                                          </span>
+                                      </th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td class="first">Total Gigs</td>
+                                      <td class="last"> {{total_gigs.length}}</td>
+                                  </tr>
+                              </tbody>
+                               
+                           </table>
+                       </div>
+                   </div>
+           </div>
+           <div class="section-gig-stat">
+               <div class="edit-heading">
+                   <h4>Orders Statistics</h4>
+               </div>
+                   <div class="fieldset">
+                       <div class="grid">
+                           <table cellspacing="0" >
+                              <thead>
+                                  <tr class="heading">
+                                      <th class="no-link" colspan="3">
+                                          <span class="nobr">
+                                          Summary
+                                          </span>
+                                      </th>
+                                      <th class="no-link">
+                                          <span class="nobr">
+                                          Total Orders
+                                          </span>
+                                      </th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td colspan="3" class="first">Gig Orders</td>
+                                      <td class="last">{{total_orders.length}}</td>
+                                  </tr>
+                                 
+                              </tbody>
+                               
+                           </table>
+                       </div>
+                   </div>
+           </div>
+          <div class="section-gig-stat">
+               <div class="edit-heading">
+                   <h4>Request Statistics</h4>
+               </div>
+                   <div class="fieldset">
+                       <div class="grid">
+                           <table cellspacing="0" >
+                              <thead>
+                                  <tr class="heading">
+                                      <th class="no-link">
+                                          <span class="nobr">
+                                          Summary
+                                          </span>
+                                      </th>
+                                      <th class="no-link">
+                                          <span class="nobr">
+                                          Results
+                                          </span>
+                                      </th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td class="first">Total Request</td>
+                                      <td class="last">{{custom_orders.length}}</td>
+                                  </tr>
+                                  
+                              </tbody>
+                               
+                           </table>
+                       </div>
+                   </div>
+           </div>
+           </div>
+            <div class="section-gig-other">
+           <div class="section-gig-stat-other">
+                    <div class="edit-heading">
+                   <h4>Category Statistics</h4>
+               </div>
+                   <div class="fieldset">
+                       <div class="grid">
+                           <table cellspacing="0" >
+                              <thead>
+                                  <tr class="heading">
+                                      <th class="no-link" colspan="4">
+                                          <span class="nobr">
+                                          Summary
+                                          </span>
+                                      </th>
+                                      <th class="no-link">
+                                          <span class="nobr">
+                                          Total Categories
+                                          </span>
+                                      </th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td colspan="4" class="first">Categories</td>
+                                      <td class="last" colspan="4"> {{total_categories.length}}</td>
+                                  </tr>
+                                
+                                  
+                              </tbody>
+                               
+                           </table>
+                       </div>
+                   </div>
+           </div>
+                 <div class="section-gig-stat-other">
+                    <div class="edit-heading">
+                   <h4>Member Statistics</h4>
+               </div>
+                   <div class="fieldset">
+                       <div class="grid">
+                           <table cellspacing="0" >
+                              <thead>
+                                  <tr class="heading">
+                                      <th class="no-link" colspan="4">
+                                          <span class="nobr">
+                                          Summary
+                                          </span>
+                                      </th>
+                                      <th class="no-link">
+                                          <span class="nobr">
+                                          Results
+                                          </span>
+                                      </th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td colspan="4" class="first">Total Member</td>
+                                      <td class="last" colspan="4">{{total_users.length}} </td>
+                                  </tr>
+                                
+                                  
+                              </tbody>
+                               
+                           </table>
+                       </div>
+                   </div>
+           </div>
+                      <div class="section-gig-stat-other">
+                    <div class="edit-heading">
+                   <h4>Payment Statistics</h4>
+               </div>
+                   <div class="fieldset">
+                       <div class="grid">
+                           <table cellspacing="0" >
+                              <thead>
+                                  <tr class="heading">
+                                      <th class="no-link" colspan="4">
+                                          <span class="nobr">
+                                          Summary
+                                          </span>
+                                      </th>
+                                      <th class="no-link">
+                                          <span class="nobr">
+                                          Result
+                                          </span>
+                                      </th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td class="first" colspan="4">Total Payments</td>
+                                      <td class="last" colspan="4"> 3921</td>
+                                  </tr>
+                                
+                                  
+                              </tbody>
+                               
+                           </table>
+                       </div>
+                   </div>
+           </div>
+           
+           </div>
+            <div class="section-gig-side">
+           <div class="section-gig-stat-side">
+              <div class="section-gig-stat-other">
+                    <div class="edit-heading">
+                   <h4>Last 10 Members</h4>
+               </div>
+                   <div class="fieldset">
+                       <div class="grid">
+                           <table cellspacing="0" >
+                              <thead>
+                                  <tr class="heading">
+                                      <th class="no-link" colspan="4">
+                                          <span class="nobr">
+                                         Username
+                                          </span>
+                                      </th>
+                                      <th class="no-link">
+                                          <span class="nobr">
+                                          Email Address
+                                          </span>
+                                      </th>
+                                  </tr>
+                              </thead>
+                              <tbody *ngFor="let u of total_users">
+                                  <tr>
+                                      <td colspan="4" class="first">{{u.name}}</td>
+                                      <td class="last" colspan="4"> {{u.email}}</td>
+                                  </tr>
+                                 
+                                
+                                  
+                              </tbody>
+                           </table>
+                       </div>
+                   </div>
+           </div>
+               
+           </div>
+          </div>
+        
+           </div>
+       </div>
+   </div>
+    
 </div>

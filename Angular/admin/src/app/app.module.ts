@@ -5,6 +5,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { OrderModule } from 'ngx-order-pipe'; // <- import OrderModule
 import { NgModule } from '@angular/core';
 import {RouterModule,Routes} from '@angular/router';
+import { AdminAuthGuard } from './admin/guard/admin-auth.guard';
 import { AppComponent } from './app.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
@@ -28,68 +29,103 @@ import { AdminAddSubCategoryComponent } from './admin/admin-add-sub-category/adm
 import { AdminManageCustomRequestComponent } from './admin/admin-manage-custom-request/admin-manage-custom-request.component';
 import { AdminManageReferralsComponent } from './admin/admin-manage-referrals/admin-manage-referrals.component';
 import { AdminValidateReferralsComponent } from './admin/admin-validate-referrals/admin-validate-referrals.component';
+import { CreateAdminComponent } from './admin/create-admin/create-admin.component';
+import { ManageAdminComponent } from './admin/manage-admin/manage-admin.component';
+import { HeaderComponent } from './admin/header/header.component';
+import { EditAdminComponent } from './admin/edit-admin/edit-admin.component';
+import { AdminEditRequestsComponent } from './admin/admin-edit-requests/admin-edit-requests.component';
 const appRoutes:Routes = [{
   path:'',
-  redirectTo:'/home',
+  redirectTo:'/login',
   pathMatch:'full'
-
 },
 {
     path:'home',
-    component: AdminHomeComponent
+    component: AdminHomeComponent,
+    canActivate: [AdminAuthGuard]
     },
     {
     path:'add-category',
-    component: AdminCategoriesComponent
+    component: AdminCategoriesComponent,
+    canActivate: [AdminAuthGuard]
     },
     {
       path:'manage-categories',
-      component: AdminManageCategoriesComponent
+      component: AdminManageCategoriesComponent,
+      canActivate: [AdminAuthGuard]
       },
       {
       path:'manage-orders',
-      component: AdminManageOrdersComponent
+      component: AdminManageOrdersComponent,
+      canActivate: [AdminAuthGuard]
       },
       {
       path:'manage-members',
-      component:AdminManageMembersComponent
+      component:AdminManageMembersComponent,
+      canActivate: [AdminAuthGuard]
       },
       {
         path:'edit-members/:id',
-        component:AdminEditMembersComponent
+        component:AdminEditMembersComponent,
+        canActivate: [AdminAuthGuard]
         },
   
       {
         path:'edit-category/:id',
-        component: AdminEditCategoryComponent
+        component: AdminEditCategoryComponent,
+        canActivate: [AdminAuthGuard]
         },
     {
     path:'login',
-    component:AdminLoginComponent
-    },{
+    component:AdminLoginComponent,
+    }, {
+      path:'create-admin',
+      component:CreateAdminComponent,
+      canActivate: [AdminAuthGuard]
+      },{
+        path:'edit-admin/:id',
+        component:EditAdminComponent,
+        canActivate: [AdminAuthGuard]
+        }, {
+        path:'manage-admin',
+        component:ManageAdminComponent,
+        canActivate: [AdminAuthGuard]
+        },{
       path:'manage-gigs',
-      component:AdminManageGigsComponent
+      component:AdminManageGigsComponent,
+      canActivate: [AdminAuthGuard]
     },{
       path:'edit-gig/:id',
-        component: AdminEditGigComponent
+        component: AdminEditGigComponent,
+        canActivate: [AdminAuthGuard]
     },{
       path:'manage-feedback',
-      component:AdminManageFeedbackComponent
+      component:AdminManageFeedbackComponent,
+      canActivate: [AdminAuthGuard]
     },{
       path:'fake-feedback',
-      component:AdminFakeFeedbackComponent
+      component:AdminFakeFeedbackComponent,
+      canActivate: [AdminAuthGuard]
     },{
       path:'add-sub_category',
-      component:AdminAddSubCategoryComponent
+      component:AdminAddSubCategoryComponent,
+      canActivate: [AdminAuthGuard]
     },{
       path:'manage-custom-requests',
-      component:AdminManageCustomRequestComponent
+      component:AdminManageCustomRequestComponent,
+      canActivate: [AdminAuthGuard]
+    },{
+      path:'edit-request/:id',
+      component:AdminEditRequestsComponent,
+      canActivate: [AdminAuthGuard]
     },{
       path:'validate-referrals',
-      component:AdminValidateReferralsComponent
+      component:AdminValidateReferralsComponent,
+      canActivate: [AdminAuthGuard]
     },{
       path:'manage-referrals',
-      component:AdminManageReferralsComponent
+      component:AdminManageReferralsComponent,
+      canActivate: [AdminAuthGuard]
     }]
 
 @NgModule({
@@ -111,7 +147,12 @@ const appRoutes:Routes = [{
     AdminAddSubCategoryComponent,
     AdminManageCustomRequestComponent,
     AdminManageReferralsComponent,
-    AdminValidateReferralsComponent
+    AdminValidateReferralsComponent,
+    CreateAdminComponent,
+    ManageAdminComponent,
+    HeaderComponent,
+    EditAdminComponent,
+    AdminEditRequestsComponent
   ],
   imports: [
     BrowserModule,
@@ -121,7 +162,7 @@ const appRoutes:Routes = [{
     HttpClientModule,
     OrderModule
   ],
-  providers: [AuthService,ValidateService,GigService,AdminService],
+  providers: [AuthService,ValidateService,GigService,AdminService,AdminAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,9 @@
+<app-header></app-header>
+<br>
 <div class="container">
+    <div id="heading">
+        Edit Sub-Category
+      </div><br>
   <div class="form-group">
     Parent_category
   
@@ -30,6 +35,7 @@
                   meta_keywords
                   <input type="text" class="form-control" [(ngModel)]="meta_key" >
                 </div>
+                <span id="serr"></span>
                 <a  class="btn btn-block btn-success" (click)="edit_this()">Submit</a>
                 <br><br>
   </div>

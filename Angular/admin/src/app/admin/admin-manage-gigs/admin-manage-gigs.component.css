@@ -4,3 +4,11 @@
     padding: 2px;
 
 }
+#edit{
+    cursor: pointer;
+    color: springgreen;
+}
+#del{
+    cursor: pointer;
+    color: tomato;
+}

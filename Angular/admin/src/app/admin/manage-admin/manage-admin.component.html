@@ -1,0 +1,28 @@
+<app-header></app-header>
+<br>
+<div class="container">
+    <br>
+      <div id="heading">
+       Manage Referrals
+    
+      </div>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Email-Address</th>
+            <th>UserName</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of admins let i = index">
+            <td>{{i+1}}</td>
+            <td>{{a.email}}</td>
+            <td>{{a.name}}</td>
+            <td><a routerLink="/edit-admin/{{a._id}}"> <b id="edit">Edit</b> </a> | <a (click)="delete_this(a)"> <b id="del">delete</b> </a> </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  

@@ -3,7 +3,9 @@ import {AdminService} from '../../services/admin.service';
 import {GigService} from '../../services/gig.service';
 import * as moment from 'moment';
 import { ActivatedRoute } from '@angular/router';
-
+import { ValidateService } from '../../services/validate.service';
+declare var jquery:any;
+declare var $ :any;
 @Component({
   selector: 'app-admin-edit-gig',
   templateUrl: './admin-edit-gig.component.html',
@@ -11,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AdminEditGigComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute,private adminService:AdminService,private gigService:GigService) { }
+  constructor(private validateService:ValidateService, private route:ActivatedRoute,private adminService:AdminService,private gigService:GigService) { }
 gig_id;
 title;
 description;
@@ -59,7 +61,8 @@ image1;
       console.log(this.selected_user);
       this.selected_user_id=res.msg[0]._id;
       console.log(this.selected_user_id);
-    
+    if(this.validateService.validateInput(this.title) && this.validateService.validateInput(this.selected_days) && this.validateService.validateInput(this.price)){
+
     var data={
       user_id:this.selected_user_id,
       gig_id:this.gig_id,
@@ -71,9 +74,30 @@ image1;
       rating:this.rating
     }
     this.adminService.edit_gig(data).subscribe(res=>{
-      console.log(res);
+      if(res.success === true){
+        console.log(res);
+        window.location.reload();
+      }
     })
+  }else{
+    switch (false) {
+      case this.validateService.validateInput(this.title):
+      $('#serr').html('please enter title')
+        break;
+        case this.validateService.validateInput(this.selected_days):
+        $('#serr').html('please enter days to complete')
+          break;
+          case this.validateService.validateInput(this.price):
+          $('#serr').html('please enter price')
+            break;
+    
+      default:
+        break;
+    }
+  }
   })
+
+
   }
 
 

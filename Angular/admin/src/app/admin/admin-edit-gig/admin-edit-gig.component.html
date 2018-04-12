@@ -1,4 +1,9 @@
+<app-header></app-header>
+<br>
 <div class="container">
+    <div id="heading">
+        Edit Gig
+      </div>
   <br>
       <div class="form-group">
         Gig-Id:  <p>{{gig_id}}</p>  
@@ -25,7 +30,7 @@
         </div>
         <div class="form-group">
           Days To Complete
-          <input type="text" class="form-control" [(ngModel)]="selected_days">
+          <input type="text" class="form-control" [(ngModel)]="selected_days" placeholder="max-days : 10">
       </div>
             <div class="form-group">
                 Date Created:
@@ -33,9 +38,10 @@
               </div>
               <div class="form-group">
                   Price
-                  <input type="text" class="form-control" [(ngModel)]="price">
+                  <input type="text" class="form-control" [(ngModel)]="price" placeholder="max-price : 9999">
                 </div>
                 photo#1: <img src="{{image1}}" alt="" width="150px" height="100px"><br>
+                <span id="serr"></span>
                   <a  class="btn btn-block btn-success" (click)="edit_this()">Submit</a>
                   <br><br>
                   

@@ -20,12 +20,16 @@ export class AdminService {
 
   // loggedIn
   loggedIn(){
-    return tokenNotExpired('adminToken');
+    return tokenNotExpired();
   }
 
   // get all users
   get_all_users(){
     return this.http.get("http://localhost:3000/admin/get_all_users").map(res => res.json());
+    // return this.http.get("admin/get_all_users").map(res => res.json());
+  }
+  get_all_admins(){
+    return this.http.get("http://localhost:3000/admin/get_all_admins").map(res => res.json());
     // return this.http.get("admin/get_all_users").map(res => res.json());
   }
   edit_gig(formData){
@@ -58,6 +62,9 @@ export class AdminService {
   getCategoryById(id){
     return this.http.get("http://localhost:3000/admin/get_category_by_id/" + id).map(res=>res.json());
   }
+  getRequestById(id){
+    return this.http.get("http://localhost:3000/admin/get_custom_orders_by_id/" + id).map(res=>res.json());
+  }
   getCategoryByName(name){
     return this.http.get("http://localhost:3000/admin/get_category_by_name/" + name).map(res=>res.json());
   }
@@ -77,6 +84,12 @@ export class AdminService {
     let header = new Headers();
     header.append('Content-Type', 'application/json');
     return this.http.post('http://localhost:3000/admin/edit_sub_category',data,{headers:header}).map(res=>res.json());
+    
+  }
+  editRequest(data){
+    let header = new Headers();
+    header.append('Content-Type', 'application/json');
+    return this.http.post('http://localhost:3000/admin/edit_request',data,{headers:header}).map(res=>res.json());
     
   }
   DeleteCategory(cat_id){
@@ -102,6 +115,19 @@ export class AdminService {
     header.append('Content-Type','application/json');
     return this.http.post('http://localhost:3000/admin/update_user',data,{headers:header}).map(res=>res.json());
   }
+   cancel_order(data){
+    return this.http.post('http://localhost:3000/admin/cancel_order',data).map(res=>res.json());
+  }
+  update_admin(data){
+    let header = new Headers();
+    header.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3000/admin/update_admin',data,{headers:header}).map(res=>res.json());
+  }
+  add_admin(data){
+    let header = new Headers();
+    header.append('Content-Type','application/json');
+    return this.http.post('http://localhost:3000/admin/admin_det',data,{headers:header}).map(res=>res.json());
+  }
   getIpAddress() {
     return this.http
           .get('http://freegeoip.net/json/?callback')
@@ -122,9 +148,15 @@ deleteReferral(user_id){
 getUserById(user_id){
   return this.http.get('http://localhost:3000/admin/user_by_id/' + user_id).map(res=>res.json());
 }
+getAdminById(user_id){
+  return this.http.get('http://localhost:3000/admin/admin_by_id/' + user_id).map(res=>res.json());
+}
 DeleteMember(mem_id){
   return this.http.get('http://localhost:3000/admin/remove_user/' + mem_id).map(res=>res.json());
 
+}
+removeAdmin(admin_id){
+  return this.http.get('http://localhost:3000/admin/remove_admin/' + admin_id).map(res=>res.json());
 }
 getAllReviews(){
   return this.http.get('http://localhost:3000/admin/get_all_reviews').map(res=>res.json());

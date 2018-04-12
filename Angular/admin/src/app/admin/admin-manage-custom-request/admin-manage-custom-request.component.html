@@ -1,3 +1,5 @@
+<app-header></app-header>
+<br>
 <div class="container">
   <br>
     <div id="heading">
@@ -19,7 +21,7 @@
        <td>{{c.order_description}}</td>
        <td>{{c.username}}</td> 
        
-  <td> <a href="">Edit</a> | <a (click)="delete_this(c)">Delete</a></td>
+  <td> <a routerLink="/edit-request/{{c._id}}"> <b id="edit">Edit</b> </a> | <a (click)="delete_this(c)"> <b id="del">Delete</b> </a></td>
         </tr>
       </tbody>
     </table>

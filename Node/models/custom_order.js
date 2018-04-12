@@ -12,6 +12,10 @@ const cus_order = schema({
     image:{
         type:String,
     },
+    category_name:{
+        type:String,
+        required:true
+    },
     orderd_date:{
         type:String,
         required:true
@@ -27,6 +31,25 @@ const cus_order = schema({
         type:String,
         required:true
     }
+},{
+    toObject : {virtuals:true},
+    toJSON   : {virtuals: true}
 });
+cus_order.virtual('buyer', {
+    ref: 'User', // The model to use
+    localField: 'buyer_id', // Find people where `localField`
+    foreignField: '_id', // is equal to `foreignField`
+    // If `justOne` is true, 'members' will be a single doc as opposed to
+    // an array. `justOne` is false by default.
+    justOne: true
+  });
+  cus_order.virtual('seller', {
+    ref: 'User', // The model to use
+    localField: 'seller_id', // Find people where `localField`
+    foreignField: '_id', // is equal to `foreignField`
+    // If `justOne` is true, 'members' will be a single doc as opposed to
+    // an array. `justOne` is false by default.
+    justOne: true
+  });
 
 const custom_order = module.exports = mongoose.model('custom_order',cus_order);

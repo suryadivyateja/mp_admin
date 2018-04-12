@@ -4,3 +4,7 @@
     padding: 2px;
 
 }
+#del{
+    cursor: pointer;
+    color: tomato;
+}

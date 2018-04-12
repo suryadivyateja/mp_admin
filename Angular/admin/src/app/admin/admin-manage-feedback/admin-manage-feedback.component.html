@@ -1,3 +1,5 @@
+<app-header></app-header>
+<br>
 <div class="container">
   <br>
   <div id="heading">
@@ -22,7 +24,7 @@
      <td>{{r.gig.title}}</td>
      <td>{{r.review}}</td>
      <td>{{r.score}}</td>
-<td><a (click)="delete_this(r)">Delete</a></td>
+<td><a (click)="delete_this(r)"> <p id="del">Delete</p> </a></td>
       </tr>
     </tbody>
   </table>

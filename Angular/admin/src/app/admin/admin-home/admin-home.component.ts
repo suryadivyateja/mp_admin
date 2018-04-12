@@ -18,6 +18,7 @@ export class AdminHomeComponent implements OnInit {
 
 
   ngOnInit() {
+    localStorage.getItem('adminToken');
     //all-gigs
     this.adminService.get_all_gigs().subscribe(res=>{
      this.total_gigs=res.msg;
