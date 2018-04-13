@@ -1,6 +1,6 @@
 <app-header></app-header>
 <br>
-<div class="container">
+<!-- <div class="container">
   <br>
   <div id="heading">
     Create-Admnistrator
@@ -19,5 +19,57 @@
   </div>
   <span id="serr"></span>
   <a (click)="signup()" class="btn btn-success btn-block">Sign-Up</a>
+  </div> -->
+  <div class="main-col">
+      <div class="main-col-inner">
+        <div id="serr">
+        </div>
+        <div id="message"></div>
+        <div class="con-header">
+          <div class="con-h">
+            <h3 class="con-header-title">
+             Administrators Add-Administratot
+            </h3>
+            <div class="con-header-button">
+                <button class="con-button con-button-1" (click)="signup()">
+                  <i class="fa fa-check"></i> submit</button>
+              </div>
+          </div>
+        </div>
+        <div class="group-content">
+          <div class="edit-heading">
+            <h6>Add-Administrator</h6>
+          </div>
+        </div>
+        <div class="form">
+          <div class="form-grid">
+            <div class="form-n">
+              <p class="label">Username</p>
+              <p class="label" for="">Password</p>
+              <p class="label" for="">Email</p>
+            </div>
+            <div class="form-input">
+              <div class="input">
+                  <input type="text" class="form-control" [(ngModel)]="user_name" placeholder="Enter the name">
+              </div>
+              <div class="input">
+                  <input type="text" class="form-control" [(ngModel)]="password" placeholder="Enter Password">
+              </div>
+              <div class="input">
+                  <input type="text" class="form-control" [(ngModel)]="email" placeholder="Enter Email-Address">
+              </div>    
+            </div>
+            <div class="form-hint">
+              <p class="hint">[ADMIN USERNAME]</p>  
+              <p class="hint">[ADMIN PASSWORD]</p>
+              <p class="hint">[ADMIN E-MAIL ADDRESS]	</p>
+              
+  
+            </div>
+          </div>
+        </div>
+  
+      </div>
   </div>
+     
 

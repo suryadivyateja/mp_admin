@@ -1,6 +1,6 @@
 <app-header></app-header>
 <br>
-<div class="container">
+<!-- <div class="container">
   <div class="form-group">
   Gig
     <select class="form-control" [(ngModel)]="selected_gig">
@@ -36,4 +36,69 @@
 
 
 
+ -->
+ <div class="main-col">
+    <div class="main-col-inner">
+      <div id="serr">
+      </div>
+      <div id="message"></div>
+      <div class="con-header">
+        <div class="con-h">
+          <h3 class="con-header-title">
+           Feedbacks Add-Fake Feedback
+          </h3>
+          <div class="con-header-button">
+              <button class="con-button con-button-1" (click)="edit_this()">
+                <i class="fa fa-check"></i> submit</button>
+            </div>
+        </div>
+      </div>
+      <div class="group-content">
+        <div class="edit-heading">
+          <h6>Add-Fake Feedback</h6>
+        </div>
+      </div>
+      <div class="form">
+        <div class="form-grid">
+          <div class="form-n">
+            <p class="label">Gig</p>
+            <p class="label" for="">Username</p>
+            <p class="label" for="">Rating</p>
+            <p class="label" for="">Comment</p>
+          </div>
+          <div class="form-input">
+            <div class="input">
+                <select class="form-control" [(ngModel)]="selected_gig">
+                    <option *ngFor="let g of gigs" [ngValue]="g.title" >{{g.title}}</option>
+                   </select>
+            </div>
+            <div class="input">
+                <select class="form-control" [(ngModel)]="selected_user">
+                    <option *ngFor="let u of users" [ngValue]="u.name" >{{u.name}}</option>
+                   </select>
+            </div>
+            <div class="input">
+                <select class="form-control" [(ngModel)]="selected_rating">
+                    <option  value="1" >1</option>
+                    <option  value="2" >2</option>
+                    <option  value="3" >3</option>
+                    <option  value="4" >4</option>
+                    <option  value="5" >5</option>
+                   </select>
+            </div>
+            <div class="input">
+                <input type="text" class="form-control" [(ngModel)]="selected_review">
+            </div>     
+          </div>
+          <div class="form-hint">
+            <p class="hint">[GIG YOU WILL BE ADDING THE FEEDBACK TO]</p>  
+            <p class="hint">[USERNAME THE FEEDBACK WILL BE POSTED FROM]</p>
+            <p class="hint">[FEEDBACK RATING]</p>
+            <p class="hint">[FEEDBACK COMMENT]</p>
+          </div>
+        </div>
+      </div>
 
+    </div>
+</div>
+   

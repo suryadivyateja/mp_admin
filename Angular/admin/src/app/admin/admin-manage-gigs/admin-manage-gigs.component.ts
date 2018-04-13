@@ -26,10 +26,15 @@ gigs=[];
   }
   delete_this(g){
     this.gigService.delete_gig(g._id).subscribe(res=>{
-      console.log(res);
       if(res.success===true){
         var index = this.gigs.indexOf(g);
     this.gigs.splice(index,1);
+    $('#serr').html('<i class="fa fa-check"></i> gig deleted successfully')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
+
+setTimeout(()=>{
+  $('#serr').css('display','none')
+},2000);
       }
 
     })

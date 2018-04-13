@@ -1,5 +1,5 @@
 <app-header></app-header>
-
+<br>
 <!-- <div class="container">
   <br>
   <div id="heading">
@@ -39,45 +39,18 @@
     </div>
   </div>
 </div> -->
-
-<div class="middle" id="anchor-content">
-  <div id="page:main-container">
-    <div class="columns ">
-
-      <div class="side-col" id="page:left">
-        <h3>Categories</h3>
-
-        <ul id="isoft" class="tabs">
-          <li>
-            <a href="cat_manage.php" id="isoft_group_1" name="group_1" title="Manage Categories" class="tab-item-link active">
-              <span>
-
-                <h5 class="add-c add-man"> Manage Category</h5>
-              </span>
-            </a>
-          </li>
-          <li class="add">
-            <a href="cat_add.php" id="isoft_group_2" name="group_2" title="Add Category" class="tab-item-link">
-              <span>
-
-                <h5 class="add-c"> Add Category</h5>
-              </span>
-            </a>
-
-          </li>
-
-        </ul>
-      </div>
       <div class="main-col">
         <div class="main-col-inner">
-          <div id="messages"></div>
+          <div id="serr"></div>
           <div class="con-header">
             <div class="con-h">
               <h3 class="con-header-title">
                 Manage-Categories
               </h3>
               <div class="con-header-button">
-                <button class="con-button">
+                  <button class="con-button" routerLink="/add-sub_category">
+                      <i class="fa fa-plus-circle"></i> Add sub-category</button>
+                <button class="con-button" routerLink="/add-category">
                   <i class="fa fa-plus-circle"></i> Add category</button>
               </div>
             </div>
@@ -117,6 +90,4 @@
 
         </div>
       </div>
-    </div>
-  </div>
-</div>
+ 

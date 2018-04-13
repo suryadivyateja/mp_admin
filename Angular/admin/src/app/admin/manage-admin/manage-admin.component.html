@@ -1,6 +1,6 @@
 <app-header></app-header>
 <br>
-<div class="container">
+<!-- <div class="container">
     <br>
       <div id="heading">
        Manage Referrals
@@ -25,4 +25,48 @@
         </tbody>
       </table>
     </div>
+   -->
+   <div class="main-col">
+      <div class="main-col-inner">
+        <div id="serr"></div>
+        <div class="con-header">
+          <div class="con-h">
+            <h3 class="con-header-title">
+             Administrator - Manage Administrators
+            </h3>
+          </div>
+        </div>
+        <div class="group-content">
+          <div class="edit-heading">
+            <h6>Manage-Administrators</h6>
+          </div>
+        </div>
+        <div class="grid">
+          <table cellspacing="0">
+            <thead>
+              <tr>
+                <th class="id">ID</th>
+                <th class="name">Email Address</th>
+                <th class="pcat">Username</th>
+                <th clas="action">Action</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let a of admins let i = index">
+              <tr class="s">
+                <td>
+                  {{i+1}}
+                </td>
+                <td>
+              {{a.email}}
+                </td>
+                <td>
+                  {{a.name}}
+                </td>
+                <td><a routerLink="/edit-admin/{{a._id}}"> <b id="edit">Edit</b> </a> | <a (click)="delete_this(a)"> <b id="del">delete</b> </a> </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
   
+      </div>
+    </div>

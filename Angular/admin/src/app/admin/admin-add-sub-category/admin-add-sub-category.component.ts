@@ -42,19 +42,37 @@ sub_categories=[];
     if(this.validateService.validateInput(this.sub_category_name) && this.validateService.validateInput(this.selected_cat) ){
       this.adminService.postSubCategory(data).subscribe(res=>{
         if(res.success === false){
-          $('#serr').html('sub_category_name is already exists');
+          $('#serr').html('<i class="fa fa-times-circle"></i> sub_category already exists')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
         }else if(res.success === true){
+          $('#message').html('<i class="fa fa-check"></i> sub-category added successfully')
+          .css({"padding":"8px","margin-bottom":"10px","display":"block"});
+  
+  setTimeout(()=>{
+    $('#message').css('display','none')
+  },2000);
+  $('#serr').css("display","none");
             console.log(res);
-            window.location.reload();
+            this.selected_cat='';
+            this.sub_category_name='';
+            this.seo='';
+            this.desc='';
+            this.meta_desc='';
+            this.meta_key='';
         }
       })
     }else{
       switch(false){
         case this.validateService.validateInput(this.selected_cat):
-        $('#serr').html('Please Select the category_name');
+        $('#serr').html('<i class="fa fa-times-circle"></i> please enter category_name')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
+        // setTimeout(()=>{
+        //   $('#serr').css('display','none')
+        // },2000);
         break;
         case this.validateService.validateInput(this.sub_category_name):
-        $('#serr').html('Please Enter the sub_category_name');
+        $('#serr').html('<i class="fa fa-times-circle"></i> please enter sub_category_name')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
         break;
   
         default:

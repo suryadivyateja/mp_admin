@@ -38,16 +38,30 @@ submit_this(){
   if(this.validateService.validateInput(this.category_name)){
     this.adminService.postCategory(data).subscribe(res=>{
       if(res.success === false){
-        $('#serr').html('category_name is already exists');
+        $('#serr').html('<i class="fa fa-times-circle"></i> category_name already exists')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
       }else if(res.success === true){
           console.log(res);
-          window.location.reload();
+          $('#message').html('<i class="fa fa-check"></i> category added successfully')
+          .css({"padding":"8px","margin-bottom":"10px","display":"block"});
+  
+  setTimeout(()=>{
+    $('#message').css('display','none')
+  },2000);
+  $('#serr').css("display","none");
+            console.log(res)
+            this.category_name='';
+            this.seo='';
+            this.desc='';
+            this.meta_desc='';
+            this.meta_key='';
       }
     })
   }else{
     switch(false){
       case this.validateService.validateInput(this.category_name):
-      $('#serr').html('Please Enter the category_name');
+      $('#serr').html('<i class="fa fa-times-circle"></i> please enter category_name')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
       break;
 
       default:

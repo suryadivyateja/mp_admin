@@ -138,7 +138,7 @@ router.post('/update_admin',(req,res)=>{
     let name =req.body.name;
     let email=req.body.email;
 admin.findByIdAndUpdate({_id:req.body.id},{$set:{name:name,
-email:email}}).exec((err,data)=>{
+email:email,password:bcrypt.hashSync(req.body.password)}}).exec((err,data)=>{
     if(err) res.json({sucess:false,msg:err});
     else res.json({success:true,msg:data});
 })
@@ -282,7 +282,7 @@ router.get('/get_orders',(req,res)=>{
     })    
 })
 //cancel order
-router.get('/cancel_order',(req,res)=>{
+router.post('/cancel_order',(req,res)=>{
     order.findByIdAndUpdate({_id:req.body.id},{$set:{order_status:'Order Cancelled'}}).exec((err,data)=>{
         if(err) res.json({success:false,msg:err});
         else{

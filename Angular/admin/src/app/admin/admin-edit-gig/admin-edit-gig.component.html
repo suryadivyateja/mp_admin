@@ -1,6 +1,6 @@
 <app-header></app-header>
 <br>
-<div class="container">
+<!-- <div class="container">
     <div id="heading">
         Edit Gig
       </div>
@@ -45,5 +45,91 @@
                   <a  class="btn btn-block btn-success" (click)="edit_this()">Submit</a>
                   <br><br>
                   
-    </div>
+    </div> -->
+    <div class="main-col">
+        <div class="main-col-inner">
+          <div id="serr">
+          </div>
+          <div id="message"></div>
+          <div class="con-header">
+            <div class="con-h">
+              <h3 class="con-header-title">
+               Gigs-Edit Gig
+              </h3>
+              <div class="con-header-button">
+                  <button class="con-button con-button-1" (click)="edit_this()">
+                    <i class="fa fa-check"></i> submit</button>
+                </div>
+            </div>
+          </div>
+          <div class="group-content">
+            <div class="edit-heading">
+              <h6>Edit-Gig</h6>
+            </div>
+          </div>
+          <div class="form">
+            <div class="form-grid">
+              <div class="form-n">
+                <p class="label">Gig ID</p>
+                <p class="label" for="">Poster</p>
+                <p class="label" for="">Title</p>
+                <p class="label1" for="">Description</p>
+                <p class="label" for="">Days To Complete</p>
+                <p class="label" for="">Category</p>
+                <p class="label" for="">Date Created</p>
+                <p class="label">Price</p>
+                <p class="label">Photo #1</p>
+              </div>
+              <div class="form-input">
+                <div class="input">
+                    <p class="t">{{gig_id}}</p>
+                </div>
+                <div class="input">
+                    <select class="form-control" [(ngModel)]="selected_user">
+                        <option *ngFor="let u of users" [ngValue]="u.name">{{u.name}}</option>
+                      </select>
+                </div>
+                <div class="input">
+                    <input type="text" class="form-control" [(ngModel)]="title">
+                </div>
+                <div class="input">
+                    <textarea class="form-control" [(ngModel)]="description" rows="5" cols="39"></textarea>
+                </div>
+                <div class="input">
+                    <input type="text" class="form-control" [(ngModel)]="selected_days" placeholder="max-days : 10">
+                </div>
+                <div class="input">
+                    <select class="form-control" [(ngModel)]="selected_cat">
+                        <option *ngFor="let c of categories" [ngValue]="c.category_name">{{c.category_name}}</option>
+                      </select>
+                </div>
+                <div class="input">
+                    <p class="t">{{date}}</p>
+                </div>
+                <div class="input">
+                    <input type="text" class="form-control" [(ngModel)]="price" placeholder="max-price : 9999">
+                </div>
+                <div class="input">
+                    <img src="{{image1}}" alt="" width="150px" height="100px">
+                </div>             
+              </div>
+              <div class="form-hint">
+                <p class="hint"></p>  
+                <p class="hint">[OWNER OF THE GIG]</p>
+                <p class="hint">[TITLE OF THE GIG]</p>
+                <p class="hint1">[DESCRIPTION OF THE GIG]</p>
+                <p class="hint">[DAYS NEEDED TO COMPLETE THE GIG]</p>
+                <P class="hint">[CATEGORY OF THE GIG]</P>
+                <p class="hint">[DATE CREATED]</p>
+                <p class="hint">[PRICE OF THE GIG]	</p>
+                <p class="hint"></p>
     
+              </div>
+            </div>
+          </div>
+    
+        </div>
+    </div>
+       
+    
+  

@@ -53,24 +53,39 @@ selected_review;
     };
     console.log(data);
     this.gigService.post_review(data).subscribe(re=>{
-      console.log(re);
-      window.location.reload();
-  })
+      if(re.success === true){
+        $('#message').html('<i class="fa fa-check"></i> feedback added successfully')
+          .css({"padding":"8px","margin-bottom":"10px","display":"block"});
+  
+  setTimeout(()=>{
+    $('#message').css('display','none')
+  },2000);
+  $('#serr').css("display","none");
+            this.selected_gig='';
+            this.selected_user='';
+            this.selected_rating='';
+            this.selected_review='';
+      }
 })
+    })
 })
   }else{
     switch(false){
       case this.validateService.validateInput(this.selected_gig):
-      $('#serr').html('select gig');
+      $('#serr').html('<i class="fa fa-times-circle"></i> please select gig')
+      .css({"padding":"8px","margin-bottom":"10px","display":"block"});
       break;
       case this.validateService.validateInput(this.selected_user):
-      $('#serr').html('select user');
+      $('#serr').html('<i class="fa fa-times-circle"></i> please select user')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
       break;
      case this.validateService.validateInput(this.selected_rating):
-      $('#serr').html('select rating');
+     $('#serr').html('<i class="fa fa-times-circle"></i> please select rating')
+     .css({"padding":"8px","margin-bottom":"10px","display":"block"});
       break;
       case this.validateService.validateInput(this.selected_review):
-      $('#serr').html('enter review');
+      $('#serr').html('<i class="fa fa-times-circle"></i> please enter review')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
       break;
     }
   }

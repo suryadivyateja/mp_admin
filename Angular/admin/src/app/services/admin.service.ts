@@ -41,7 +41,7 @@ export class AdminService {
     return this.http.get("http://localhost:3000/admin/get_all_gigs").map(res => res.json());
   }
   get_all_orders(){
-    return this.http.get("http://localhost:3000/admin/get_all_orders").map(res => res.json());
+    return this.http.get("http://localhost:3000/admin/get_orders").map(res => res.json());
   }
   postCategory(data:any){
     let header = new Headers();

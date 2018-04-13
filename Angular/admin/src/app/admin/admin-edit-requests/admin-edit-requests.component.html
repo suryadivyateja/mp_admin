@@ -1,6 +1,6 @@
 <app-header></app-header>
 <br>
-<div class="container">
+<!-- <div class="container">
     <div id="heading">
             Edit Custom Request
           </div> <br>
@@ -25,5 +25,63 @@
           <span id="serr"></span>
               <a  class="btn btn-block btn-success" (click)="submit_this()">Submit</a>
               <br><br>
+</div> -->
+<div class="main-col">
+    <div class="main-col-inner">
+      <div id="serr">
+      </div>
+      <div id="message"></div>
+      <div class="con-header">
+        <div class="con-h">
+          <h3 class="con-header-title">
+           Requests-Edit Request
+          </h3>
+          <div class="con-header-button">
+              <button class="con-button con-button-1" (click)="submit_this()">
+                <i class="fa fa-check"></i> submit</button>
+            </div>
+        </div>
+      </div>
+      <div class="group-content">
+        <div class="edit-heading">
+          <h6>Edit-Request</h6>
+        </div>
+      </div>
+      <div class="form">
+        <div class="form-grid">
+          <div class="form-n">
+            <p class="label">Buyer</p>
+            <p class="label1" for="">Buyer Request</p>
+            <p class="label" for="">Category</p>
+          </div>
+          <div class="form-input">
+            <div class="input">
+                <select class="form-control" [(ngModel)]="selected_user">
+                    <option *ngFor="let u of users" [ngValue]="u.name">{{u.name}}</option>
+                  </select>
+            </div>
+            <div class="input">
+                <textarea name="" id="" cols="39" rows="4" class="form-control" [(ngModel)]="description"></textarea>
+            </div>
+            <div class="input">
+                <select class="form-control" [(ngModel)]="selected_cat">
+                    <option *ngFor="let c of categories" [ngValue]="c.category_name">{{c.category_name}}</option>
+                  </select>
+            </div>
+            
+          </div>
+          <div class="form-hint">
+            <p class="hint">[USER WHO REQUESTED THE REQUEST]</p>
+            <p class="hint1">[WHAT THE USER REQUESTED]</p>
+            <p class="hint1">[CATEGORY OF THE REQUEST]</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
 </div>
+   
+
+
+
 

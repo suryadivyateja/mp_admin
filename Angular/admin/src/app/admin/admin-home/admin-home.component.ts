@@ -33,6 +33,7 @@ export class AdminHomeComponent implements OnInit {
     })
     this.adminService.get_all_orders().subscribe(res=>{
       this.total_orders=res.msg;
+      console.log('eyrfmerygjr'+this.total_orders.length)
       this.total_orders.forEach(element => {
         if(element.order_status === 'Order Delivered'){
           this.total_orders_delivered.push(element);

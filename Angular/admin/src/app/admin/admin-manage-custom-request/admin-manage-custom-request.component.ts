@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
-
-
+declare var $:any;
 @Component({
   selector: 'app-admin-manage-custom-request',
   templateUrl: './admin-manage-custom-request.component.html',
@@ -28,6 +27,12 @@ custom_orders=[];
         if(res.success===true){
           var index = this.custom_orders.indexOf(cat);
       this.custom_orders.splice(index,1);
+      $('#serr').html('<i class="fa fa-check"></i> request deleted successfully')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
+
+setTimeout(()=>{
+  $('#serr').css('display','none')
+},2000);
       
         }
       })

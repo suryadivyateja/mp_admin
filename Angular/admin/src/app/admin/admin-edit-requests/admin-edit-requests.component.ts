@@ -48,11 +48,19 @@ selected_cat;
         id :this.request_id
       }
       this.adminService.editRequest(data).subscribe(res=>{
-          console.log(res);
-        
+          if(res.success === true){
+            $('#message').html('<i class="fa fa-check"></i> Edited request successfully')
+            .css({"padding":"8px","margin-bottom":"10px","display":"block"});
+    
+    setTimeout(()=>{
+      $('#message').css('display','none')
+    },2000);
+    $('#serr').css("display","none");
+          }
       })
     }else{
-      $('#serr').html('please enter order_description')
+      $('#serr').html('<i class="fa fa-times-circle"></i> please enter order description')
+      .css({"padding":"8px","margin-bottom":"10px","display":"block"});
     }
 
     })

@@ -75,20 +75,28 @@ image1;
     }
     this.adminService.edit_gig(data).subscribe(res=>{
       if(res.success === true){
-        console.log(res);
-        window.location.reload();
+        $('#message').html('<i class="fa fa-check"></i> Edited gig successfully')
+            .css({"padding":"8px","margin-bottom":"10px","display":"block"});
+    
+    setTimeout(()=>{
+      $('#message').css('display','none')
+    },2000);
+    $('#serr').css("display","none");
       }
     })
   }else{
     switch (false) {
       case this.validateService.validateInput(this.title):
-      $('#serr').html('please enter title')
+      $('#serr').html('<i class="fa fa-times-circle"></i> please enter title')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
         break;
         case this.validateService.validateInput(this.selected_days):
-        $('#serr').html('please enter days to complete')
+        $('#serr').html('<i class="fa fa-times-circle"></i> please enter days to complete')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
           break;
           case this.validateService.validateInput(this.price):
-          $('#serr').html('please enter price')
+          $('#serr').html('<i class="fa fa-times-circle"></i> please enter price')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});
             break;
     
       default:

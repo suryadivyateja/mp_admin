@@ -63,12 +63,20 @@ export class AdminEditCategoryComponent implements OnInit {
         id:this.category_id
       }
       this.adminService.editSubCategory(obj).subscribe(res=>{
-        console.log(res);
+        if(res.success === true){
+            console.log(res);
+            $('#message').html('<i class="fa fa-check"></i> Edited sub-category successfully')
+            .css({"padding":"8px","margin-bottom":"10px","display":"block"});
+    
+    setTimeout(()=>{
+      $('#message').css('display','none')
+    },2000);
+    $('#serr').css("display","none");
+        }
       })
-      window.location.reload();
-
     }else{
-      $('#serr').html('please enter sub_category name');
+      $('#serr').html('<i class="fa fa-times-circle"></i> please enter sub_category_name')
+        .css({"padding":"8px","margin-bottom":"10px","display":"block"});;
     }
   }
 

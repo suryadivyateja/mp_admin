@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
 import { GigService } from '../../services/gig.service';
-
+declare var $:any;
 @Component({
   selector: 'app-admin-manage-feedback',
   templateUrl: './admin-manage-feedback.component.html',
@@ -26,6 +26,12 @@ gigTitle;
       if(res.success===true){
         var index = this.reviews.indexOf(r);
     this.reviews.splice(index,1);
+    $('#serr').html('<i class="fa fa-check"></i> feedback deleted successfully')
+    .css({"padding":"8px","margin-bottom":"10px","display":"block"});
+
+setTimeout(()=>{
+$('#serr').css('display','none')
+},2000);
       }
 
     })

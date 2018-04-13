@@ -2,29 +2,81 @@
 <br>
 <div class="main-col">
     <div class="main-col-inner">
-      <div id="messages"></div>
+      <div id="serr">
+      </div>
+      <div id="message"></div>
       <div class="con-header">
         <div class="con-h">
           <h3 class="con-header-title">
-            Manage-Categories
+           Categories Add-Sub_Category
           </h3>
           <div class="con-header-button">
-            <button class="con-button">
-              <i class="fa fa-plus-circle"></i> Add category</button>
-          </div>
+              <button class="con-button con-button-1" (click)="submit_this()">
+                <i class="fa fa-check"></i> submit</button>
+            </div>
         </div>
       </div>
       <div class="group-content">
         <div class="edit-heading">
-          <h6>Categories</h6>
+          <h6>Add-Sub_Category</h6>
         </div>
       </div>
-      <div class="edit-cat">
-        jashdfjhadsfjhjfdcbsjkdb
-        jsgkjsdafgjdgfjk
-        dbcfkjdsagjkd
+      <div class="form">
+        <div class="form-grid">
+          <div class="form-n">
+            <p class="label">Parent Category</p>
+            <p class="label" for="">Sub-Category Name</p>
+            <p class="label" for="">SEO Name</p>
+            <p class="label" for="">Description</p>
+            <p class="label" for="">Page Title</p>
+            <p class="label" for="">Meta Description</p>
+            <p class="label" for="">Meta Keywords</p>
+          </div>
+          <div class="form-input">
+            <div class="input">
+                <select [(ngModel)]="selected_cat">
+                    <option *ngFor="let c of categories" [ngValue]="c.category_name">{{c.category_name}}</option>
+                  </select>
+            </div>
+            <div class="input">
+                <input type="text" class="form-control" [(ngModel)]="sub_category_name">
+            </div>
+            <div class="input">
+                <input type="text" class="form-control" [(ngModel)]="seo">
+            </div>
+            <div class="input">
+                <input type="text" class="form-control" [(ngModel)]="desc">
+            </div>
+            <div class="input">
+                <input type="text" class="form-control" [(ngModel)]="page_title_name">
+            </div>
+            <div class="input">
+                <input type="text" class="form-control" [(ngModel)]="meta_desc">
+            </div>
+            <div class="input">
+                <input type="text" class="form-control" [(ngModel)]="meta_key">
+            </div>
+
+
+              
+                
+          </div>
+          <div class="form-hint">
+            <p class="hint">[IF YOU WANT THIS TO BE A SUB-CATEGORY, SELECT A PARENT CATEGORY]</p>  
+            <p class="hint">[NAME OF THE SUB-CATEGORY]</p>
+            <p class="hint">[SEO NAME]</p>
+            <p class="hint">[DESCRIPTION OF THE SUB-CATEGORY]</p>
+            <p class="hint">[PAGE TITLE FOR THE SUB-CATEGORY]</p>
+            <P class="hint">[META DESCRIPTION FOR THE SUB-CATEGORY]</P>
+            <p class="hint">[META KEYWORDS FOR THE SUB-CATEGORY]	</p>
+
+          </div>
+        </div>
       </div>
-      </div>
+
+    </div>
+</div>
+   
 <!-- <div class="container">
     <div id="heading">
         Add Sub-Category

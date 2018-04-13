@@ -1,6 +1,6 @@
 <app-header></app-header>
 <br>
-<div class="container">
+<!-- <div class="container">
         <div id="heading">
                 Edit Members
               </div> <br>
@@ -38,4 +38,88 @@
                   <a  class="btn btn-block btn-success" (click)="submit_this()">Submit</a>
                   <br><br>
     </div>
-    
+     -->
+     <div class="main-col">
+            <div class="main-col-inner">
+              <div id="serr">
+              </div>
+              <div id="message"></div>
+              <div class="con-header">
+                <div class="con-h">
+                  <h3 class="con-header-title">
+                   Members-Edit Member
+                  </h3>
+                  <div class="con-header-button">
+                      <button class="con-button con-button-1" (click)="submit_this()">
+                        <i class="fa fa-check"></i> submit</button>
+                    </div>
+                </div>
+              </div>
+              <div class="group-content">
+                <div class="edit-heading">
+                  <h6>Edit-Member</h6>
+                </div>
+              </div>
+              <div class="form">
+                <div class="form-grid">
+                  <div class="form-n">
+                    <p class="label">Member ID</p>
+                    <p class="label" for="">First Name</p>
+                    <p class="label" for="">Last Name</p>
+                    <p class="label" for="">Email</p>
+                    <p class="label" for="">Paypal Email</p>
+                    <p class="label1" for="">About Me</p>
+                    <p class="label">Date Joined</p>
+                    <p class="label">Signup IP</p>
+                    <p class="label">Last IP</p>
+                  </div>
+                  <div class="form-input">
+                    <div class="input">
+                        <p class="t">{{member_id}}</p>
+                    </div>
+                    <div class="input">
+                            <input type="text" class="form-control" [(ngModel)]="name">
+
+                    </div>
+                    <div class="input">
+                            <input type="text" class="form-control" [(ngModel)]="last_name">
+
+                    </div>
+                    <div class="input">
+                            <input type="text" class="form-control" [(ngModel)]="email">
+
+                    </div>
+                    <div class="input">
+                            <input type="email" class="form-control" [(ngModel)]="pay_pal">
+                    </div>
+                    <div class="input">
+                            <textarea name="" id="" cols="39" rows="4" class="form-control" [(ngModel)]="description"></textarea> 
+                    </div>
+                    <div class="input">
+                            <p class="t">{{date}}</p>
+                        </div>
+                    <div class="input">
+                        <p class="t">{{ipAddress}}</p>
+                    </div>
+                    <div class="input">
+                            <p class="t">{{ipAddress}}</p>
+                    </div>             
+                  </div>
+                  <div class="form-hint">
+                    <p class="hint">[MEMBER ID]</p>  
+                    <p class="hint">[FIRSTNAME OF THE MEMBER]</p>
+                    <p class="hint">[LASTNAME OF THE MEMBER]</p>
+                    <p class="hint">[EMAIL ADDRESS OF THE MEMBER]</p>
+                    <p class="hint">[PAYPAL EMAIL ADDRESS OF THE MEMBER]</p>
+                    <P class="hint1">[DESCRIPTION OF THE MEMBER]</P>
+                    <p class="hint">[DATE JOINED]</p>
+                    <p class="hint">[SIGNUP IP ADDRESS]	</p>
+                    <p class="hint">[LAST LOGIN IP ADDRESS</p>
+        
+                  </div>
+                </div>
+              </div>
+        
+            </div>
+        </div>
+           
