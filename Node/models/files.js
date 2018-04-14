@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const User_gig = require('./gig');
 const User = require('./user');
 
-filesSchema=new mongoose.Schema({
+const filesSchema= mongoose.Schema({
     gigs:{
         type:Array
     },

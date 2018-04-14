@@ -1,3 +1,4 @@
+
 "use strict";
 const express = require('express');
 const router = express.Router();
@@ -388,15 +389,40 @@ router.get('/delete_reviews/:id',(req,res)=>{
         }
     })
 })
-//files
-router.get('/get_files',(req,res)=>{
-    files.find({}).populate('pics').exex((err,file)=>{
+router.post('/files',(req,res)=>{
+   var file=[];
+    User_gig.find({}).exec((err,data)=>{
         if(err) res.json({success:false,msg:err});
         else{
-            res.json({success:true,msg:file});
+            data.forEach(element=>{
+                file.push(element.img1,element.img2,element.img3,element.img4,element.img5,element.img6);
+                
+            })
+            console.log(file);
+            var fil= new files({
+                gigs:'tgrvfnevgf4v'
+            })
+            fil.save((err1,d)=>{
+                if(err1) res.json({success:false,msg:err1});
+                else{
+                    
+                    res.json({success:true,msg:d});
+
+                }
+            })
+            
         }
     })
-})
+ })
+ router.post('/file',(req,res)=>{
+     var file = new files({
+         gigs:['rfhuemg']
+     });
+     file.save((err,d)=>{
+         res.json({msg:d})
+
+     })
+ })
 //update gig
 router.post('/edit_gig',(req,res)=>{
     var gig_id = req.body.gig_id;

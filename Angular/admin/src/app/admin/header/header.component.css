@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0px;
     padding: 0px;
        
@@ -41,13 +41,13 @@
 }
 .fiverr h1{
     margin-top: 20px;
-} */
+} 
 ul {
 list-style-type: none;
 margin: 0;
 padding: 0;
 height: 100%;
-/* overflow: hidden; */
+
 background-color: #666E73;
 
 }
@@ -79,7 +79,7 @@ display: block;
 }
 
 .dropdown-content {
-/* display: none; */
+
 position: absolute;
 background-color: #e7efef;
 border-bottom: 1px dashed black;
@@ -93,7 +93,7 @@ z-index: 100;
 
 .dropdown-content a {
 color:black;
-/* padding: px px; */
+
 text-decoration: none;
 display: block;
 font-size: 12px;
@@ -103,11 +103,104 @@ margin-left: -5px;
 }
 
 .dropdown-content a:hover{
-/* background-color:; */
+
 color: black;
 }
 
 .dropdown:hover .dropdown-content {
 display:block;
 
+} */
+/* .wrapper ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+} */
+.navigation{
+    width: 100%;
+    background: #666e73;
+    color: #fff;
+    cursor: default;
+    flex-direction: column;
+    
 }
+.navigation div.tit{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    border-bottom: 1px solid #5F767F;
+    background:  linear-gradient(#122b31,#36535d);
+}
+div.tit p{
+    padding: 10px 25px 10px 15px;
+    
+}
+p.hea{
+    color: #bbc2c7;
+    font-weight: 600px;
+    font-size: 25px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+p.hea + p.info {
+    margin-left: auto;  
+  }
+p.info{
+    font-size: 10px;
+}
+p.info:last-of-type{
+    cursor: pointer;
+}
+.navigation div.nav ul{
+    padding: 8px 0 8px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-basis: 100%;
+}
+.navigation div.nav ul li ,.navigation div.nav ul li.drop a{
+    font-size: 12px;
+    color: #fff;
+}
+/* .navigation ul li.drop{
+    position: relative;
+} */
+.navigation div.nav ul li.drop:after {
+    content: "\25BC";
+    color: #fff;
+}
+.dropdown{
+    margin-top: 0px;
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    height: auto;
+    width: 160px;
+    color: black;
+}
+.dd-core{
+    margin-top: 5px;
+    background: #e9eef0;
+}
+.dropdown p{
+    cursor: pointer;
+    font-size: 12px;
+    float: none;
+    display: block;
+    padding: 5px 15px;
+    border-bottom: 1px dotted black;
+}
+.dropdown p:hover{
+    background: #bbc2c7;
+}
+.navigation div.nav ul li.drop:hover::after{
+    content: "\25B2";
+    opacity: 0.5;
+}
+.navigation div.nav ul li:last-of-type:after {
+    content: "";
+}
+.navigation div.nav ul li.drop:hover .dropdown{
+    display: block;
+    
+}
+

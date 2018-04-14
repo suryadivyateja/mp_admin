@@ -88,8 +88,10 @@
           </li>
         </ul>
       </div> -->
-      <div class="wrapper">
-        <ul class="h">
+      
+      
+      <!-- <div class="wrapper">
+       <ul class="h">
             <li>
               <a>Market Place
               </a>
@@ -103,9 +105,9 @@
               <li class="ri">
                   <a >logged in as admin</a>
                  </li>
-            </ul>
+            </ul> -->
         
-    <ul>
+    <!-- <ul>
       <li><a routerLink="/home">Home </a> |</li>
       
      
@@ -131,7 +133,6 @@
         <a  class="dropbtn">Memberships</a>
         <div class="dropdown-content">
             <a routerLink="/manage-members">Members</a>
-    <!--      <a href="#">Validate Requests</a>-->
        
        
         </div> |
@@ -182,7 +183,7 @@
         <a  class="dropbtn">Reports</a>
         <div class="dropdown-content">
           <a href="#">reported Messages</a>
-    <!--      <a href="#">Validate Requests</a>-->
+
        
        
         </div> |
@@ -191,7 +192,7 @@
         <a  class="dropbtn">Conversations</a>
         <div class="dropdown-content">
           <a href="#">Manage Conversations</a>
-    <!--      <a href="#">Validate Requests</a>-->
+    
        
        
         </div> |
@@ -203,7 +204,7 @@
         <a  class="dropbtn">Bans</a>
         <div class="dropdown-content">
           <a href="#">Manage Conversations</a>
-    <!--      <a href="#">Validate Requests</a>-->
+   
        
        
         </div> |
@@ -212,7 +213,6 @@
         <a  class="dropbtn">Files</a>
         <div class="dropdown-content">
           <a href="#">Manage Conversations</a>
-    <!--      <a href="#">Validate Requests</a>-->
        
        
         </div> |
@@ -221,5 +221,78 @@
         
         
     </ul>
+    </div> -->
+    <div class="navigation">
+      <div class="tit">
+        <p class="hea" routerLink="/home">Market Place</p>
+        <p class="info">Logged in as admin</p>
+        <p class="info">{{date}}</p>
+        <p class="info" (click)="logout()">logout</p>
+      </div>
+      <div class="nav">
+      <ul>
+        <li routerLink="/home">Home</li>
+        <li class="drop"> <a class="d-name">Categories</a> 
+          <div class="dropdown">
+            <div class="dd-core">
+              <p class="item" routerLink="/manage-categories">Manage-Categories</p>
+              <p class="item" routerLink="/add-category">Add-Category</p>
+              <p class="item"routerLink="/add-sub_category" >Add-Sub Category</p>
+            </div>
+          </div>
+        </li>
+        <li class="drop"> <a class="d-name">Gigs</a> 
+          
+          <div class="dropdown">
+              <div class="dd-core">
+            <p class="item" routerLink="/manage-gigs">Manage-Gigs</p>
+          </div>
+          </div>
+        </li>
+        <li class="drop"> <a class="d-name">Orders</a> 
+          
+          <div class="dropdown">
+              <div class="dd-core">
+            <p class="item"routerLink="/manage-orders">Manage-Orders</p>
+          </div>
+          </div>
+        </li>
+        <li class="drop"> <a class="d-name">Requests</a> 
+          <div class="dropdown">
+          <div class="dd-core">
+            <p class="item"routerLink="/manage-custom-requests">Manage-Requests</p>
+          </div>
+          </div>
+        </li>
+        <li class="drop"> <a class="d-name">Members</a> 
+          <div class="dropdown">
+          <div class="dd-core">
+            <p class="item" routerLink="/manage-members">Manage-Members</p>
+          </div>
+          </div>
+        </li>
+        <li class="drop"> <a class="d-name">Admins</a> 
+          <div class="dropdown">
+          <div class="dd-core">
+            <p class="item" routerLink="/manage-admin">Manage-Admins</p>
+            <p class="item"routerLink="/create-admin">Create-Admin</p>
+          </div>
+          </div>
+        </li>
+        <li class="drop"> <a class="d-name">Feedbacks</a> 
+          <div class="dropdown">
+          <div class="dd-core">
+            <p class="item" routerLink="/manage-feedback">Manage-Feedbacks</p>
+            <p class="item" routerLink="/fake-feedback">Fake-Feedback</p>
+          </div>
+          </div>
+        </li>
+        <li>Conversations</li>
+        <li>Reports</li>
+        <li>Files</li>
+        <li>Bans</li>
+        
+      </ul>
+    </div>
     </div>
     
