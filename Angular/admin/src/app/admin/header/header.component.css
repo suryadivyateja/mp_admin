@@ -151,6 +151,24 @@ p.info{
 p.info:last-of-type{
     cursor: pointer;
 }
+.info1{
+    color: #fff;
+
+}
+.info1::after{
+    content: "\25BC";
+    
+    font-size: 10px;
+    margin-left: 3px;
+    color: #eb5e00
+
+}
+/* .info1:hover{
+    
+    border: 1px solid white;
+    border-radius: 50px;
+    padding: 5px 10px 5px 10px;
+} */
 .navigation div.nav ul{
     padding: 8px 0 8px 0;
     display: flex;
@@ -202,5 +220,8 @@ p.info:last-of-type{
 .navigation div.nav ul li.drop:hover .dropdown{
     display: block;
     
+}
+.icon{
+    cursor: pointer;
 }
 

@@ -10,7 +10,7 @@ const config = require('../config/database');
 const admin = require('../models/admin');
 const User = require('../models/user');
 const User_gig = require('../models/gig');
-const files = require('../models/files');
+const Files = require('../models/all_files');
 const order = require('../models/order_details');
 const conv = require('../models/conversations');
 const category = require('../models/category');
@@ -389,40 +389,54 @@ router.get('/delete_reviews/:id',(req,res)=>{
         }
     })
 })
-router.post('/files',(req,res)=>{
-   var file=[];
-    User_gig.find({}).exec((err,data)=>{
+router.post('/delete_file',(req,res)=>{
+    console.log(req.body);
+    if(req.body.value === 'img1'){
+    User_gig.findByIdAndUpdate({_id:req.body.id},{$set:{img1:'not specified'}}).exec((err,gig) => {
         if(err) res.json({success:false,msg:err});
-        else{
-            data.forEach(element=>{
-                file.push(element.img1,element.img2,element.img3,element.img4,element.img5,element.img6);
-                
-            })
-            console.log(file);
-            var fil= new files({
-                gigs:'tgrvfnevgf4v'
-            })
-            fil.save((err1,d)=>{
-                if(err1) res.json({success:false,msg:err1});
-                else{
-                    
-                    res.json({success:true,msg:d});
-
-                }
-            })
-            
-        }
+        else res.json({success:true,msg:gig});
     })
- })
- router.post('/file',(req,res)=>{
-     var file = new files({
-         gigs:['rfhuemg']
-     });
-     file.save((err,d)=>{
-         res.json({msg:d})
-
-     })
- })
+    }else if(req.body.value === 'img2'){
+        User_gig.findByIdAndUpdate({_id:req.body.id},{$set:{img2:'not specified'}}).exec((err1,gig1) => {
+            if(err1) res.json({success:false,msg:err1});
+            else res.json({success:true,msg:gig1});
+        })
+    }else if(req.body.value === 'img3'){
+        User_gig.findByIdAndUpdate({_id:req.body.id},{$set:{img3:'not specified'}}).exec((err2,gig2) => {
+            if(err2) res.json({success:false,msg:err2});
+            else res.json({success:true,msg:gig2});
+        })
+    }else if(req.body.value === 'img4'){
+        User_gig.findByIdAndUpdate({_id:req.body.id},{$set:{img4:'not specified'}}).exec((err3,gig3) => {
+            if(err3) res.json({success:false,msg:err3});
+            else res.json({success:true,msg:gig3});
+        })
+    }else if(req.body.value === 'img5'){
+        User_gig.findByIdAndUpdate({_id:req.body.id},{$set:{img5:'not specified'}}).exec((err4,gig4) => {
+            if(err4) res.json({success:false,msg:err4});
+            else res.json({success:true,msg:gig4});
+        })
+    }else if(req.body.value === 'img6'){
+        User_gig.findByIdAndUpdate({_id:req.body.id},{$set:{img6:'not specified'}}).exec((err5,gig5) => {
+            if(err5) res.json({success:false,msg:err5});
+            else res.json({success:true,msg:gig5});
+        })
+    }
+})
+//remove order file
+router.post('/delete_order_file',(req,res)=>{
+    order.findByIdAndUpdate({_id:req.body.id},{$set:{gig_img:'not specified'}}).exec((err,order)=>{
+        if(err) res.json({success:false,msg:err});
+        else res.json({success:true,msg:order});
+    })
+})
+//remove user file
+router.post('/delete_user_file',(req,res)=>{
+    User.findByIdAndUpdate({_id:req.body.id},{$set:{profile_pic:'not specified'}}).exec((err,user)=>{
+        if(err) res.json({success:false,msg:err});
+        else res.json({success:true,msg:user});
+    })
+})
 //update gig
 router.post('/edit_gig',(req,res)=>{
     var gig_id = req.body.gig_id;

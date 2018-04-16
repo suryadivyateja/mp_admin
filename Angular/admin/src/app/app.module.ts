@@ -34,6 +34,9 @@ import { ManageAdminComponent } from './admin/manage-admin/manage-admin.componen
 import { HeaderComponent } from './admin/header/header.component';
 import { EditAdminComponent } from './admin/edit-admin/edit-admin.component';
 import { AdminEditRequestsComponent } from './admin/admin-edit-requests/admin-edit-requests.component';
+import { AdminGigFilesComponent } from './admin/admin-gig-files/admin-gig-files.component';
+import { AdminOrderFilesComponent } from './admin/admin-order-files/admin-order-files.component';
+import { AdminUserFilesComponent } from './admin/admin-user-files/admin-user-files.component';
 const appRoutes:Routes = [{
   path:'',
   redirectTo:'/login',
@@ -126,6 +129,18 @@ const appRoutes:Routes = [{
       path:'manage-referrals',
       component:AdminManageReferralsComponent,
       canActivate: [AdminAuthGuard]
+    },{
+      path:'gig-files',
+      component:AdminGigFilesComponent,
+      canActivate: [AdminAuthGuard]
+    },{
+      path:'order-files',
+      component:AdminOrderFilesComponent,
+      canActivate: [AdminAuthGuard]
+    },{
+      path:'user-files',
+      component:AdminUserFilesComponent,
+      canActivate: [AdminAuthGuard]
     }]
 
 @NgModule({
@@ -152,7 +167,10 @@ const appRoutes:Routes = [{
     ManageAdminComponent,
     HeaderComponent,
     EditAdminComponent,
-    AdminEditRequestsComponent
+    AdminEditRequestsComponent,
+    AdminGigFilesComponent,
+    AdminOrderFilesComponent,
+    AdminUserFilesComponent
   ],
   imports: [
     BrowserModule,

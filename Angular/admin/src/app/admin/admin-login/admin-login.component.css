@@ -16,6 +16,9 @@ a{
     color:white;
     cursor: pointer;
 } */
+#serr{
+    color: red;
+}
 .module{
     display: flex;
     justify-content: center;
@@ -57,7 +60,6 @@ input{
 }
 input:focus{
     border: 1px solid #33b5e5;
-    color: lighten(black,20%);
 }
 button{
     cursor: pointer;

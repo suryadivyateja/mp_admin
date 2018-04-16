@@ -22,7 +22,10 @@ export class AdminService {
   loggedIn(){
     return tokenNotExpired();
   }
-
+//get files
+get_gig_files(){
+  return this.http.get("http://localhost:3000/admin/files").map(res=>res.json());
+}
   // get all users
   get_all_users(){
     return this.http.get("http://localhost:3000/admin/get_all_users").map(res => res.json());
@@ -32,6 +35,18 @@ export class AdminService {
     return this.http.get("http://localhost:3000/admin/get_all_admins").map(res => res.json());
     // return this.http.get("admin/get_all_users").map(res => res.json());
   }
+  delete_img(data){
+    let header = new Headers();
+    header.append('Content-Type', 'application/json');
+return this.http.post('http://localhost:3000/admin/delete_file',data,{headers:header}).map(res=>res.json());
+}
+delete_order_file(data){
+return this.http.post('http://localhost:3000/admin/delete_order_file',data).map(res=>res.json());
+}
+delete_user_file(data){
+  return this.http.post('http://localhost:3000/admin/delete_user_file',data).map(res=>res.json());
+  }
+  
   edit_gig(formData){
     return this.http.post("http://localhost:3000/admin/edit_gig",formData).map(res => res.json());
     // return this.http.post("users/update_gig",formData).map(res => res.json());

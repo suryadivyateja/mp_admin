@@ -21,8 +21,10 @@
    
     <div class="form">
             <h2>Login to your account</h2>
+            
         <input type="text" placeholder="Username" [(ngModel)]="email">
         <input type="password" placeholder="password" [(ngModel)]="password">
+        <div id="serr"></div>
         <button (click)="login()">Login</button>
     </div>
 </div>

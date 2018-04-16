@@ -29,7 +29,7 @@ login(){
         console.log(res);
         localStorage.setItem('token',res.token);
     this.router.navigate(['/home']);
-      }else{
+      }else if(res.success === false){
         $('#serr').html('password incorrect')
       }
     })

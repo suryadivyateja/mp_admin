@@ -1,0 +1,155 @@
+<app-header></app-header>
+<br>
+<div class="main-col">
+  <div class="main-col-inner">
+    <div id="serr"></div>
+    <div class="con-header">
+      <div class="con-h">
+        <h3 class="con-header-title">
+          Files - Gigs Files
+        </h3>
+       
+      </div>
+    </div>
+    <div class="group-content">
+      <div class="edit-heading">
+        <h6>Files</h6>
+      </div>
+    </div>
+    <div class="grid">
+      <table cellspacing="0">
+        <thead>
+          <tr>
+            <th class="id">ID</th>
+            <th class="name">File Name</th>
+            <th class="pcat">Username</th>
+            <th clas="action">Action</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let f of gig_files let i = index">
+          <tr class="s">
+            <td>
+              {{i+1}}
+            </td>
+            <td>
+              <div class="imgs">
+                <div class="img">
+                    <div *ngIf="f.img1 !== undefined && f.img1 !== null && f.img1 !== 'not specified'" >
+                       <img src="{{f.img1}}" alt="">
+                     </div>
+                  <div *ngIf="f.img1 === 'not specified'" class="te">
+                    <p class="im">Img1</p>
+                  </div>
+                </div>
+                <div class="img">
+                  <div *ngIf="f.img2 !== undefined && f.img2 !== null && f.img2 !== 'not specified'">
+
+                    <img src="{{f.img2}}" alt="">
+                  </div>
+                  <div *ngIf="f.img2 === 'not specified'" class="te">
+                    <p class="im">Img2</p>
+                  </div>
+                </div>
+                <div class="img">
+                  <div *ngIf="f.img3 !== undefined && f.img3 !== null && f.img3 !== 'not specified'" >
+
+                    <img src="{{f.img3}}" alt="">
+                    
+                  </div>
+                  <div  *ngIf="f.img3 === 'not specified'"class="te">
+                      <p class="im">Img3</p>
+                    
+                  </div>
+                </div>
+                <div class="img">
+                  <div *ngIf="f.img4 !== undefined && f.img4 !== null && f.img4 !== 'not specified'">
+
+                    <img src="{{f.img4}}" alt="">
+                    
+                  </div>
+                  <div *ngIf="f.img4 === 'not specified'" class="te">
+                      <p class="im">Img4</p>
+                  </div>
+                </div>
+                <div class="img">
+                  <div *ngIf="f.img5 !== undefined && f.img5 !== null && f.img5 !== 'not specified'">
+
+                    <img src="{{f.img5}}" alt="">
+                  </div>
+                  <div *ngIf="f.img5 === 'not specified'" class="te">
+                    <p class="im">Img5</p>
+                  </div>
+                </div>
+                <div class="img">
+                  <div *ngIf="f.img6 !== undefined && f.img6 !== null && f.img6 !== 'not specified'">
+
+                    <img src="{{f.img6}}" alt="">
+                  </div>
+                  <div *ngIf="f.img6 === 'not specified'" class="te">
+                    <p class="im">Img6</p>
+                  </div>
+                </div>
+              </div>
+
+            </td>
+            <td class="c">
+              <div class="user_n">
+                    {{f.username}}
+              </div>
+              
+            </td>
+            <td class="b">
+             <div class="buttons">
+               <div class="button">
+                 <div *ngIf="f.img1 !== null && f.img1 !== 'undefined' && f.img1 !== 'not specified'">
+                    <button class="but" (click)="delete_this(f,'img1')">1</button>
+                 </div>
+                 
+               </div>
+               <div class="button">
+                  <div *ngIf="f.img2 !== null && f.img2 !== undefined && f.img2 !== 'not specified'">
+                      <button class="but" (click)="delete_this(f,'img2')">2</button>
+  
+                   </div>
+               </div>
+               <div class="button">
+                  <div *ngIf="f.img3 !== null && f.img3 !== undefined && f.img3 !== 'not specified'">
+                      <button class="but" (click)="delete_this(f,'img3')">3</button>
+  
+                   </div>
+                   
+
+               </div>
+               <div class="button">
+                  <div *ngIf="f.img4 !== null && f.img4 !== undefined && f.img4 !== 'not specified'">
+                      <button class="but" (click)="delete_this(f,'img4')">4</button>
+  
+                   </div>
+                   
+
+               </div>
+               <div class="button">
+                  <div *ngIf="f.img5 !== null && f.img5 !== undefined && f.img5 !== 'not specified'">
+                      <button class="but" (click)="delete_this(f,'img5')">5</button>
+  
+                   </div>
+                   
+               </div>
+               <div class="button">
+                  <div *ngIf="f.img6 !== null && f.img6 !== undefined && f.img6 !== 'not specified'">
+                      <button class="but" (click)="delete_this(f,'img6')">6</button>
+  
+                   </div>
+                   
+
+               </div>
+             </div>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+</div>

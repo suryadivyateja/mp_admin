@@ -1,0 +1,159 @@
+#edit{
+    cursor: pointer;
+    color: springgreen;
+}
+#del{
+    cursor: pointer;
+    color: tomato;
+} 
+#serr{
+    color: #4F8A10;
+    background-color: #DFF2BF;
+    font-size: 13px;
+}
+div.main-col {
+    min-height: 450px;
+    padding: 0 25px 0px 25px;
+}
+div.main-col-inner {
+    float: left;
+    width: 100%;
+}
+.con-header{
+    display: inline-block;
+    width: 100%;
+    border-bottom: 4px solid #888; margin-bottom: 10px;
+}
+/* .con-h{
+ margin-bottom: 20px;
+} */
+.con-header-title{
+    float: left;
+    color:#eb5e00;
+    margin-bottom: 5px;
+}
+.con-header-button{
+    float: right;
+    margin-top: -8px;
+    padding: 5px 5px;
+   
+}
+.con-button{
+    color: white;
+    background: orange;
+    border: none;
+    cursor: pointer;
+}
+.edit-heading {
+    background: #6f8992;
+    padding: 3px 3px;
+
+}
+.edit-heading h6{
+    color: white;
+    padding: 2px 2px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.grid{
+    /* border:1px solid #cbd3d4; */
+    margin-top: 10px;
+    padding: 5px 5px;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td,th{
+    border: 1px solid #dddddd;
+    padding: 5px;
+
+}
+td{
+    font-size: 12px;
+}
+th{
+    font-size: 14px;
+    font-weight: 600;
+    background: #dedede;
+}
+.imgs{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.img{
+    width: 40px;
+    height: 40px;
+    margin-right: 25px;
+    text-align: center;
+    
+}
+.img img{
+    width: 40px;
+    height: 40px;
+    
+    text-align: center;
+}
+.te{
+    width: 40px;
+    height: 40px;
+    border: 1px dashed black;
+    position: relative;
+}
+.im{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 10px;
+}
+
+
+
+.img:nth-last-child(){
+margin-right: 0;
+}
+.id{
+    width: 10%;
+}
+.name{
+width: 40%;
+}
+.pcat{
+    width: 25%;
+}
+.action{
+    width: 25%;
+}
+.s{
+    text-align: center;
+
+}
+.b{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.buttons{
+    display: flex;
+    padding: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.but{
+    outline: none;
+    margin-right:15px; 
+    background: #eb5e00;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+}
+.c{
+    margin: 0;
+    padding: 0;
+}

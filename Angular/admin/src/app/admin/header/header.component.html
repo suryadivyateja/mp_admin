@@ -227,11 +227,11 @@
         <p class="hea" routerLink="/home">Market Place</p>
         <p class="info">Logged in as admin</p>
         <p class="info">{{date}}</p>
-        <p class="info" (click)="logout()">logout</p>
+        <p class="info" (click)="logout()"> <span class="info1">logout</span> </p>
       </div>
       <div class="nav">
       <ul>
-        <li routerLink="/home">Home</li>
+        <li routerLink="/home" class="icon">Home</li>
         <li class="drop"> <a class="d-name">Categories</a> 
           <div class="dropdown">
             <div class="dd-core">
@@ -287,9 +287,18 @@
           </div>
           </div>
         </li>
+        <li class="drop"> <a class="d-name">Files</a> 
+          <div class="dropdown">
+          <div class="dd-core">
+            <p class="item"routerLink="/gig-files">Gig-Files</p>
+            <p class="item"routerLink="/user-files">User-Files</p>
+            <p class="item"routerLink="/order-files">Order-Files</p>
+            <p class="item"routerLink="/conversation-files">Conversation-Files</p>
+          </div>
+          </div>
+        </li>
         <li>Conversations</li>
         <li>Reports</li>
-        <li>Files</li>
         <li>Bans</li>
         
       </ul>
